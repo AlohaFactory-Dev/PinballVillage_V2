@@ -1,0 +1,20 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_Rubble/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Obj_Rubble", "bone": "root", "attachment": "Obj_Rubble" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 0.5, "y": 135, "width": 429, "height": 288 }
+		},
+		"Obj_Rubble": {
+			"Obj_Rubble": { "x": 1, "y": 143, "width": 386, "height": 298 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

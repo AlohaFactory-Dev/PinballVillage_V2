@@ -1,0 +1,7 @@
+Obj_Stone02.png
+size:512,512
+filter:Linear,Linear
+pma:true
+Obj_Stone02
+bounds:2,12,476,466
+offsets:1,1,478,468

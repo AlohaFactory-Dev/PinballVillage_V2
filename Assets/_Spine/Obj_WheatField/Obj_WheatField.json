@@ -1,0 +1,88 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_WheatField/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Ground01", "bone": "root", "attachment": "Ground01" },
+	{ "name": "Obj_WheatFieldGreen01", "bone": "root", "attachment": "Obj_WheatFieldGreen01" },
+	{ "name": "Obj_WheatFieldGreen02", "bone": "root", "attachment": "Obj_WheatFieldGreen02" },
+	{ "name": "Obj_WheatFieldGreen03", "bone": "root", "attachment": "Obj_WheatFieldGreen03" },
+	{ "name": "Obj_WheatFieldGreen04", "bone": "root", "attachment": "Obj_WheatFieldGreen04" },
+	{ "name": "Obj_WheatFieldGreen05", "bone": "root", "attachment": "Obj_WheatFieldGreen05" },
+	{ "name": "Obj_WheatFieldGreen06", "bone": "root", "attachment": "Obj_WheatFieldGreen06" },
+	{ "name": "Obj_WheatFieldGreen07", "bone": "root", "attachment": "Obj_WheatFieldGreen07" },
+	{ "name": "Obj_WheatFieldGreen08", "bone": "root", "attachment": "Obj_WheatFieldGreen08" },
+	{ "name": "Obj_WheatFieldGreen09", "bone": "root", "attachment": "Obj_WheatFieldGreen09" },
+	{ "name": "Obj_WheatFieldYellow01", "bone": "root", "attachment": "Obj_WheatFieldYellow01" },
+	{ "name": "Obj_WheatFieldYellow02", "bone": "root", "attachment": "Obj_WheatFieldYellow02" },
+	{ "name": "Obj_WheatFieldYellow03", "bone": "root", "attachment": "Obj_WheatFieldYellow03" },
+	{ "name": "Obj_WheatFieldYellow04", "bone": "root", "attachment": "Obj_WheatFieldYellow04" },
+	{ "name": "Obj_WheatFieldYellow05", "bone": "root", "attachment": "Obj_WheatFieldYellow05" },
+	{ "name": "Obj_WheatFieldYellow06", "bone": "root", "attachment": "Obj_WheatFieldYellow06" },
+	{ "name": "Obj_WheatFieldYellow07", "bone": "root", "attachment": "Obj_WheatFieldYellow07" },
+	{ "name": "Obj_WheatFieldYellow08", "bone": "root", "attachment": "Obj_WheatFieldYellow08" },
+	{ "name": "Obj_WheatFieldYellow09", "bone": "root", "attachment": "Obj_WheatFieldYellow09" }
+],
+"skins": {
+	"default": {
+		"Ground01": {
+			"Ground01": { "x": 0, "y": 157.5, "width": 498, "height": 321 }
+		},
+		"Obj_WheatFieldGreen01": {
+			"Obj_WheatFieldGreen01": { "x": -126, "y": 360, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen02": {
+			"Obj_WheatFieldGreen02": { "x": -126, "y": 252, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen03": {
+			"Obj_WheatFieldGreen03": { "x": -126, "y": 148, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen04": {
+			"Obj_WheatFieldGreen04": { "x": 6, "y": 360, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen05": {
+			"Obj_WheatFieldGreen05": { "x": 6, "y": 252, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen06": {
+			"Obj_WheatFieldGreen06": { "x": 6, "y": 148, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen07": {
+			"Obj_WheatFieldGreen07": { "x": 126, "y": 360, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen08": {
+			"Obj_WheatFieldGreen08": { "x": 126, "y": 252, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldGreen09": {
+			"Obj_WheatFieldGreen09": { "x": 126, "y": 148, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow01": {
+			"Obj_WheatFieldYellow01": { "x": -126, "y": 360, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow02": {
+			"Obj_WheatFieldYellow02": { "x": -126, "y": 252, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow03": {
+			"Obj_WheatFieldYellow03": { "x": -126, "y": 148, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow04": {
+			"Obj_WheatFieldYellow04": { "x": 6, "y": 360, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow05": {
+			"Obj_WheatFieldYellow05": { "x": 6, "y": 252, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow06": {
+			"Obj_WheatFieldYellow06": { "x": 6, "y": 148, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow07": {
+			"Obj_WheatFieldYellow07": { "x": 126, "y": 360, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow08": {
+			"Obj_WheatFieldYellow08": { "x": 126, "y": 252, "width": 218, "height": 280 }
+		},
+		"Obj_WheatFieldYellow09": {
+			"Obj_WheatFieldYellow09": { "x": 126, "y": 148, "width": 218, "height": 280 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

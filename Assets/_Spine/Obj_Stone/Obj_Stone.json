@@ -1,0 +1,28 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_Stone/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Grass02", "bone": "root", "attachment": "Grass02" },
+	{ "name": "Stone", "bone": "root", "attachment": "Stone" },
+	{ "name": "Grass01", "bone": "root", "attachment": "Grass01" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 257, "y": -321, "width": 318, "height": 214 }
+		},
+		"Grass02": {
+			"Grass02": { "x": 93.5, "y": -301, "width": 143, "height": 118 }
+		},
+		"Stone": {
+			"Stone": { "x": 252.5, "y": -276, "width": 401, "height": 336 }
+		},
+		"Grass01": {
+			"Grass01": { "x": 361, "y": -339.5, "width": 96, "height": 99 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

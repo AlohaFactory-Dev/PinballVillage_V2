@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Image
+  m_EditorClassIdentifier: 
+  m_GroupName: Image
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9c598fd675fa6304ba7a59c3aff210b8
+  m_SerializeEntries:
+  - m_GUID: 018a3994c7e554e42a8c93ad15a2505b
+    m_Address: Obj_ArrowTower03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0378fe41ea62cd8408cd769a60592937
+    m_Address: Obj_House01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cbd943a592c5bb498844be4fd7fe6b5
+    m_Address: Obj_Tree01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11afd9a657021974199f663039cf7559
+    m_Address: Obj_LordCastle01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d68caea642aee34faff28ce4a505903
+    m_Address: Obj_Stone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 285b8628132f92c4b94f8baa8f8a68a4
+    m_Address: Obj_MarketWeapon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28d617c47f2f073408b467ec409690b6
+    m_Address: Obj_Tree03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ccfca96ae24b2e49b12f2739d2855ae
+    m_Address: Obj_House03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ce3939a61886c44e8ee058f0c10d537
+    m_Address: Obj_Market02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4303d2f2c66e09846b0fd92eec4cb350
+    m_Address: Obj_DirectionalSign
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5038fc5a4e77d0d4fb0d6f28c5501703
+    m_Address: Obj_WindmillTower02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6652489c1a1e846458f76501c7aadba9
+    m_Address: Obj_WindmillTower01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ca4c6739e68efb40bd89252dc3d0fac
+    m_Address: Obj_House02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f79e948986066f488f6f8a85db8b6ba
+    m_Address: Obj_ArrowTower01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9091046de966f974dbb3b8aa11ba6bec
+    m_Address: Obj_Bank
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7b22847ccbe75946b38bb83cd71bde7
+    m_Address: Obj_Market01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b899962657505f442bb18cdcc8f9889e
+    m_Address: Obj_LordCastle03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7d7dfa0c3ae3c341887cad13cadf68e
+    m_Address: Obj_ArcherTrainingCenter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8c45c0daf55ea74092a47be7cb5d2dd
+    m_Address: Obj_WheatField02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5cf93c3977231049a809cf1106904e3
+    m_Address: Obj_WheatField01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5f8a5433528f124ba46cf8ebbae6caa
+    m_Address: Obj_Market03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8ebe7dcbb2ce0c44862d19d787dbda5
+    m_Address: Obj_ArrowTower02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee2b02e9bb7606241926fe11d8d7f72c
+    m_Address: Obj_StatueArcher
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef63b7ca9527f644ab522e08249ae8b5
+    m_Address: Obj_HouseFarmer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f208239bd8a3e5746aa25e775b7a234d
+    m_Address: Obj_LordCastle02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f44bf38ddd00f2f48843039e116c76bc
+    m_Address: Obj_Tree02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0f82acf65c28141820f552e7aee322
+    m_Address: Obj_StatueCavalryman
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Image
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c500563653463c343839ec906c2c5ab2, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e5dee80786cd3e243b9a24d0df98d776, type: 2}
+    - {fileID: 11400000, guid: 45cf30b9182360d45a6ce92a6af90165, type: 2}

@@ -1,0 +1,13 @@
+Obj_WheatField.png
+size:1024,1024
+filter:Linear,Linear
+pma:true
+Ground01
+bounds:2,615,496,319
+offsets:1,1,498,321
+Obj_WheatFieldGreen01
+bounds:718,656,216,278
+offsets:1,1,218,280
+Obj_WheatFieldYellow01
+bounds:500,656,216,278
+offsets:1,1,218,280

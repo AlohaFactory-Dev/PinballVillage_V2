@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Obj_Rubble
+  m_Controller: {fileID: 9100000, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -5023979817611008368, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: 9004260320740155608, guid: f8e3cebb2dbc8de449cbd3f318b2704d, type: 2}
+  - m_OriginalClip: {fileID: -185083695065326244, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: 8987856833593936222, guid: f8e3cebb2dbc8de449cbd3f318b2704d, type: 2}
+  - m_OriginalClip: {fileID: 544520763215398029, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: 1651143513357784290, guid: f8e3cebb2dbc8de449cbd3f318b2704d, type: 2}

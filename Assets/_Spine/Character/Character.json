@@ -1,0 +1,24 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Character/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Character_Load", "bone": "root", "attachment": "Character_Load" },
+	{ "name": "Character_Resident", "bone": "root", "attachment": "Character_Resident" },
+	{ "name": "Character_Archer", "bone": "root", "attachment": "Character_Archer" }
+],
+"skins": {
+	"default": {
+		"Character_Load": {
+			"Character_Load": { "x": -4.5, "y": 124, "width": 375, "height": 378 }
+		},
+		"Character_Resident": {
+			"Character_Resident": { "x": -7.5, "y": 103, "width": 279, "height": 334 }
+		},
+		"Character_Archer": {
+			"Character_Archer": { "x": 10.5, "y": 128, "width": 335, "height": 396 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

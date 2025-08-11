@@ -1,0 +1,17 @@
+Obj_LoadCastle.png
+size:1024,1024
+filter:Linear,Linear
+pma:true
+Obj_LoadCastle01
+bounds:509,40,466,485
+offsets:1,1,468,488
+rotate:90
+Obj_LoadCastle02
+bounds:510,508,466,486
+offsets:1,1,468,488
+Obj_LoadCastle03
+bounds:2,494,506,500
+offsets:1,1,508,502
+shadow
+bounds:2,228,395,264
+offsets:1,1,397,266

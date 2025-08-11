@@ -1,0 +1,17 @@
+Obj_Tree.png
+size:1024,1024
+filter:Linear,Linear
+pma:true
+Obj_Tree01
+bounds:2,425,394,482
+offsets:2,2,398,485
+Obj_Tree02
+bounds:398,468,297,439
+offsets:1,2,299,442
+Obj_Tree03
+bounds:697,436,207,155
+offsets:2,1,211,158
+shadow
+bounds:697,593,314,210
+offsets:1,1,316,212
+rotate:90

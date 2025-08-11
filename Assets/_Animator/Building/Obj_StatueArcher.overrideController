@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Obj_StatueArcher
+  m_Controller: {fileID: 9100000, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -5023979817611008368, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: -2689306030627998460, guid: b59d9bd82a4ab71468829f17b56f5670, type: 2}
+  - m_OriginalClip: {fileID: -185083695065326244, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: 645049584320238993, guid: b59d9bd82a4ab71468829f17b56f5670, type: 2}
+  - m_OriginalClip: {fileID: 544520763215398029, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: -1220940354608761300, guid: b59d9bd82a4ab71468829f17b56f5670, type: 2}
+  - m_OriginalClip: {fileID: 9080301085206236662, guid: 9ec3144a9cb6bea4fab0de4a912843bd, type: 2}
+    m_OverrideClip: {fileID: 3226600272429254784, guid: b59d9bd82a4ab71468829f17b56f5670, type: 2}

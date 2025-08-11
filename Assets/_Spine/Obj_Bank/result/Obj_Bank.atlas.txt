@@ -1,0 +1,11 @@
+Obj_Bank.png
+size:1024,1024
+filter:Linear,Linear
+pma:true
+Obj_Bank
+bounds:2,257,420,432
+offsets:1,2,422,435
+shadow
+bounds:424,294,395,265
+offsets:1,1,397,267
+rotate:90

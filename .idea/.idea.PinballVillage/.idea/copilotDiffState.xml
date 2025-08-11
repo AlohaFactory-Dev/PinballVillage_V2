@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/Assets/_Scripts/Spawner/SpawnerVillagerTracker.cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Assets/_Scripts/Spawner/SpawnerVillagerTracker.cs" />
+              <option name="updatedContent" value="using System.Collections.Generic;&#10;using UnityEngine;&#10;using System;&#10;&#10;public class SpawnerVillagerTracker : MonoBehaviour&#10;{&#10;    [SerializeField] private List&lt;Villager&gt; villagersInSpawner = new List&lt;Villager&gt;();&#10;    [SerializeField] private float detectionRadius = 1f;&#10;    &#10;    public event Action&lt;Villager&gt; OnVillagerEntered;&#10;    public event Action&lt;Villager&gt; OnVillagerExited;&#10;    &#10;    public IReadOnlyList&lt;Villager&gt; VillagersInSpawner =&gt; villagersInSpawner;&#10;    public int VillagerCount =&gt; villagersInSpawner.Count;&#10;    public bool HasVillagers =&gt; villagersInSpawner.Count &gt; 0;&#10;&#10;    private void OnTriggerEnter2D(Collider2D other)&#10;    {&#10;        var villager = other.GetComponent&lt;Villager&gt;();&#10;        if (villager != null &amp;&amp; !villagersInSpawner.Contains(villager))&#10;        {&#10;            villagersInSpawner.Add(villager);&#10;            OnVillagerEntered?.Invoke(villager);&#10;        }&#10;    }&#10;&#10;    private void OnTriggerExit2D(Collider2D other)&#10;    {&#10;        var villager = other.GetComponent&lt;Villager&gt;();&#10;        if (villager != null &amp;&amp; villagersInSpawner.Contains(villager))&#10;        {&#10;            villagersInSpawner.Remove(villager);&#10;            OnVillagerExited?.Invoke(villager);&#10;        }&#10;    }&#10;&#10;    public bool IsVillagerInSpawner(Villager villager)&#10;    {&#10;        return villagersInSpawner.Contains(villager);&#10;    }&#10;&#10;    public Villager GetRandomVillager()&#10;    {&#10;        if (villagersInSpawner.Count == 0) return null;&#10;        return villagersInSpawner[UnityEngine.Random.Range(0, villagersInSpawner.Count)];&#10;    }&#10;&#10;    public List&lt;Villager&gt; GetVillagersByOwnerType(OwnerType ownerType)&#10;    {&#10;        return villagersInSpawner.FindAll(v =&gt; v.OwnerType == ownerType);&#10;    }&#10;&#10;#if UNITY_EDITOR&#10;    private void OnDrawGizmosSelected()&#10;    {&#10;        Gizmos.color = Color.yellow;&#10;        Gizmos.DrawWireSphere(transform.position, detectionRadius);&#10;        &#10;        Gizmos.color = Color.red;&#10;        foreach (var villager in villagersInSpawner)&#10;        {&#10;            if (villager != null)&#10;            {&#10;                Gizmos.DrawLine(transform.position, villager.transform.position);&#10;            }&#10;        }&#10;    }&#10;#endif&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Assets/_Scripts/UI/StageUI.cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Assets/_Scripts/UI/StageUI.cs" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

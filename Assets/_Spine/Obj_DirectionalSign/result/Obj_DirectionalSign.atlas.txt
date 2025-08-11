@@ -1,0 +1,15 @@
+Obj_DirectionalSign.png
+size:1024,1024
+filter:Linear,Linear
+pma:true
+arrow
+bounds:617,606,142,131
+offsets:1,1,144,133
+rotate:90
+shadow
+bounds:399,426,322,216
+offsets:1,1,324,218
+rotate:90
+sign
+bounds:2,442,395,306
+offsets:1,1,398,308

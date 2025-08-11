@@ -1,0 +1,20 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Enermy_Slime/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "eye", "bone": "root", "attachment": "eye" }
+],
+"skins": {
+	"default": {
+		"body": {
+			"body": { "x": 0, "y": 132.5, "width": 308, "height": 267 }
+		},
+		"eye": {
+			"eye": { "x": 0, "y": 114, "width": 166, "height": 62 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

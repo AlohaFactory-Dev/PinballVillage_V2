@@ -1,0 +1,24 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_ArcherTrainingCenter/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Obj_CastleWall02", "bone": "root", "attachment": "Obj_CastleWall02" },
+	{ "name": "Mark", "bone": "root", "attachment": "Mark" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 0.5, "y": 30, "width": 285, "height": 192 }
+		},
+		"Obj_CastleWall02": {
+			"Obj_CastleWall02": { "x": 2, "y": 182.5, "width": 442, "height": 375 }
+		},
+		"Mark": {
+			"Mark": { "x": 0, "y": 170, "width": 220, "height": 246 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

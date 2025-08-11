@@ -1,0 +1,11 @@
+Enermy_Slime.png
+size:512,512
+filter:Linear,Linear
+pma:true
+body
+bounds:2,103,306,263
+offsets:1,1,308,267
+eye
+bounds:310,202,164,56
+offsets:1,1,166,62
+rotate:90

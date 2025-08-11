@@ -1,0 +1,3 @@
+public class ArcherTrainingCenter : Building
+{
+}

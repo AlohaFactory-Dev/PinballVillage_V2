@@ -1,0 +1,20 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_House01/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Obj_House01", "bone": "root", "attachment": "Obj_House01" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 2.5, "y": 81, "width": 397, "height": 268 }
+		},
+		"Obj_House01": {
+			"Obj_House01": { "x": 0, "y": 166.5, "width": 422, "height": 365 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

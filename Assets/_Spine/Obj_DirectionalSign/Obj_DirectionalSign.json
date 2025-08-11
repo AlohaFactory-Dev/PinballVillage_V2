@@ -1,0 +1,24 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_DirectionalSign/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "sign", "bone": "root", "attachment": "sign" },
+	{ "name": "arrow", "bone": "root", "attachment": "arrow" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 1, "y": 29, "width": 324, "height": 218 }
+		},
+		"sign": {
+			"sign": { "x": -2, "y": 149, "width": 398, "height": 308 }
+		},
+		"arrow": {
+			"arrow": { "x": 11, "y": 158.5, "width": 144, "height": 133 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

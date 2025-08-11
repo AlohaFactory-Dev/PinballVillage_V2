@@ -1,0 +1,28 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Obj_LoadCastle01", "bone": "root", "attachment": "Obj_LoadCastle01" },
+	{ "name": "Obj_LoadCastle02", "bone": "root", "attachment": "Obj_LoadCastle02" },
+	{ "name": "Obj_LoadCastle03", "bone": "root", "attachment": "Obj_LoadCastle03" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 1.5, "y": 151, "width": 397, "height": 266 }
+		},
+		"Obj_LoadCastle01": {
+			"Obj_LoadCastle01": { "x": 0, "y": 243.5, "width": 468, "height": 511 }
+		},
+		"Obj_LoadCastle02": {
+			"Obj_LoadCastle02": { "x": 0, "y": 243.5, "width": 468, "height": 511 }
+		},
+		"Obj_LoadCastle03": {
+			"Obj_LoadCastle03": { "x": 0, "y": 250.5, "width": 508, "height": 525 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

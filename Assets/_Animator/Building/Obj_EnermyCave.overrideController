@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Obj_EnermyCave
+  m_Controller: {fileID: 9100000, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -5023979817611008368, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: 4161388810451867256, guid: 357c7e2879493f54c8099e77ed0cb550, type: 2}
+  - m_OriginalClip: {fileID: -185083695065326244, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: 2311621141852503023, guid: 357c7e2879493f54c8099e77ed0cb550, type: 2}
+  - m_OriginalClip: {fileID: 544520763215398029, guid: 189b9e772eafdba4b9e50267abe30a17, type: 2}
+    m_OverrideClip: {fileID: -2951958227471185468, guid: 357c7e2879493f54c8099e77ed0cb550, type: 2}
+  - m_OriginalClip: {fileID: 9080301085206236662, guid: 9ec3144a9cb6bea4fab0de4a912843bd, type: 2}
+    m_OverrideClip: {fileID: -6037577920176508656, guid: 357c7e2879493f54c8099e77ed0cb550, type: 2}

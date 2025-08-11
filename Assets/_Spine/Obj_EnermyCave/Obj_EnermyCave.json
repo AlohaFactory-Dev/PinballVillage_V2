@@ -1,0 +1,32 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_EnermyCave/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "DoorLight", "bone": "root", "attachment": "DoorLight" },
+	{ "name": "CaveBottom", "bone": "root", "attachment": "CaveBottom" },
+	{ "name": "CaveTop", "bone": "root", "attachment": "CaveTop" },
+	{ "name": "Door", "bone": "root", "attachment": "Door" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 2.5, "y": 87, "width": 397, "height": 268 }
+		},
+		"DoorLight": {
+			"DoorLight": { "x": 0, "y": 10, "width": 192, "height": 114 }
+		},
+		"CaveBottom": {
+			"CaveBottom": { "x": 0, "y": 180, "width": 458, "height": 386 }
+		},
+		"CaveTop": {
+			"CaveTop": { "x": 0, "y": 312, "width": 428, "height": 286 }
+		},
+		"Door": {
+			"Door": { "x": 0, "y": 90, "width": 270, "height": 226 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

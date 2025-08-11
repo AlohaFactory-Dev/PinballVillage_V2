@@ -1,0 +1,10 @@
+Obj_Rubble.png
+size:1024,1024
+filter:Linear,Linear
+pma:true
+Obj_Rubble
+bounds:431,519,384,296
+offsets:1,1,386,298
+shadow
+bounds:2,529,427,286
+offsets:1,1,429,288

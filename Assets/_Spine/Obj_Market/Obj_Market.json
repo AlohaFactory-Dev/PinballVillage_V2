@@ -1,0 +1,32 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_Market/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Obj_Market01", "bone": "root", "attachment": "Obj_Market01" },
+	{ "name": "Obj_Market02", "bone": "root", "attachment": "Obj_Market02" },
+	{ "name": "Obj_Market03", "bone": "root", "attachment": "Obj_Market03" },
+	{ "name": "Obj_MarketWeapon", "bone": "root", "attachment": "Obj_MarketWeapon" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 1.5, "y": 110.5, "width": 397, "height": 267 }
+		},
+		"Obj_Market01": {
+			"Obj_Market01": { "x": 0, "y": 197, "width": 476, "height": 396 }
+		},
+		"Obj_Market02": {
+			"Obj_Market02": { "x": -0.5, "y": 199.5, "width": 395, "height": 371 }
+		},
+		"Obj_Market03": {
+			"Obj_Market03": { "x": -6.5, "y": 199.5, "width": 467, "height": 479 }
+		},
+		"Obj_MarketWeapon": {
+			"Obj_MarketWeapon": { "x": 0, "y": 199, "width": 414, "height": 438 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

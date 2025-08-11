@@ -1,0 +1,20 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_StatueCavalryman/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "Obj_StatueCavalryman", "bone": "root", "attachment": "Obj_StatueCavalryman" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": -0.5, "y": 107, "width": 285, "height": 192 }
+		},
+		"Obj_StatueCavalryman": {
+			"Obj_StatueCavalryman": { "x": -9.5, "y": 234.5, "width": 469, "height": 475 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

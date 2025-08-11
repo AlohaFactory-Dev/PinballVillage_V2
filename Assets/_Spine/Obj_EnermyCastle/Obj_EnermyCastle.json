@@ -1,0 +1,32 @@
+{ "skeleton": { "images": "D:/Art/Project/Art/5_핀볼빌리지/Ingame_Main/Obj_EnermyCastle/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "botttom", "bone": "root", "attachment": "botttom" },
+	{ "name": "born", "bone": "root", "attachment": "born" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "fire01", "bone": "root", "attachment": "fire01" },
+	{ "name": "fire02", "bone": "root", "attachment": "fire02" }
+],
+"skins": {
+	"default": {
+		"botttom": {
+			"botttom": { "x": 299.5, "y": -346.5, "width": 559, "height": 393 }
+		},
+		"born": {
+			"born": { "x": 300, "y": -133, "width": 596, "height": 196 }
+		},
+		"body": {
+			"body": { "x": 300, "y": -248.5, "width": 508, "height": 491 }
+		},
+		"fire01": {
+			"fire01": { "x": 82, "y": -466, "width": 58, "height": 84 }
+		},
+		"fire02": {
+			"fire02": { "x": 517, "y": -466, "width": 58, "height": 84 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
