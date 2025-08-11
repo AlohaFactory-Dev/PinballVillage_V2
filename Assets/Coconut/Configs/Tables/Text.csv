@@ -39,60 +39,60 @@ TextFilter,BannedWordIncluded,Contains an unavailable word.,사용할 수 없는
 TextFilter,InvalidLength,Your nickname must be least 4 characters and no more than 20 characters.,닉네임은 4자 이상 20자 이하여야 합니다.,-99999
 SystemUI,ToastMessage/NotEnough,Not enough {[property]},{[property]}이(가) 부족합니다.,-99999
 Building,Name/Tree,Tree,나무,-99999
-Building,Name/TreasureBox,Tree,#보물 상자,-99999
+Building,Name/#TreasureBox,#Treasure Chest,#보물 상자,-99999
 Building,Name/Rock,Rock,바위,-99999
-Building,Name/Castle_0,Castle,영주의 성,-99999
-Building,Name/Castle_1,Castle,영주의 성,-99999
-Building,Name/Castle_2,Castle,영주의 성,-99999
-Building,Name/Market_0,Market,시장,-99999
+Building,Name/Castle_1,Lord's Castle,영주의 성,-99999
+Building,Name/Castle_2,Lord's Castle,영주의 성,-99999
+Building,Name/Castle_3,Lord's Castle,영주의 성,-99999
 Building,Name/Market_1,Market,시장,-99999
 Building,Name/Market_2,Market,시장,-99999
-Building,Name/Bank_0,Bank,은행,-99999
-Building,Name/WheatField_0,WheatField,밀 밭,-99999
-Building,Name/WheatField_1,WheatField,밀 밭,-99999
-Building,Name/Windmill_0,Windmill,풍차,-99999
+Building,Name/Market_3,Market,시장,-99999
+Building,Name/Bank_1,Bank,은행,-99999
+Building,Name/WheatField_1,Wheat Field,밀 밭,-99999
+Building,Name/WheatField_2,Wheat Field,밀 밭,-99999
 Building,Name/Windmill_1,Windmill,풍차,-99999
-Building,Name/ArrowTower_0,Tower,화살 탑,-99999
-Building,Name/ArrowTower_1,Tower,화살 탑,-99999
-Building,Name/ArrowTower_2,Tower,화살 탑,-99999
-Building,Name/House_0,House,집,-99999
+Building,Name/Windmill_2,Windmill,풍차,-99999
+Building,Name/ArrowTower_1,Arrow Tower,화살 탑,-99999
+Building,Name/ArrowTower_2,Arrow Tower,화살 탑,-99999
+Building,Name/ArrowTower_3,Arrow Tower,화살 탑,-99999
 Building,Name/House_1,House,집,-99999
 Building,Name/House_2,House,집,-99999
-Building,Name/DirectionSign,DirectionSign,방향 표지판,-99999
-Building,Name/ArmsMarket,Market,무기 시장,-99999
-Building,Name/FarmerHouse,House,농부의 집,-99999
-Building,Name/ArcherTrainingCenter,ArcherTrainingCenter,궁수 양성소,-99999
-Building,Name/CavalrymanStatue,CavalrymanStatue,기병의 동상,-99999
-Building,Name/ArcherStatue,ArcherStatue,궁수의 동상,-99999
-Building,Name/EnemyCastle,Castle,해골 성,-99999
-Building,Name/EnemyHouse,House,슬라임 동굴,-99999
-Building,Desc/Tree,Desc/Tree,충돌시 <sprite name=Gold>+3 (총 6회),-99999
-Building,Desc/TreasureBox,Desc/TreasureBox,충돌시 <sprite name=Gold><color=#f4b900>골드</color> 30 획득 (총 3회),-99999
-Building,Desc/Rock,Desc/Rock,단단한 바위,-99999
-Building,Desc/Castle_0,Desc/Castle_0,충돌시 <sprite name=Gold>+5,-99999
-Building,Desc/Castle_1,Desc/Castle_1,충돌시 <sprite name=Gold>20 획득.,-99999
-Building,Desc/Castle_2,Desc/Castle_2,충돌시 <sprite name=Gold>20 획득.<color=#559FFA>1칸 이내</color>의 모든 집<c> 농부의 집 <sprite name=VillagerNormal> 수 +1,-99999
-Building,Desc/Market_0,Desc/Market_0,충돌시 <sprite name=Gold>+3,-99999
-Building,Desc/Market_1,Desc/Market_1,충돌시 <sprite name=Gold>+5,-99999
-Building,Desc/Market_2,Desc/Market_2,충돌시 <sprite name=Gold>+7,-99999
-Building,Desc/Bank_0,Desc/Bank_0,모든 시장<c> 무기 시장의 <sprite name=Gold>+3,-99999
-Building,Desc/WheatField_0,Desc/WheatField_0,10초마다 <sprite name=Gold> +1. <color=#559FFA>1칸 이내</color>의 밀밭 수만큼 <sprite name=Gold> 증가.,-99999
-Building,Desc/WheatField_1,Desc/WheatField_1,10초마다 <sprite name=Gold> +2. <color=#559FFA>1칸 이내</color>의 밀밭 수 x2만큼 <sprite name=Gold> 증가.,-99999
-Building,Desc/Windmill_0,Desc/Windmill_0,충돌시 <color=#559FFA>1칸 이내</color>의 밀밭 수 x5만큼 <sprite name=Gold>획득,-99999
-Building,Desc/Windmill_1,Desc/Windmill_1,충돌시 <color=#559FFA>2칸 이내</color>의 밀밭 수 x5만큼 <sprite name=Gold>획득,-99999
-Building,Desc/ArrowTower_0,Desc/ArrowTower_0,충돌시 <color=#559FFA>3칸 이내</color>의 칸 1개 공격,-99999
-Building,Desc/ArrowTower_1,Desc/ArrowTower_1,충돌시 <color=#559FFA>4칸 이내</color>의 칸 1개 공격,-99999
-Building,Desc/ArrowTower_2,Desc/ArrowTower_2,충돌시 <color=#559FFA>5칸 이내</color>의 칸 2개 공격,-99999
-Building,Desc/House_0,Desc/House_0,<sprite name=VillagerNormal> +1,-99999
-Building,Desc/House_1,Desc/House_1,<sprite name=VillagerNormal> +2,-99999
-Building,Desc/House_2,Desc/House_2,<sprite name=VillagerNormal> 3 획득. <color=#559FFA>1칸 이내</color>의 집<c> 농부의 집의 <sprite name=VillagerNormal> 수 +1,-99999
-Building,Desc/DirectionSign,Desc/DirectionSign,충돌시 캐릭터를 지정한 방향으로 밀어냄. 방향 회전 가능,-99999
-Building,Desc/ArmsMarket,Desc/ArmsMarket,충돌시 <sprite name=Gold>+5. <color=#559FFA>3칸 이내</color>의 화살 탑의 공격 타겟 수 +1,-99999
-Building,Desc/FarmerHouse,Desc/FarmerHouse,<color=#559FFA>1칸 이내</color>의 밀 밭 수 x1만큼의 <sprite name=VillagerNormal> 획득,-99999
-Building,Desc/ArcherTrainingCenter,Desc/ArcherTrainingCenter,<sprite name=VillagerArcher> 1 획득,-99999
-Building,Desc/CavalrymanStatue,Desc/CavalrymanStatue,<color=#559FFA>3칸</color> 이내의 캐릭터는 이속 +5,-99999
-Building,Desc/ArcherStatue,Desc/ArcherStatue,<color=#559FFA>3칸</color> 이내의 <sprite name=VillagerArcher><c> 화살 탑은 공격 타겟 수 +1,-99999
-Building,Desc/EnemyCastle,Desc/EnemyCastle,<sprite name=VillagerNormal> +3,-99999
+Building,Name/House_3,House,집,-99999
+Building,Name/DirectionSign,Direction Sign,방향 표지판,-99999
+Building,Name/ArmsMarket,Weapon Market,무기 시장,-99999
+Building,Name/FarmerHouse,Farmer's House,농부의 집,-99999
+Building,Name/ArcherTrainingCenter,Archer's Training School,궁수 양성소,-99999
+Building,Name/CavalrymanStatue,Cavalry Statue,기병의 동상,-99999
+Building,Name/ArcherStatue,Archer's Statue,궁수의 동상,-99999
+Building,Name/EnemyCastle,Skull Castle,해골 성,-99999
+Building,Name/EnemyHouse,Slime Cave,슬라임 동굴,-99999
+Building,Desc/Tree,Upon collision<c> <sprite name=Gold>+3 (6 times total),충돌시 <sprite name=Gold>+3 (총 6회),-99999
+Building,Desc/#TreasureBox,Upon collision<c> <sprite name=Gold><color=#f4b900>Gold</color> is gained 30 (3 times total),충돌시 <sprite name=Gold><color=#f4b900>골드</color> 30 획득 (총 3회),-99999
+Building,Desc/Rock,Solid Rock,단단한 바위,-99999
+Building,Desc/Castle_1,Upon collision<c> <sprite name=Gold>+5,충돌시 <sprite name=Gold>+5,-99999
+Building,Desc/Castle_2,Upon collision<c> <sprite name=Gold>20 is gained.,충돌시 <sprite name=Gold>20 획득.,-99999
+Building,Desc/Castle_3,Upon collision<c> <sprite name=Gold>20 is gained. All houses within <color=#559FFA>1 block</color><c> including <sprite name=VillagerNormal><c> are +1.,충돌시 <sprite name=Gold>20 획득.<color=#559FFA>1칸 이내</color>의 모든 집<c> 농부의 집 <sprite name=VillagerNormal> 수 +1,-99999
+Building,Desc/Market_1,Upon collision<c> <sprite name=Gold>+3,충돌시 <sprite name=Gold>+3,-99999
+Building,Desc/Market_2,Upon collision<c> <sprite name=Gold>+5,충돌시 <sprite name=Gold>+5,-99999
+Building,Desc/Market_3,Upon collision<c> <sprite name=Gold>+7,충돌시 <sprite name=Gold>+7,-99999
+Building,Desc/Bank_1,<sprite name=Gold>+3 in all markets and weapon markets,모든 시장<c> 무기 시장의 <sprite name=Gold>+3,-99999
+Building,Desc/WheatField_1,<sprite name=Gold> +1 every 10 seconds. <sprite name=Gold> increases by the number of wheat fields <color=#559FFA>within 1 block</color>.,10초마다 <sprite name=Gold> +1. <color=#559FFA>1칸 이내</color>의 밀밭 수만큼 <sprite name=Gold> 증가.,-99999
+Building,Desc/WheatField_2,<sprite name=Gold> +2 every 10 seconds. <sprite name=Gold> increases by 2 times the number of wheat fields <color=#559FFA>within 1 block</color>. Upon collision<c> gain <sprite name=Gold> equal to 5 x the number of wheat fields <color=#559FFA>within 1 block</color>.,10초마다 <sprite name=Gold> +2. <color=#559FFA>1칸 이내</color>의 밀밭 수 x2만큼 <sprite name=Gold> 증가.,-99999
+Building,Desc/Windmill_1,Upon collision<c> gain <sprite name=Gold> equal to 5 x the number of wheat fields <color=#559FFA>within 2 blocks</color>.,충돌시 <color=#559FFA>1칸 이내</color>의 밀밭 수 x5만큼 <sprite name=Gold>획득,-99999
+Building,Desc/Windmill_2,Upon collision<c> attack 1 block <color=#559FFA>within 3 blocks</color>.,충돌시 <color=#559FFA>2칸 이내</color>의 밀밭 수 x5만큼 <sprite name=Gold>획득,-99999
+Building,Desc/ArrowTower_1,Upon collision<c> attack 1 block <color=#559FFA>within 4 blocks</color>.,충돌시 <color=#559FFA>3칸 이내</color>의 칸 1개 공격,-99999
+Building,Desc/ArrowTower_2,Upon collision<c> attack 2 blocks <color=#559FFA>within 5 blocks</color>.,충돌시 <color=#559FFA>4칸 이내</color>의 칸 1개 공격,-99999
+Building,Desc/ArrowTower_3,<sprite name=VillagerNormal> +1,충돌시 <color=#559FFA>5칸 이내</color>의 칸 2개 공격,-99999
+Building,Desc/House_1,<sprite name=VillagerNormal> +2,<sprite name=VillagerNormal> +1,-99999
+Building,Desc/House_2,Gain <sprite name=VillagerNormal> 3. +1 to the number of <sprite name=VillagerNormal> houses and farmer's houses <color=#559FFA>within 1 block</color>.,<sprite name=VillagerNormal> +2,-99999
+Building,Desc/House_3,Upon collision<c> pushes the character in the specified direction. Can rotate direction,<sprite name=VillagerNormal> 3 획득. <color=#559FFA>1칸 이내</color>의 집<c> 농부의 집의 <sprite name=VillagerNormal> 수 +1,-99999
+Building,Desc/DirectionSign,Upon collision<c> <sprite name=Gold>+5. Arrow towers within <color=#559FFA>3 blocks</color> gain +1 attack target,충돌시 캐릭터를 지정한 방향으로 밀어냄. 방향 회전 가능,-99999
+Building,Desc/ArmsMarket,Acquire <sprite name=VillagerNormal> equal to the number of wheat fields within <color=#559FFA>1 block</color>,충돌시 <sprite name=Gold>+5. <color=#559FFA>3칸 이내</color>의 화살 탑의 공격 타겟 수 +1,-99999
+Building,Desc/FarmerHouse,Acquire 1 <sprite name=VillagerArcher>,<color=#559FFA>1칸 이내</color>의 밀 밭 수 x1만큼의 <sprite name=VillagerNormal> 획득,-99999
+Building,Desc/ArcherTrainingCenter,Characters within <color=#559FFA>3 blocks</color> gain +5 movement speed,<sprite name=VillagerArcher> 1 획득,-99999
+Building,Desc/CavalrymanStatue,<sprite name=VillagerArcher> and arrow towers within <color=#559FFA>3 blocks</color> gain +1 attack target,<color=#559FFA>3칸</color> 이내의 캐릭터는 이속 +5,-99999
+Building,Desc/ArcherStatue,<sprite name=VillagerNormal> +3,<color=#559FFA>3칸</color> 이내의 <sprite name=VillagerArcher><c> 화살 탑은 공격 타겟 수 +1,-99999
+Building,Desc/EnemyCastle,<sprite name=VillagerNormal> +3,<sprite name=VillagerNormal> +3,-99999
 Building,Desc/EnemyHouse,Desc/EnemyHouse,<sprite name=VillagerNormal> +3,-99999
-FloatingText,VillagerSpawn,FloatingText/VillagerSpawn,<sprite name={[villagerType]}>+{[value]},-99999
-FloatingText,EarnGold,FloatingText/EarnGold,<sprite name=Gold>+{[value]},-99999
+FloatingText,VillagerSpawn,<sprite name={[villagerType]}>+{[value]},<sprite name={[villagerType]}>+{[value]},-99999
+FloatingText,EarnGold,<sprite name=Gold>+{[value]},<sprite name=Gold>+{[value]},-99999

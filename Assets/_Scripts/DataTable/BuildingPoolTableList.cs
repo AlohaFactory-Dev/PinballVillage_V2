@@ -6,7 +6,6 @@ using Aloha.Coconut;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-[Serializable]
 public class BuildingPoolTable
 {
     [CSVColumn] public string id;

@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Stage.Building;
 using UnityEngine;
 
-public abstract class Passive : MonoBehaviour
+public abstract class Passive
 {
     public OwnerType OwnerType => CastSpawner.CurrentOwner;
 
@@ -10,9 +11,13 @@ public abstract class Passive : MonoBehaviour
 
     // 패시브 받은 스포너들
     protected List<Spawner> InjectedPassiveSpawners = new();
+    protected BuildingPassiveTable PassiveTable;
+    protected SpawnerGridManager SpawnerGridManager;
 
-    public void AddPassive(Spawner spawner)
+    public void Init(Spawner spawner, string passiveId)
     {
+        SpawnerGridManager = StageContainer.Get<SpawnerGridManager>();
+        PassiveTable = TableListContainer.Get<BuildingPassiveTableList>().GetPassiveTable(passiveId);
         CastSpawner = spawner;
         InjectPassive(spawner);
     }

@@ -19,7 +19,6 @@ public enum SpawnPointType
     Soil, Rampart
 }
 
-[Serializable]
 public class BuildingTable
 {
     [CSVColumn] public BuildingGroupType passiveTargetGroup;
@@ -42,6 +41,7 @@ public class BuildingTable
     [CSVColumn] public string descriptionKey;
     [CSVColumn] public int maxHp;
     [CSVColumn] public string nameKey;
+    [CSVColumn] public string passiveId;
 
     public int maxLevel;
     // [CSVColumn] public string passiveDescriptionKey;
@@ -74,7 +74,7 @@ public class BuildingTableList : ITableList
         var info = _tables.Find(a => a.id == id);
         if (info == null)
         {
-            Debug.LogError($"EtcInfo not found. id: {id}");
+            Debug.LogError($"BuildingTable not found. id: {id}");
             return null;
         }
 

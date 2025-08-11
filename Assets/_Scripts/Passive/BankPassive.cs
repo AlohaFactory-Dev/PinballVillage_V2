@@ -5,12 +5,11 @@ using Zenject;
 
 public class BankPassive : Passive
 {
-    [Inject] SpawnerGridManager _spawnerGridManager;
-    [SerializeField] private int addGoldAmount = 3;
+    private int AddGoldAmount => PassiveTable.effectValue;
 
     protected override void InjectPassive(Spawner spawner)
     {
-        InjectedPassiveSpawners = _spawnerGridManager.GetAllSpawners();
+        InjectedPassiveSpawners = SpawnerGridManager.GetAllSpawners();
         foreach (var neighbor in InjectedPassiveSpawners)
         {
             if (neighbor == spawner) continue;
@@ -24,7 +23,7 @@ public class BankPassive : Passive
         if (spawner.IsEmpty) return;
         if (spawner.Building.PassiveTargetGroupType == BuildingGroupType.Market)
         {
-            spawner.Building.UpdatePerformance(addGoldAmount);
+            spawner.Building.UpdatePerformance(AddGoldAmount);
         }
     }
 }

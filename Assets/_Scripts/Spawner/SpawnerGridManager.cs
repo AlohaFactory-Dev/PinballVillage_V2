@@ -268,7 +268,7 @@ namespace Stage.Building
             for (int i = 0; i < existingSpawners.Length; i++)
             {
                 Vector2Int arrayIndex = GridToArrayIndex(gridPositions[i]);
-                RegisterSpawner(existingSpawners[i], arrayIndex);
+                RegisterSpawnerEdit(existingSpawners[i], arrayIndex);
             }
 
             // Row 오름차순, Col 오름차순 정렬 (예: (0,0),(0,1),(0,2),(1,0),(1,1),(1,2)...)
@@ -286,7 +286,12 @@ namespace Stage.Building
                 sorted[i].SetName();
             }
         }
-
+        private void RegisterSpawnerEdit(Spawner spawner, Vector2Int gridPos)
+        {
+            spawner.InitEdit(gridPos.x, gridPos.y);
+            _spawnerGrid[gridPos.x, gridPos.y] = spawner;
+            _allSpawners.Add(spawner);
+        }
         [ContextMenu("Set Tilemap Sprites")]
         public void SetTilemapSprites()
         {

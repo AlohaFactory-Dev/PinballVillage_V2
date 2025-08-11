@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[Serializable]
 public class AttackObjectTable
 {
     [CSVColumn] public string id;

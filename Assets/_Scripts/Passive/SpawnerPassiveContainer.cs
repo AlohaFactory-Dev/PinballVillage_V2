@@ -26,7 +26,7 @@ public class SpawnerPassiveContainer
     {
         if (!_passives.Remove(passive))
         {
-            Debug.LogWarning($"Passive {passive.name} not found in SpawnerPassiveContainer.");
+            Debug.LogWarning($"Passive {nameof(passive)} not found in SpawnerPassiveContainer.");
         }
     }
 

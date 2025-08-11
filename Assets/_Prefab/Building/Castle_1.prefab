@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3744997198019093441
+--- !u!1 &6051170889120130674
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7683791196890288712}
-  - component: {fileID: 7376780802812325103}
-  - component: {fileID: 1237689330002841244}
-  - component: {fileID: 4855238112433299969}
-  - component: {fileID: 4029690518068758242}
-  - component: {fileID: 6708924402393362175}
+  - component: {fileID: 3343968473617354161}
+  - component: {fileID: 1258431587130404790}
+  - component: {fileID: 198738110138721902}
+  - component: {fileID: 4409355875633271169}
+  - component: {fileID: 958603921855047457}
+  - component: {fileID: 39789818342951712}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (Obj_LoadCastle)
   m_TagString: Untagged
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7683791196890288712
+--- !u!4 &3343968473617354161
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744997198019093441}
+  m_GameObject: {fileID: 6051170889120130674}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3848817253044995365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7376780802812325103
+--- !u!33 &1258431587130404790
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744997198019093441}
+  m_GameObject: {fileID: 6051170889120130674}
   m_Mesh: {fileID: 0}
---- !u!23 &1237689330002841244
+--- !u!23 &198738110138721902
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744997198019093441}
+  m_GameObject: {fileID: 6051170889120130674}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,14 +86,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4855238112433299969
+--- !u!95 &4409355875633271169
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744997198019093441}
+  m_GameObject: {fileID: 6051170889120130674}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 22100000, guid: 2c103dccab2b2234880c1272e285f35a, type: 2}
@@ -107,20 +107,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4029690518068758242
+--- !u!114 &958603921855047457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744997198019093441}
+  m_GameObject: {fileID: 6051170889120130674}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: a461976269d4db94994359fe55bdb787, type: 2}
-  initialSkinName: Obj_LoadCastle02
+  initialSkinName: Obj_LoadCastle01
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -151,13 +151,13 @@ MonoBehaviour:
     layerMixModes: 01000000
     layerBlendModes: 01000000
   updateTiming: 1
---- !u!114 &6708924402393362175
+--- !u!114 &39789818342951712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744997198019093441}
+  m_GameObject: {fileID: 6051170889120130674}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebc6602ebb844aa2bc4e31b358a3f1fa, type: 3}
@@ -237,11 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622918444974104571, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_text
-      value: Castle_1
+      value: Castle_0
       objectReference: {fileID: 0}
     - target: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_Name
-      value: Castle_1
+      value: Castle_0
       objectReference: {fileID: 0}
     - target: {fileID: 7590475778206604445, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_SizeDelta.x
@@ -267,7 +267,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6316143205943434030, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7683791196890288712}
+      addedObject: {fileID: 3343968473617354161}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
@@ -277,7 +277,7 @@ PrefabInstance:
       addedObject: {fileID: 8979989442082512258}
     - targetCorrespondingSourceObject: {fileID: 4093905285476084477, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6259535678269968576}
+      addedObject: {fileID: 1058894906966159174}
   m_SourcePrefab: {fileID: 100100000, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
 --- !u!1 &227818197134114440 stripped
 GameObject:
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lordActionInterval: 0.15
-  buildingObj: {fileID: 3744997198019093441}
+  buildingObj: {fileID: 6051170889120130674}
   rubbleObj: {fileID: 227818197134114440}
 --- !u!114 &8979989442082512258
 MonoBehaviour:
@@ -326,7 +326,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4093905285476084477, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
   m_PrefabInstance: {fileID: 7119852560368082443}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &6259535678269968576
+--- !u!61 &1058894906966159174
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

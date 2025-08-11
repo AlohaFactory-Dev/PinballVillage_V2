@@ -5,13 +5,12 @@ using Zenject;
 
 public class HousePassive : Passive
 {
-    [Inject] SpawnerGridManager _spawnerGridManager;
-    [SerializeField] private int range = 1;
-    [SerializeField] private int addVillageCount = 1;
+    private int Range => PassiveTable.range;
+    private int AddVillageCount => PassiveTable.effectValue;
 
     protected override void InjectPassive(Spawner spawner)
     {
-        InjectedPassiveSpawners = _spawnerGridManager.GetNeighbors(spawner, range);
+        InjectedPassiveSpawners = SpawnerGridManager.GetNeighbors(spawner, Range);
         foreach (var neighbor in InjectedPassiveSpawners)
         {
             neighbor.AddSpawnerPassive(this);
@@ -22,7 +21,7 @@ public class HousePassive : Passive
     {
         if (spawner.Building.PassiveTargetGroupType == BuildingGroupType.House)
         {
-            spawner.Building.UpdatePerformance(addVillageCount);
+            spawner.Building.UpdatePerformance(AddVillageCount);
         }
     }
 }

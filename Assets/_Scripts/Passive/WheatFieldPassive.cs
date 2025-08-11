@@ -4,13 +4,12 @@ using Zenject;
 
 public class WheatFieldPassive : Passive
 {
-    [SerializeField] int range = 1;
-    [SerializeField] float effectValue = 1f;
-    [Inject] SpawnerGridManager _spawnerGridManager;
+    private int Range => PassiveTable.range;
+    private float EffectValue => PassiveTable.effectValue;
 
     protected override void InjectPassive(Spawner spawner)
     {
-        InjectedPassiveSpawners = _spawnerGridManager.GetNeighbors(spawner, range);
+        InjectedPassiveSpawners = SpawnerGridManager.GetNeighbors(spawner, Range);
         foreach (var neighbor in InjectedPassiveSpawners)
         {
             neighbor.AddSpawnerPassive(this);
@@ -21,7 +20,7 @@ public class WheatFieldPassive : Passive
     {
         if (spawner.Building.PassiveTargetGroupType != BuildingGroupType.WheatField)
             return;
-        CastSpawner.Building.UpdatePerformance(effectValue);
-        spawner.Building.UpdatePerformance(effectValue);
+        CastSpawner.Building.UpdatePerformance(EffectValue);
+        spawner.Building.UpdatePerformance(EffectValue);
     }
 }

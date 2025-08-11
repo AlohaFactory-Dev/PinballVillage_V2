@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6246323776760578559
+--- !u!1 &1780958044449831110
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5891207832872820510}
-  - component: {fileID: 996413848824183457}
-  - component: {fileID: 2007954377632368980}
-  - component: {fileID: 4178995372671211338}
-  - component: {fileID: 343511113120133420}
-  - component: {fileID: 2564210676249126735}
+  - component: {fileID: 8051311897540641080}
+  - component: {fileID: 9007235836071444075}
+  - component: {fileID: 5659722735226263487}
+  - component: {fileID: 2642240757511645856}
+  - component: {fileID: 6263364422379238732}
+  - component: {fileID: 9187790318247276914}
   m_Layer: 0
-  m_Name: Spine Mecanim GameObject (Obj_Bank)
+  m_Name: Spine Mecanim GameObject (Obj_WindmillTower01)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5891207832872820510
+--- !u!4 &8051311897540641080
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246323776760578559}
+  m_GameObject: {fileID: 1780958044449831110}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3848817253044995365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &996413848824183457
+--- !u!33 &9007235836071444075
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246323776760578559}
+  m_GameObject: {fileID: 1780958044449831110}
   m_Mesh: {fileID: 0}
---- !u!23 &2007954377632368980
+--- !u!23 &5659722735226263487
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246323776760578559}
+  m_GameObject: {fileID: 1780958044449831110}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b70adfe088e7cbc4f9785075750d59b7, type: 2}
+  - {fileID: 2100000, guid: 1f0540f0fd6c72745a44fdea471f7e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,17 +86,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4178995372671211338
+--- !u!95 &2642240757511645856
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246323776760578559}
+  m_GameObject: {fileID: 1780958044449831110}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 3fc2b57b6751bae4ba98cba02c716fd7, type: 2}
+  m_Controller: {fileID: 22100000, guid: 5976d01758d4b0941be000798b12f885, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,20 +107,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &343511113120133420
+--- !u!114 &6263364422379238732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246323776760578559}
+  m_GameObject: {fileID: 1780958044449831110}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 03224bf855874be4e959eafae7590c78, type: 2}
-  initialSkinName: 
+  skeletonDataAsset: {fileID: 11400000, guid: 6d9bb95542f40b44ab19907518f7d9de, type: 2}
+  initialSkinName: Obj_WindmillTower02
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -151,13 +151,13 @@ MonoBehaviour:
     layerMixModes: 01000000
     layerBlendModes: 01000000
   updateTiming: 1
---- !u!114 &2564210676249126735
+--- !u!114 &9187790318247276914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246323776760578559}
+  m_GameObject: {fileID: 1780958044449831110}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebc6602ebb844aa2bc4e31b358a3f1fa, type: 3}
@@ -213,11 +213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6622918444974104571, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_text
-      value: Bank_0
+      value: Windmill_1
       objectReference: {fileID: 0}
     - target: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_Name
-      value: Bank_0
+      value: Windmill_1
       objectReference: {fileID: 0}
     - target: {fileID: 8705574953958777644, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_SortingLayer
@@ -233,14 +233,14 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6316143205943434030, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5891207832872820510}
+      addedObject: {fileID: 8051311897540641080}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9178338703134340693}
+      addedObject: {fileID: 10234839172637626}
     - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5259589451997384828}
+      addedObject: {fileID: 8979989442082512258}
   m_SourcePrefab: {fileID: 100100000, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
 --- !u!1 &227818197134114440 stripped
 GameObject:
@@ -257,7 +257,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
   m_PrefabInstance: {fileID: 7119852560368082443}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9178338703134340693
+--- !u!114 &10234839172637626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,13 +266,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4561921062580990406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a6971f4031742469e3abbc0674921de, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d28213d0521d364e86e1a20d0afa238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lordActionInterval: 0.15
-  buildingObj: {fileID: 6246323776760578559}
+  buildingObj: {fileID: 1780958044449831110}
   rubbleObj: {fileID: 227818197134114440}
---- !u!114 &5259589451997384828
+--- !u!114 &8979989442082512258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +281,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4561921062580990406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957d075bfc5f4283adb8098af10913df, type: 3}
+  m_Script: {fileID: 11500000, guid: 4685f7824598415c8e1944a2453da01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addGoldAmount: 3

@@ -358,9 +358,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8604690976124851902}
-    - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8672320242398749122}
   m_SourcePrefab: {fileID: 100100000, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
 --- !u!1 &227818197134114440 stripped
 GameObject:
@@ -392,21 +389,6 @@ MonoBehaviour:
   lordActionInterval: 0.15
   buildingObj: {fileID: 3060359870925216054}
   rubbleObj: {fileID: 227818197134114440}
---- !u!114 &8672320242398749122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561921062580990406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2701ce9a48747c6b40999d8d0c9e070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  villagerTracker: {fileID: 7499119710781310696}
-  range: 3
-  addSpeedValue: 5
 --- !u!4 &8497999582189993078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1666395316582031997, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}

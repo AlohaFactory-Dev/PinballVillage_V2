@@ -5,7 +5,6 @@ using Aloha.Coconut;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-[Serializable]
 public class EtcTable
 {
     [CSVColumn] public string Id;

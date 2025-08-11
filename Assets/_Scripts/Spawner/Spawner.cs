@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using FactorySystem;
 using ModestTree;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 using Stage.Building;
+using UnityEngine.Serialization;
 
 
 public enum OwnerType
@@ -16,22 +18,34 @@ public enum OwnerType
 
 public class Spawner : MonoBehaviour
 {
+#if UNITY_EDITOR
+    [ShowInInspector, ReadOnly]
+#endif
+    [SerializeField]
+    private int row = -1;
+#if UNITY_EDITOR
+    [ShowInInspector, ReadOnly]
+#endif
+    [SerializeField]
+    private int col = -1;
+
     private SpawnerPassiveContainer _spawnerPassiveContainer;
     private Building _building;
 
     [Inject] private SpawnerGridManager _spawnerGridManager;
     [Inject] private VillagerManager _villagerManager;
     [SerializeField] private OwnerType defaultOwnerType;
-    [SerializeField] private int row = -1;
-    [SerializeField] private int col = -1;
+
     [SerializeField] private SpawnerOwnerChangerController ownerChangerController;
     [SerializeField] private string defaultBuildingId;
     [SerializeField] private GameObject buildAbleHighlight;
     [SerializeField] private GameObject buildDisableHighlight;
     [SerializeField] private Animator showRangeHighlight;
 
+    [Header("적 자동 건물 생성 관련")]
+    [FormerlySerializedAs("_autoSpawnTime")]
+    public int autoSpawnTime = 0;
 
-    [Header("적 자동 건물 생성 관련")] public int _autoSpawnTime = 0;
     [Range(0, 100)] public int spawnPercent = 0;
     public string autoBuildingId = string.Empty;
     public Direction defaultDirection = Direction.Right;
@@ -42,7 +56,7 @@ public class Spawner : MonoBehaviour
     public OwnerType CurrentOwner => ownerChangerController.CurrentOwner;
 
     // 그리드 좌표 프로퍼티 (읽기 전용)
-    public Vector2Int GridPosition => new Vector2Int(col, row);
+    public Vector2Int GridPosition => new(col, row);
     public void ChangeOwner(IChanger changer) => ownerChangerController.Change(changer);
 
 
@@ -129,6 +143,17 @@ public class Spawner : MonoBehaviour
 
 
 #if UNITY_EDITOR
+
+    public void InitEdit(int colIndex, int rowIndex)
+    {
+        col = colIndex;
+        row = rowIndex;
+        ownerChangerController.Init(defaultOwnerType, this);
+        _spawnerPassiveContainer = new SpawnerPassiveContainer(this);
+        AllBuildAbleHighlightOff();
+        ShowRangeHighlight(false);
+    }
+
     private void OnValidate()
     {
         if (!defaultBuildingId.IsEmpty())
@@ -165,7 +190,7 @@ public class Spawner : MonoBehaviour
             {
                 color = Color.green;
             }
-            else if ("WheatField_0".Equals(defaultBuildingId) || "WheatField_1".Equals(defaultBuildingId))
+            else if ("WheatField_1".Equals(defaultBuildingId) || "WheatField_2".Equals(defaultBuildingId))
             {
                 color = Color.yellow;
             }
@@ -186,7 +211,7 @@ public class Spawner : MonoBehaviour
         {
             UnityEditor.Handles.Label(
                 transform.position,
-                $"Auto:\n{autoBuildingId} ({_autoSpawnTime}s) , {spawnPercent}%",
+                $"Auto:\n{autoBuildingId} ({autoSpawnTime}s) , {spawnPercent}%",
                 new GUIStyle()
                 {
                     normal = { textColor = Color.blue },

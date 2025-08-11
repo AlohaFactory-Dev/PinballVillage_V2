@@ -5,13 +5,12 @@ using Zenject;
 
 public class ArmsMarketPassive : Passive
 {
-    [Inject] SpawnerGridManager _spawnerGridManager;
-    [SerializeField] private int range = 3;
-    [SerializeField] private int targetCount = 1;
+    private int Range => PassiveTable.range;
+    private int TargetCount => PassiveTable.targetCount;
 
     protected override void InjectPassive(Spawner spawner)
     {
-        InjectedPassiveSpawners = _spawnerGridManager.GetNeighbors(spawner, range);
+        InjectedPassiveSpawners = SpawnerGridManager.GetNeighbors(spawner, Range);
         foreach (var neighbor in InjectedPassiveSpawners)
         {
             neighbor.AddSpawnerPassive(this);
@@ -24,7 +23,7 @@ public class ArmsMarketPassive : Passive
         if (spawner.IsEmpty) return;
         if (spawner.Building.PassiveTargetGroupType == BuildingGroupType.Tower)
         {
-            spawner.Building.UpdatePerformance(targetCount);
+            spawner.Building.UpdatePerformance(TargetCount);
         }
     }
 }

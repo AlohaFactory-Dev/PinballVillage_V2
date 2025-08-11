@@ -5,21 +5,21 @@ using Zenject;
 
 public class ArcherStatuePassive : Passive
 {
-    [Inject] private SpawnerGridManager _spawnerGridManager;
-    [SerializeField] VillagerTracker villagerTracker;
-    [SerializeField] private int range = 3;
-    [SerializeField] private int targetCount = 1;
+    private VillagerTracker _villagerTracker;
+    private int Range => PassiveTable.range;
+    private int TargetCount => PassiveTable.targetCount;
 
     protected override void InjectPassive(Spawner spawner)
     {
-        InjectedPassiveSpawners = _spawnerGridManager.GetNeighbors(spawner, range);
+        _villagerTracker = spawner.Building.GetComponentInChildren<VillagerTracker>();
+        InjectedPassiveSpawners = SpawnerGridManager.GetNeighbors(spawner, Range);
         foreach (var neighbor in InjectedPassiveSpawners)
         {
             neighbor.AddSpawnerPassive(this);
-            villagerTracker.CreateCrossColliders(neighbor.transform.position);
+            _villagerTracker.CreateCrossColliders(neighbor.transform.position);
         }
 
-        villagerTracker.Init(spawner,
+        _villagerTracker.Init(spawner,
             AddAttack,
             DecreaseAttack);
     }
@@ -37,7 +37,7 @@ public class ArcherStatuePassive : Passive
     {
         if (villager.VillagerType == VillagerType.Archer)
         {
-            (villager as ArcherCharacter).AddAttackCount(targetCount);
+            (villager as ArcherCharacter).AddAttackCount(TargetCount);
         }
     }
 
@@ -45,7 +45,7 @@ public class ArcherStatuePassive : Passive
     {
         if (villager.VillagerType == VillagerType.Archer)
         {
-            (villager as ArcherCharacter).DecreaseAttackCount(targetCount);
+            (villager as ArcherCharacter).DecreaseAttackCount(TargetCount);
         }
     }
 }

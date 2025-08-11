@@ -18,43 +18,43 @@ MonoBehaviour:
   m_GUID: 5444003c1a742dd48a8c00b84648ac3d
   m_SerializeEntries:
   - m_GUID: 069c02ca7b0220e41b000324d5c7c6cc
-    m_Address: Windmill_1
+    m_Address: Windmill_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0807944a89671a3499d73f6d095beb59
-    m_Address: Market_0
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 196fbf8acc23f1a489234b19b04ccba5
     m_Address: Market_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 196fbf8acc23f1a489234b19b04ccba5
+    m_Address: Market_2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Building
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d1a25de008f103499265ac5ced7a7b8
-    m_Address: WheatField_0
+    m_Address: WheatField_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 20c75515ea9660a449fe8086bcc72d4f
-    m_Address: ArrowTower_1
+    m_Address: ArrowTower_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e2e082111dda6349bf509b4012f17ef
-    m_Address: Castle_0
+    m_Address: Castle_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2eec2bc08ea10784d990d5437a2cb2e5
-    m_Address: Bank_0
+    m_Address: Bank_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -66,7 +66,7 @@ MonoBehaviour:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3546b1a68c3aebf4ba49ef37dcb0598c
-    m_Address: Windmill_0
+    m_Address: Windmill_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -84,7 +84,7 @@ MonoBehaviour:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 56e51e165c97f7442b49c5c2aa36529a
-    m_Address: Castle_1
+    m_Address: Castle_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -102,7 +102,7 @@ MonoBehaviour:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7bbc3481fbece6a4ca0bd304ffaf0ee8
-    m_Address: ArrowTower_2
+    m_Address: ArrowTower_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -120,7 +120,7 @@ MonoBehaviour:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a097e43dba66f50428a1bba88b9a6038
-    m_Address: House_0
+    m_Address: House_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -132,7 +132,7 @@ MonoBehaviour:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ae0dcd61382d5f24eb4dd8833a6fea45
-    m_Address: House_2
+    m_Address: House_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -144,31 +144,31 @@ MonoBehaviour:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b023079fecd1076409f5e3a5c5632008
-    m_Address: Castle_2
+    m_Address: Castle_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d0c1ffb9eef562340b7621366d2587eb
-    m_Address: Market_2
+    m_Address: Market_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d12f62c5d81126040840de2605817caa
-    m_Address: WheatField_1
+    m_Address: WheatField_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d33d934a5b9089c478584cac3ea1473f
-    m_Address: ArrowTower_0
+    m_Address: ArrowTower_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd8da12986854dd4c94c41a6cfcf0567
-    m_Address: House_1
+    m_Address: House_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building

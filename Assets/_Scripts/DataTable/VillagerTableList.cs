@@ -13,7 +13,6 @@ public enum VillagerType
     Building,
 }
 
-[Serializable]
 public class VillagerTable
 {
     [CSVColumn] public string id;

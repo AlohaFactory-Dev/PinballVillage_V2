@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9030198749514190109
+--- !u!1 &1135186945436026684
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3186263021824879073}
-  - component: {fileID: 5213969890639249742}
-  - component: {fileID: 3642560447993070716}
-  - component: {fileID: 3648532681081220815}
-  - component: {fileID: 5921433977858864841}
-  - component: {fileID: 5438144290823981944}
+  - component: {fileID: 4383008693567223484}
+  - component: {fileID: 5456441529638624005}
+  - component: {fileID: 5126844842830858358}
+  - component: {fileID: 2964676785376266054}
+  - component: {fileID: 6652489338796964234}
+  - component: {fileID: 4115313854326335916}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (Obj_ArrowTower)
   m_TagString: Untagged
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3186263021824879073
+--- !u!4 &4383008693567223484
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030198749514190109}
+  m_GameObject: {fileID: 1135186945436026684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3848817253044995365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5213969890639249742
+--- !u!33 &5456441529638624005
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030198749514190109}
+  m_GameObject: {fileID: 1135186945436026684}
   m_Mesh: {fileID: 0}
---- !u!23 &3642560447993070716
+--- !u!23 &5126844842830858358
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030198749514190109}
+  m_GameObject: {fileID: 1135186945436026684}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,14 +86,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3648532681081220815
+--- !u!95 &2964676785376266054
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030198749514190109}
+  m_GameObject: {fileID: 1135186945436026684}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 22100000, guid: e038502126476014991ac0b8e7930daa, type: 2}
@@ -107,20 +107,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5921433977858864841
+--- !u!114 &6652489338796964234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030198749514190109}
+  m_GameObject: {fileID: 1135186945436026684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 60c7784035cc7984caf40e5e1f867d4f, type: 2}
-  initialSkinName: Obj_ArrowTower02
+  initialSkinName: Obj_ArrowTower01
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -151,13 +151,13 @@ MonoBehaviour:
     layerMixModes: 01000000
     layerBlendModes: 01000000
   updateTiming: 1
---- !u!114 &5438144290823981944
+--- !u!114 &4115313854326335916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030198749514190109}
+  m_GameObject: {fileID: 1135186945436026684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebc6602ebb844aa2bc4e31b358a3f1fa, type: 3}
@@ -211,13 +211,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5559963241237375298, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6622918444974104571, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_text
-      value: ArrowTower_1
+      value: ArrowTower_0
       objectReference: {fileID: 0}
     - target: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_Name
-      value: ArrowTower_1
+      value: ArrowTower_0
       objectReference: {fileID: 0}
     - target: {fileID: 8705574953958777644, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_SortingLayer
@@ -233,7 +237,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6316143205943434030, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3186263021824879073}
+      addedObject: {fileID: 4383008693567223484}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
@@ -270,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lordActionInterval: 0.15
-  buildingObj: {fileID: 9030198749514190109}
+  buildingObj: {fileID: 1135186945436026684}
   rubbleObj: {fileID: 227818197134114440}
 --- !u!114 &378480582363881138
 MonoBehaviour:

@@ -1,4 +1,5 @@
 using System.Collections;
+using Aloha.Coconut;
 using FactorySystem;
 using TMPro;
 using UniRx;
@@ -45,9 +46,11 @@ public class Building : MonoBehaviour
     public BuildingGroupType PassiveTargetGroupType => Table.passiveTargetGroup;
     public int RestroeCost => Mathf.CeilToInt(Table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
     private BuildingInfoPopupPoint _popupPoint;
+    private bool _hasPassive;
 
     public virtual void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
+        _hasPassive = false;
         _popupPoint = GetComponentInChildren<BuildingInfoPopupPoint>(true);
         _recycleObject = GetComponent<RecycleObject>();
         Collider2D = GetComponentInChildren<Collider2D>(true);
@@ -90,10 +93,11 @@ public class Building : MonoBehaviour
                 break;
         }
 
-        _passive = GetComponent<Passive>();
-        if (_passive)
+        _hasPassive = !TableManager.IsMagicNumber(Table.passiveId);
+        if (_hasPassive)
         {
-            _passive.AddPassive(spawner);
+            _passive = BuildingPassiveContainer.GetPassive(Table.passiveId);
+            _passive.Init(spawner, Table.passiveId);
         }
 
         spawner.SetBuilding(this);
@@ -199,7 +203,7 @@ public class Building : MonoBehaviour
             _stageGlobalClock.UnregisterTimer(_timerId);
         }
 
-        if (_passive)
+        if (_hasPassive)
         {
             _passive.RemovePassive();
         }
@@ -222,7 +226,7 @@ public class Building : MonoBehaviour
             BuildingFunction.DestroyAction();
         }
 
-        if (_passive)
+        if (_hasPassive)
         {
             _passive.RemovePassive();
         }

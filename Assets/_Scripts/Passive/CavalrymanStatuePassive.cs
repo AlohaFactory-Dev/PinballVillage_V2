@@ -5,21 +5,21 @@ using Zenject;
 
 public class CavalrymanStatuePassive : Passive
 {
-    [Inject] private SpawnerGridManager _spawnerGridManager;
-    [SerializeField] VillagerTracker villagerTracker;
-    [SerializeField] private int range = 3;
-    [SerializeField] private int addSpeedValue = 3;
+    private VillagerTracker _villagerTracker;
+    private int Range => PassiveTable.range;
+    private int AddSpeedValue => PassiveTable.effectValue;
 
     protected override void InjectPassive(Spawner spawner)
     {
-        InjectedPassiveSpawners = _spawnerGridManager.GetNeighbors(spawner, range);
+        _villagerTracker = spawner.Building.GetComponentInChildren<VillagerTracker>();
+        InjectedPassiveSpawners = SpawnerGridManager.GetNeighbors(spawner, Range);
         foreach (var neighbor in InjectedPassiveSpawners)
         {
             neighbor.AddSpawnerPassive(this);
-            villagerTracker.CreateCrossColliders(neighbor.transform.position);
+            _villagerTracker.CreateCrossColliders(neighbor.transform.position);
         }
 
-        villagerTracker.Init(spawner,
+        _villagerTracker.Init(spawner,
             AddSpeed,
             DecreaseSpeed);
     }
@@ -27,12 +27,12 @@ public class CavalrymanStatuePassive : Passive
 
     private void AddSpeed(Villager villager)
     {
-        villager.VillagerMoveSystem.AdjustSpeed(addSpeedValue);
+        villager.VillagerMoveSystem.AdjustSpeed(AddSpeedValue);
     }
 
     private void DecreaseSpeed(Villager villager)
     {
-        villager.VillagerMoveSystem.AdjustSpeed(-addSpeedValue);
+        villager.VillagerMoveSystem.AdjustSpeed(-AddSpeedValue);
     }
 
     public override void Activate(Spawner spawner)
