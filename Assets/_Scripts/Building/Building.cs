@@ -4,6 +4,7 @@ using FactorySystem;
 using TMPro;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Zenject;
 
 
@@ -22,6 +23,7 @@ public class Building : MonoBehaviour
     [SerializeField] private float lordActionInterval = 0.15f;
     [SerializeField] GameObject buildingObj;
     [SerializeField] GameObject rubbleObj;
+    private SortingGroup _sortingGroup;
 
 
     protected ReactiveProperty<bool> IsDestroyed = new ReactiveProperty<bool>(false);
@@ -47,16 +49,12 @@ public class Building : MonoBehaviour
     public int RestroeCost => Mathf.CeilToInt(Table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
     private BuildingInfoPopupPoint _popupPoint;
     private bool _hasPassive;
+    private bool _hasComponents;
 
     public virtual void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
+        GetComponents();
         _hasPassive = false;
-        _popupPoint = GetComponentInChildren<BuildingInfoPopupPoint>(true);
-        _recycleObject = GetComponent<RecycleObject>();
-        Collider2D = GetComponentInChildren<Collider2D>(true);
-        _animationSystem = GetComponentInChildren<BuildingAnimationSystem>(true);
-        _buildingHp = GetComponent<BuildingHp>();
-
         Collider2D.enabled = true;
         buildingObj.SetActive(true);
         rubbleObj.SetActive(false);
@@ -100,7 +98,20 @@ public class Building : MonoBehaviour
             _passive.Init(spawner, Table.passiveId);
         }
 
+        _sortingGroup.sortingOrder = spawner.GridPosition.x + spawner.GridPosition.y * 100;
         spawner.SetBuilding(this);
+    }
+
+    private void GetComponents()
+    {
+        if (_hasComponents) return;
+        _hasComponents = true;
+        _popupPoint = GetComponentInChildren<BuildingInfoPopupPoint>(true);
+        _recycleObject = GetComponent<RecycleObject>();
+        Collider2D = GetComponentInChildren<Collider2D>(true);
+        _animationSystem = GetComponentInChildren<BuildingAnimationSystem>(true);
+        _buildingHp = GetComponent<BuildingHp>();
+        _sortingGroup = GetComponentInChildren<SortingGroup>();
     }
 
     private void StartTimer()
