@@ -31,7 +31,7 @@ public class EnemyAutoBuildManager
         foreach (var spawner in _autoBuildSpawners)
         {
             bool percentCondition = spawner.spawnPercent > 0 && playerPercent >= spawner.spawnPercent;
-            bool timeCondition = spawner.autoSpawnTime > 0 && spawner.autoSpawnTime == tick;
+            bool timeCondition = spawner._autoSpawnTime > 0 && spawner._autoSpawnTime == tick;
             if ((percentCondition || timeCondition) && spawner.IsEmpty && spawner.CurrentOwner == OwnerType.Enemy)
             {
                 toBuild.Add(spawner);
