@@ -1,3 +1,4 @@
+using Aloha.Coconut;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -44,7 +45,7 @@ public class BuildingCardContainer : MonoBehaviour
         refreshTicketFrame.SetActive(_goldManager.HasRefreshTicket);
         if (_goldManager.HasRefreshTicket)
         {
-            refreshGoldText.text = $"무료";
+            refreshGoldText.text = TextTableV2.Get("Common/Free");
             refreshGoldText.color = Color.white;
             refreshTicketText.text = $"{_goldManager.RefreshTicketAmount.Value}";
         }

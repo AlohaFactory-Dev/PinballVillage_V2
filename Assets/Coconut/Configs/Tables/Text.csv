@@ -27,6 +27,8 @@ Common,EquipmentType/Armor,Armor,방어구,-99999
 Common,EquipmentType/Ring,Ring,반지,-99999
 Common,EquipmentType/Accessories,Accessories,장신구,-99999
 Common,TapToClose,Tap to close,탭하여 닫기,-99999
+Common,Free,Free,무료,-99999
+Common,Retry,Retry,다시하기,-99999
 Account,LinkFailed,Failed to link account,계정 연동 실패,-99999
 Account,AnonymousSignOutWarning,Game data of guest account will be deleted if you sign out.<br> Do you really want to sign out?,게스트 계정에서 로그아웃하면 모든 정보가 삭제됩니다.<br> 정말로 로그아웃하시겠습니까?,-99999
 Account,SignOutWarning,Do you really want to sign out?,정말로 로그아웃하시겠습니까?,-99999
@@ -96,3 +98,5 @@ Building,Desc/EnemyCastle,<sprite name=VillagerNormal> +3,<sprite name=VillagerN
 Building,Desc/EnemyHouse,Desc/EnemyHouse,<sprite name=VillagerNormal> +3,-99999
 FloatingText,VillagerSpawn,<sprite name={[villagerType]}>+{[value]},<sprite name={[villagerType]}>+{[value]},-99999
 FloatingText,EarnGold,<sprite name=Gold>+{[value]},<sprite name=Gold>+{[value]},-99999
+ResultPopup,Clear,Clear,성공,-99999
+ResultPopup,Fail,Fail,실패,-99999

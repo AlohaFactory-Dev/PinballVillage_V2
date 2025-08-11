@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8689886842827534052
 RectTransform:
   m_ObjectHideFlags: 0
@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 7548379633532759889}
   - component: {fileID: 8503347630132126905}
   - component: {fileID: 1068788520017532435}
+  - component: {fileID: 6036443858951098700}
   m_Layer: 5
   m_Name: Clear
   m_TagString: Untagged
@@ -435,7 +436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC131\uACF5"
+  m_text: Clear
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
   m_sharedMaterial: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
@@ -504,6 +505,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6036443858951098700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7219722649955588316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d0fa3b310df4144ad2e1479fd149b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ResultPopup/Clear
+  fontType: 0
+  parameters: []
 --- !u!1 &8357106722876202080
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +729,7 @@ GameObject:
   - component: {fileID: 5008455832984806961}
   - component: {fileID: 1178764425806554185}
   - component: {fileID: 3727184731995606508}
+  - component: {fileID: 2507452722431924520}
   m_Layer: 5
   m_Name: Fail
   m_TagString: Untagged
@@ -767,7 +784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2E4\uD328"
+  m_text: Fail
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
   m_sharedMaterial: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
@@ -836,6 +853,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2507452722431924520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166003267844434420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d0fa3b310df4144ad2e1479fd149b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ResultPopup/Fail
+  fontType: 0
+  parameters: []
 --- !u!1001 &1428185432785385352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -961,6 +993,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8689886842827534052}
     m_Modifications:
+    - target: {fileID: 2277930827587280767, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
+      propertyPath: key
+      value: Common/Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277930827587280767, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
+      propertyPath: fontType
+      value: 558407714
+      objectReference: {fileID: 0}
     - target: {fileID: 5805444521601342280, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1051,10 +1091,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_text
-      value: "\uB2E4\uC2DC\uD558\uAE30"
+      value: Retry
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2277930827587280767, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1344,7 +1383,7 @@ PrefabInstance:
     - target: {fileID: 8769695402492038504, guid: bb52b2759178af144b87299360e7a4aa, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 8ee43a0fa7a56a64996eec40c2674e2e, type: 2}
+      objectReference: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
