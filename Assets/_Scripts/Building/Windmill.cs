@@ -8,7 +8,7 @@ using Zenject;
 public class Windmill : Building
 {
     [Inject] SpawnerGridManager _spawnerGridManager;
-    private int GoldPerWheatField => (int)Table.values[0];
+    private int GoldPerWheatField => (int)Table.effectValue;
 
     protected override void OnCollisionPerformAction(IChanger changer)
     {
