@@ -22,7 +22,7 @@ public class BuildingPassiveTableList : ITableList
 
     public async UniTask Init()
     {
-        _tables = await TableManager.GetAsync<BuildingPassiveTable>("Villager");
+        _tables = await TableManager.GetAsync<BuildingPassiveTable>("BuildingPassiveTableList");
         _cachedTables.Clear();
     }
 
@@ -37,7 +37,7 @@ public class BuildingPassiveTableList : ITableList
         var info = _tables.Find(a => a.id == id);
         if (info == null)
         {
-            Debug.LogError($"VillagerTableList not found. id: {id}");
+            Debug.LogError($"BuildingPassive not found. id: {id}");
             return null;
         }
 

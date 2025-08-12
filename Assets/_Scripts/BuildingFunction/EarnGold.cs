@@ -9,6 +9,11 @@ public class EarnGold : BuildingFunction
 
     public override void PerformAction(ActionContext actionContext)
     {
+        if (actionContext.Value <= 0)
+        {
+            return; // PerformAction이 호출되었지만, Value가 0인 경우는 무시
+        }
+
         if (actionContext.Changer == null)
         {
             EarnGoldAction(actionContext.Value);
@@ -21,7 +26,7 @@ public class EarnGold : BuildingFunction
 
     private void EarnGoldAction(int value)
     {
-        var gold = Mathf.CeilToInt(UpgradeValue + Table.effectValue + value);
+        var gold = Mathf.CeilToInt(UpgradeValue + value);
         _goldManager.AddGold(gold);
         FloatingTextPoint.ShowGoldText(gold);
     }

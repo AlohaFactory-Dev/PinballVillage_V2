@@ -5,6 +5,7 @@ public class WheatField : Building
 {
     [Inject] SpawnerGridManager _spawnerGridManager;
     private int GoldPerWheatField => (int)Table.values[0];
+    private int DefalutGoldAmount => (int)Table.effectValue;
 
     public override void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
@@ -32,6 +33,6 @@ public class WheatField : Building
             }
         }
 
-        PerformAction(new ActionContext(wheatFieldCount * GoldPerWheatField));
+        PerformAction(new ActionContext(DefalutGoldAmount + wheatFieldCount * GoldPerWheatField));
     }
 }
