@@ -28,8 +28,6 @@ public class Tree : Building
     protected override void OnCollisionPerformAction(IChanger changer)
     {
         if (_currentSpriteIndex >= treeSkinNames.Length) return; // 이미 모든 스프라이트를 사용한 경우
-
-
         PerformAction(new ActionContext(changer));
         _currentSpriteIndex++;
         if (_currentSpriteIndex < treeSkinNames.Length)

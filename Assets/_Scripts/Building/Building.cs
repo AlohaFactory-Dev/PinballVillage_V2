@@ -155,6 +155,7 @@ public class Building : MonoBehaviour
             }
             else
             {
+                _animationSystem.Activate();
                 OnCollisionPerformAction(changer);
             }
         }
@@ -162,8 +163,10 @@ public class Building : MonoBehaviour
 
     private IEnumerator LordMultiplierCoroutine(IChanger changer)
     {
+        _animationSystem.Activate();
         OnCollisionPerformAction(changer);
         yield return new WaitForSeconds(lordActionInterval);
+        _animationSystem.Activate();
         OnCollisionPerformAction(changer);
     }
 
@@ -171,7 +174,6 @@ public class Building : MonoBehaviour
     {
         if (Table.triggerTiming == TriggerTiming.OnCollision)
         {
-            _animationSystem.Activate();
             PerformAction(new ActionContext(changer));
         }
     }
@@ -181,6 +183,7 @@ public class Building : MonoBehaviour
     {
         if (Table.triggerTiming == TriggerTiming.Auto)
         {
+            _animationSystem.Activate();
             PerformAction();
         }
     }
