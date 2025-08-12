@@ -7,9 +7,6 @@ using Zenject;
 public abstract class BuildingFunction : MonoBehaviour
 {
     protected BuildingTable Table { get; set; }
-    [Inject] protected FactoryManager FactoryManager;
-
-
     public abstract void PerformAction(ActionContext actionContext);
 
 
@@ -17,11 +14,13 @@ public abstract class BuildingFunction : MonoBehaviour
     public abstract void DowngradePerformance(Passive passive);
     protected Spawner Spawner;
     protected int UpgradeValue;
+    protected BuildingFloatingTextPoint FloatingTextPoint;
 
     public void Init(BuildingTable buildingTable, Spawner spawner)
     {
         Table = buildingTable;
         Spawner = spawner;
+        FloatingTextPoint = spawner.Building.FloatingTextPoint;
         UpgradeValue = 0;
     }
 

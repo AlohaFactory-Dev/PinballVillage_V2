@@ -31,7 +31,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim_Damage_FloatingText
+  m_Name: anim_Gold_FloatingText
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: show
@@ -86,7 +86,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: a_Damage_FloatingText_Show
+  m_Name: a_Gold_FloatingText_Show
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

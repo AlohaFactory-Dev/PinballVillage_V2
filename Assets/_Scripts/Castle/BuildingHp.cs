@@ -4,6 +4,7 @@ using UnityEngine;
 public class BuildingHp : MonoBehaviour
 {
     [SerializeField] private BarGauge hpBar;
+
     public bool HasBar => hpBar != null;
     private int _defaultMaxHp;
     private int _currentHp;
@@ -20,6 +21,7 @@ public class BuildingHp : MonoBehaviour
     public bool TakeDamage(int amount)
     {
         _currentHp -= amount;
+
         hpBar.SetValue(_currentHp);
         if (!hpBar.gameObject.activeSelf)
         {

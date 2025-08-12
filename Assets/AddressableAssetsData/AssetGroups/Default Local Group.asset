@@ -57,11 +57,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 725da30f2a29af94a94d6ee0b94a48a7
-    m_Address: FloatingText
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 784dc8b3631083343a8e8b39377805d3
     m_Address: Property_Coin_Purple
     m_ReadOnly: 0

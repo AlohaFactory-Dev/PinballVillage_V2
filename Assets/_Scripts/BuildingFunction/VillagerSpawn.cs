@@ -20,10 +20,7 @@ public class VillagerSpawn : BuildingFunction
 
         if (Spawner.CurrentOwner == OwnerType.Player)
         {
-            var floatingText = FactoryManager.FloatingTextFactory.GetText();
-            var content = TextTableV2.Get("FloatingText/VillagerSpawn", new TextTableV2.Param("villagerType", $"Villager{villagerType}"), new TextTableV2.Param("value", $"{count}"));
-            floatingText.SetText(content);
-            floatingText.Play(Spawner.transform.position);
+            FloatingTextPoint.ShowVillagerSpawnText(count, villagerType);
         }
     }
 

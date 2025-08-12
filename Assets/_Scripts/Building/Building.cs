@@ -14,11 +14,13 @@ public class Building : MonoBehaviour
     [Inject] private StageUI _stageUI;
     [Inject] private BuildingManager _buildingManager;
     [Inject] private StageGlobalClock _stageGlobalClock;
+    [Inject] private FactoryManager _factoryManager;
 
     [SerializeField] private float lordActionInterval = 0.15f;
     [SerializeField] private GameObject buildingObj;
     [SerializeField] private GameObject rubbleObj;
 
+    private BuildingFloatingTextPoint _floatingTextPoint;
     private SortingGroup _sortingGroup;
     private ReactiveProperty<bool> _isDestroyed = new(false);
     public IReadOnlyReactiveProperty<bool> IsDestroyedReadOnly => _isDestroyed;
@@ -43,6 +45,7 @@ public class Building : MonoBehaviour
     public BuildingGroupType GroupType => Table.group;
     public int RestroeCost => Mathf.CeilToInt(Table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
     public bool IsMaxLevel => Table.level == Table.maxLevel;
+    public BuildingFloatingTextPoint FloatingTextPoint => _floatingTextPoint;
 
     public virtual void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
@@ -99,6 +102,7 @@ public class Building : MonoBehaviour
         _animationSystem = GetComponentInChildren<BuildingAnimationSystem>(true);
         _buildingHp = GetComponent<BuildingHp>();
         _sortingGroup = GetComponentInChildren<SortingGroup>();
+        _floatingTextPoint = GetComponentInChildren<BuildingFloatingTextPoint>(true);
     }
 
     private void StartTimer()
@@ -127,6 +131,7 @@ public class Building : MonoBehaviour
     public void TakeDamage(int attackPower)
     {
         _animationSystem.TakeDamage();
+        _floatingTextPoint.ShowDamageText(attackPower);
         if (_hasHp && _buildingHp.TakeDamage(attackPower))
         {
             Destroy();

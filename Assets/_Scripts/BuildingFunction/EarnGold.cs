@@ -23,11 +23,7 @@ public class EarnGold : BuildingFunction
     {
         var gold = Mathf.CeilToInt(UpgradeValue + Table.effectValue + value);
         _goldManager.AddGold(gold);
-
-        string content = TextTableV2.Get(_floatingTextKey, new TextTableV2.Param("value", $"{gold}"));
-        var floatingText = FactoryManager.FloatingTextFactory.GetText();
-        floatingText.SetText(content);
-        floatingText.Play(Spawner.transform.position);
+        FloatingTextPoint.ShowGoldText(gold);
     }
 
     public override void UpgradePerformance(Passive passive)

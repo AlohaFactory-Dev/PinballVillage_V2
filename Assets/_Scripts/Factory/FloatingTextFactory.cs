@@ -9,9 +9,9 @@
             return primaryKey;
         }
 
-        public FloatingTextParticle GetText()
+        public FloatingTextParticle GetText(string id)
         {
-            tempObject = GetObject(LabelId);
+            tempObject = GetObject(id);
             return tempObject;
         }
     }
