@@ -22,7 +22,7 @@ public class BuildingPassiveTableList : ITableList
 
     public async UniTask Init()
     {
-        _tables = await TableManager.GetAsync<BuildingPassiveTable>("BuildingPassiveTableList");
+        _tables = await TableManager.GetAsync<BuildingPassiveTable>("BuildingPassive");
         _cachedTables.Clear();
     }
 
