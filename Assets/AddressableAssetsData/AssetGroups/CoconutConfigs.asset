@@ -17,50 +17,20 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 17c511b77d3772241910e1d04ef0e6a9
   m_SerializeEntries:
-  - m_GUID: dee05d1756e0a18449b0ef1038fd6255
-    m_Address: PropertyIconConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - coconut.configs
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0ad7dd5d3cfb59449b7ba6fe86765171
     m_Address: PlayerActionConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - coconut.configs
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ed763c4c290ee5340895721f20e7c412
-    m_Address: PeriodicQuestConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - coconut.configs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fbbf16ed80ded2744b6678f7f0114027
-    m_Address: LauncherConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - coconut.configs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 964e0a97330348249b60ec904f939563
-    m_Address: MissionConfig
+  - m_GUID: 1094831a499c3a4458cbe18d762e5648
+    m_Address: PlayerProfileConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - coconut.configs
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 10e6d8f3870f2ec439ea3a020aceb912
     m_Address: PropertyTypeConfig
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - coconut.configs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f3b5860d1a3e6574e86c0ab00c33ec42
-    m_Address: PrefabPalette
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - coconut.configs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9a4ef28ce1a329a489fbd48e7b7acbb8
-    m_Address: DurianConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - coconut.configs
@@ -77,14 +47,44 @@ MonoBehaviour:
     m_SerializedLabels:
     - coconut.configs
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1094831a499c3a4458cbe18d762e5648
-    m_Address: PlayerProfileConfig
+  - m_GUID: 964e0a97330348249b60ec904f939563
+    m_Address: MissionConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - coconut.configs
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 974788df58a173245a31679b903c40da
     m_Address: TextTableConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - coconut.configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a4ef28ce1a329a489fbd48e7b7acbb8
+    m_Address: DurianConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - coconut.configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dee05d1756e0a18449b0ef1038fd6255
+    m_Address: PropertyIconConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - coconut.configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed763c4c290ee5340895721f20e7c412
+    m_Address: PeriodicQuestConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - coconut.configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3b5860d1a3e6574e86c0ab00c33ec42
+    m_Address: PrefabPalette
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - coconut.configs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbbf16ed80ded2744b6678f7f0114027
+    m_Address: LauncherConfig
     m_ReadOnly: 0
     m_SerializedLabels:
     - coconut.configs
