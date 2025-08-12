@@ -1,8 +1,8 @@
-id,range,effectValue,values
-string,int,float,[float;float;float;float;float]
-Castle_3,1,1,[-99999;-99999;-99999;-99999;-99999]
-Bank_1,-99999,3,[-99999;-99999;-99999;-99999;-99999]
-House_3,1,1,[-99999;-99999;-99999;-99999;-99999]
-ArmsMarket,3,1,[-99999;-99999;-99999;-99999;-99999]
-CavalrymanStatue,3,5,[-99999;-99999;-99999;-99999;-99999]
-ArcherStatue,3,1,[-99999;-99999;-99999;-99999;-99999]
+id,targetGroup,range,effectValue,values
+string,#enum<br>(패시브를 적용 때 그룹),int,float,[float;float;float;float;float]
+Castle_3,House,1,1,[-99999;-99999;-99999;-99999;-99999]
+Bank_1,Market,-99999,3,[-99999;-99999;-99999;-99999;-99999]
+House_3,House,1,1,[-99999;-99999;-99999;-99999;-99999]
+ArmsMarket,Tower,3,1,[-99999;-99999;-99999;-99999;-99999]
+CavalrymanStatue,None,3,5,[-99999;-99999;-99999;-99999;-99999]
+ArcherStatue,Tower,3,1,[-99999;-99999;-99999;-99999;-99999]
