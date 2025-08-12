@@ -13,7 +13,7 @@ public class BuildingFloatingTextPoint : MonoBehaviour
     private Transform defaultTextPoint;
 
     private string _damageTextKey = "FloatingText/Damage";
-    private string _goldTextKey = "FloatingText/Gold";
+    private string _goldTextKey = "FloatingText/EarnGold";
     private string _villagerSpawnTextKey = "FloatingText/VillagerSpawn";
     private string _value = "value";
     private string _villagerType = "villagerType";
