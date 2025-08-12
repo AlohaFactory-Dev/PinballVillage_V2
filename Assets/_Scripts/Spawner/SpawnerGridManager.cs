@@ -286,12 +286,14 @@ namespace Stage.Building
                 sorted[i].SetName();
             }
         }
+
         private void RegisterSpawnerEdit(Spawner spawner, Vector2Int gridPos)
         {
             spawner.InitEdit(gridPos.x, gridPos.y);
             _spawnerGrid[gridPos.x, gridPos.y] = spawner;
             _allSpawners.Add(spawner);
         }
+
         [ContextMenu("Set Tilemap Sprites")]
         public void SetTilemapSprites()
         {

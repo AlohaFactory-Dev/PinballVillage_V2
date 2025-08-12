@@ -6,7 +6,7 @@ using Zenject;
 public class ArmsMarketPassive : Passive
 {
     private int Range => PassiveTable.range;
-    private int TargetCount => PassiveTable.targetCount;
+    private int TargetCount => PassiveTable.effectValue;
 
     protected override void InjectPassive(Spawner spawner)
     {
