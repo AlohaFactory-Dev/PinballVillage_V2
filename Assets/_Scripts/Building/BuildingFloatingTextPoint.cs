@@ -25,6 +25,7 @@ public class BuildingFloatingTextPoint : MonoBehaviour
         var text = _factoryManager.FloatingTextFactory.GetText(_damageFloatingTextId);
         text.Init(defaultTextPoint.position);
         text.SetText(TextTableV2.Get(_damageTextKey, new TextTableV2.Param(_value, $"{damage}")));
+        text.Play();
     }
 
     public void ShowGoldText(int gold)
@@ -32,6 +33,7 @@ public class BuildingFloatingTextPoint : MonoBehaviour
         var text = _factoryManager.FloatingTextFactory.GetText(_defaultFloatingTextId);
         text.Init(defaultTextPoint.position);
         text.SetText(TextTableV2.Get(_goldTextKey, new TextTableV2.Param(_value, $"{gold}")));
+        text.Play();
     }
 
     public void ShowVillagerSpawnText(int count, VillagerType villagerType)
@@ -41,5 +43,6 @@ public class BuildingFloatingTextPoint : MonoBehaviour
         text.SetText(TextTableV2.Get(_villagerSpawnTextKey,
             new TextTableV2.Param(_villagerType, $"Villager{villagerType}"),
             new TextTableV2.Param(_value, $"{count}")));
+        text.Play();
     }
 }
