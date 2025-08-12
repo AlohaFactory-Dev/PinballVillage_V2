@@ -17,25 +17,22 @@ public class StageUI : MonoBehaviour
         BuildingInfoPopupConfig
     }
 
-    [Inject] private GoldManager _goldManager;
     [Inject] private StageGlobalClock _stageGlobalClock;
     [Inject] private CoconutCanvas _coconutCanvas;
     [Inject] private SpawnerGridManager _spawnerGridManager;
-    [SerializeField] GameObject stageResultPanel;
-    [SerializeField] GameObject failText;
-    [SerializeField] GameObject winText;
-    [SerializeField] Button restartButton;
-    [SerializeField] BarGauge stagePercentGauge;
-    [SerializeField] RectTransform conditionRect;
-    [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] private GoldText goldText;
+    [SerializeField] private GameObject stageResultPanel;
+    [SerializeField] private GameObject failText;
+    [SerializeField] private GameObject winText;
+    [SerializeField] private Button restartButton;
+    [SerializeField] private BarGauge stagePercentGauge;
+    [SerializeField] private RectTransform conditionRect;
+    [SerializeField] private TextMeshProUGUI timerText;
     private BuildingCardContainer _buildingCardContainer;
 
     public void Start()
     {
         _buildingCardContainer = GetComponentInChildren<BuildingCardContainer>(true);
-        _goldManager.GoldAmount.Subscribe(UpdateGoldText).AddTo(this);
-        UpdateGoldText(_goldManager.GoldAmount.Value);
         _stageGlobalClock.FormattedTime.Subscribe(UpdateTimerText).AddTo(this);
         _buildingCardContainer.Init();
         var stageClearPercent = TableListContainer.Get<EtcTableList>().GetEtcTable("stageClearCondition").values[1];
@@ -51,6 +48,7 @@ public class StageUI : MonoBehaviour
         stagePercentGauge.SetValue(_spawnerGridManager.PlayerPercent.Value);
         stageResultPanel.gameObject.SetActive(false);
         restartButton.onClick.AddListener(() => GlobalConainer.Get<GameSceneManager>().ReloadSceneAsync("Stage"));
+        goldText.Init();
     }
 
     public void OnStageResult(OwnerType owner)
@@ -79,10 +77,6 @@ public class StageUI : MonoBehaviour
         return _coconutCanvas.Open(config.ToString(), openArgs);
     }
 
-    private void UpdateGoldText(int goldAmount)
-    {
-        goldText.text = $"{goldAmount}";
-    }
 
     private void UpdateTimerText(string timeText)
     {
