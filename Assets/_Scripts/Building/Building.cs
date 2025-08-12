@@ -142,7 +142,6 @@ public class Building : MonoBehaviour
     {
         if (Table.triggerTiming != TriggerTiming.OnCollision) return;
 
-        // 중립 또는 소유자 일치 시 처리
         if (changer.OwnerType == OwnerType || OwnerType == OwnerType.Neutral)
         {
             if (changer.VillagerType == VillagerType.Lord)

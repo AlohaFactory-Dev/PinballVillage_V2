@@ -1,21 +1,23 @@
-using Stage.Building;
-using UnityEngine;
-using Zenject;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using Zenject;
 using _Scripts.Unit;
 using FactorySystem;
+using Stage.Building;
 
 public class AttackEnemy : BuildingFunction, IChanger
 {
+    [Inject] private SpawnerGridManager _spawnerGridManager;
+    [Inject] private FactoryManager _factoryManager;
+
+    private int _upgradeAttackCount = 0;
+
     public Transform Transform => transform;
     public VillagerType VillagerType => VillagerType.Building;
     public OwnerType OwnerType => Spawner.CurrentOwner;
-    public int AttackPower => (int)Table.attackPower;
+    public int AttackPower => Table.attackPower;
     public VillagerMoveSystem VillagerMoveSystem { get; }
-    [Inject] SpawnerGridManager _spawnerGridManager;
-    [Inject] FactoryManager _factoryManager;
-    private int _upgradeAttackCount = 0;
 
     public override void PerformAction(ActionContext actionContext)
     {
@@ -26,14 +28,11 @@ public class AttackEnemy : BuildingFunction, IChanger
             if (neighbor.CurrentOwner != Spawner.CurrentOwner)
             {
                 if (!neighbor.IsEmpty)
-                {
                     return neighbor.Building.Table.passiveTargetGroup != BuildingGroupType.Rock;
-                }
-
                 return true;
             }
 
-            return neighbor.CurrentOwner != Spawner.CurrentOwner;
+            return false;
         }).ToList();
 
         if (enemySpawners.Count == 0) return;
@@ -62,10 +61,11 @@ public class AttackEnemy : BuildingFunction, IChanger
 
     public void SpawnerChangeAction(Spawner spawner)
     {
+        // Do nothing
     }
 
     public override void DestroyAction()
     {
-        // Do nothing for now
+        // Do nothing
     }
 }
