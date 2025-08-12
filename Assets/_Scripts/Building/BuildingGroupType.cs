@@ -1,5 +1,6 @@
 public enum BuildingGroupType
 {
+    None,
     House,
     Rock,
     Tree,

@@ -16,11 +16,11 @@ public abstract class BuildingFunction : MonoBehaviour
     protected int UpgradeValue;
     protected BuildingFloatingTextPoint FloatingTextPoint;
 
-    public void Init(BuildingTable buildingTable, Spawner spawner)
+    public void Init(BuildingTable buildingTable, Spawner spawner, Building building)
     {
         Table = buildingTable;
         Spawner = spawner;
-        FloatingTextPoint = spawner.Building.FloatingTextPoint;
+        FloatingTextPoint = building.FloatingTextPoint;
         UpgradeValue = 0;
     }
 

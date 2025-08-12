@@ -60,16 +60,18 @@ public class Building : MonoBehaviour
         if (_hasHp) _buildingHp.Init(table.maxHp);
 
         Spawner = spawner;
-        spawner.SetBuilding(this);
         Table = table;
         transform.position = spawner.transform.position;
         if (_animationSystem) _animationSystem.Init();
 
+
         if (table.triggerTiming != TriggerTiming.None)
         {
             BuildingFunction = GetComponent<BuildingFunction>();
-            BuildingFunction.Init(table, spawner);
+            BuildingFunction.Init(table, spawner, this);
         }
+
+        spawner.SetBuilding(this);
 
         switch (Table.triggerTiming)
         {
