@@ -10,7 +10,6 @@ public class BuildingPassiveTable
 {
     [CSVColumn] public string id;
     [CSVColumn] public int range;
-    [CSVColumn] public int targetCount;
     [CSVColumn] public int effectValue;
     [CSVColumn] public List<float> values;
 }
