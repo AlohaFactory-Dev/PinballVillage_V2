@@ -24,7 +24,7 @@ public class WheatField : Building
             {
                 if (!neighbor.IsEmpty)
                 {
-                    if (neighbor.Building.PassiveTargetGroupType == BuildingGroupType.WheatField)
+                    if (neighbor.Building.GroupType == BuildingGroupType.WheatField)
                     {
                         wheatFieldCount++;
                     }

@@ -10,9 +10,6 @@ public class AttackEnemy : BuildingFunction, IChanger
 {
     [Inject] private SpawnerGridManager _spawnerGridManager;
     [Inject] private FactoryManager _factoryManager;
-
-    private int _upgradeAttackCount = 0;
-
     public Transform Transform => transform;
     public VillagerType VillagerType => VillagerType.Building;
     public OwnerType OwnerType => Spawner.CurrentOwner;
@@ -28,7 +25,10 @@ public class AttackEnemy : BuildingFunction, IChanger
             if (neighbor.CurrentOwner != Spawner.CurrentOwner)
             {
                 if (!neighbor.IsEmpty)
-                    return neighbor.Building.Table.passiveTargetGroup != BuildingGroupType.Rock;
+                {
+                    return neighbor.Building.Table.group != BuildingGroupType.Rock;
+                }
+
                 return true;
             }
 
@@ -37,7 +37,7 @@ public class AttackEnemy : BuildingFunction, IChanger
 
         if (enemySpawners.Count == 0) return;
 
-        int attackCount = Mathf.Min((int)Table.effectValue + _upgradeAttackCount, enemySpawners.Count);
+        int attackCount = Mathf.Min((int)Table.effectValue + UpgradeValue, enemySpawners.Count);
 
         for (int i = 0; i < attackCount; i++)
         {
@@ -54,9 +54,18 @@ public class AttackEnemy : BuildingFunction, IChanger
         attackObject.Init(transform.position, () => { target.ChangeOwner(this); }, attackObjectTable, target.transform.position);
     }
 
-    public override void UpgradePerformance(float value)
+    public override void UpgradePerformance(Passive passive)
     {
-        _upgradeAttackCount += (int)value;
+        UpgradeValue += passive.UpgradeValue;
+    }
+
+    public override void DowngradePerformance(Passive passive)
+    {
+        UpgradeValue -= passive.UpgradeValue;
+        if (UpgradeValue < 0)
+        {
+            UpgradeValue = 0; // 공격 횟수는 음수가 될 수 없음
+        }
     }
 
     public void SpawnerChangeAction(Spawner spawner)

@@ -40,7 +40,7 @@ public class Building : MonoBehaviour
     public bool HasHp => _hasHp;
     public OwnerType OwnerType => Spawner.CurrentOwner;
     public BuildingTable Table { get; private set; }
-    public BuildingGroupType PassiveTargetGroupType => Table.passiveTargetGroup;
+    public BuildingGroupType GroupType => Table.group;
     public int RestroeCost => Mathf.CeilToInt(Table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
     public bool IsMaxLevel => Table.level == Table.maxLevel;
 
@@ -57,6 +57,7 @@ public class Building : MonoBehaviour
         if (_hasHp) _buildingHp.Init(table.maxHp);
 
         Spawner = spawner;
+        spawner.SetBuilding(this);
         Table = table;
         transform.position = spawner.transform.position;
         if (_animationSystem) _animationSystem.Init();
@@ -86,7 +87,6 @@ public class Building : MonoBehaviour
         }
 
         _sortingGroup.sortingOrder = spawner.GridPosition.x + spawner.GridPosition.y * 100;
-        spawner.SetBuilding(this);
     }
 
     private void GetComponents()
@@ -215,10 +215,7 @@ public class Building : MonoBehaviour
             _stageGlobalClock.UnregisterTimer(_timerId);
         }
 
-        if (_hasPassive)
-        {
-            _passive.RemovePassive();
-        }
+        RemovePassive();
     }
 
     public void Restore()
@@ -238,18 +235,29 @@ public class Building : MonoBehaviour
             BuildingFunction.DestroyAction();
         }
 
-        if (_hasPassive)
-        {
-            _passive.RemovePassive();
-        }
-
+        RemovePassive();
         Spawner.ClearBuilding();
         _recycleObject.Release();
     }
 
-    public void UpdatePerformance(float value)
+    private void RemovePassive()
     {
-        BuildingFunction.UpgradePerformance(value);
+        if (_hasPassive)
+        {
+            _passive.RemovePassive();
+        }
+    }
+
+    public void UpdatePerformance(Passive passive)
+    {
+        if (GroupType != passive.TargetGroupType) return;
+        BuildingFunction.UpgradePerformance(passive);
+    }
+
+    public void DowngradePerformance(Passive passive)
+    {
+        if (GroupType != passive.TargetGroupType) return;
+        BuildingFunction.DowngradePerformance(passive);
     }
 
     public void OpenInfo()

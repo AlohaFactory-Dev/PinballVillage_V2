@@ -22,7 +22,7 @@ public class ArcherCharacter : Villager
             {
                 if (!neighbor.IsEmpty)
                 {
-                    return neighbor.Building.Table.passiveTargetGroup != BuildingGroupType.Rock;
+                    return neighbor.Building.Table.group != BuildingGroupType.Rock;
                 }
 
                 return true;

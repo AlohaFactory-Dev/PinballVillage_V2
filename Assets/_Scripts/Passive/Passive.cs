@@ -4,21 +4,24 @@ using UnityEngine;
 
 public abstract class Passive
 {
-    public OwnerType OwnerType => CastSpawner.CurrentOwner;
+    public OwnerType OwnerType => _castSpawner.CurrentOwner;
 
     // 패시브를 발동 시킨 스포너
-    protected Spawner CastSpawner { get; set; }
+    private Spawner _castSpawner;
 
     // 패시브 받은 스포너들
     protected List<Spawner> InjectedPassiveSpawners = new();
     protected BuildingPassiveTable PassiveTable;
     protected SpawnerGridManager SpawnerGridManager;
+    public string PassiveId => PassiveTable.id;
+    public int UpgradeValue => (int)PassiveTable.effectValue;
+    public BuildingGroupType TargetGroupType => PassiveTable.targetGroup;
 
     public void Init(Spawner spawner, string passiveId)
     {
         SpawnerGridManager = StageContainer.Get<SpawnerGridManager>();
         PassiveTable = TableListContainer.Get<BuildingPassiveTableList>().GetPassiveTable(passiveId);
-        CastSpawner = spawner;
+        _castSpawner = spawner;
         InjectPassive(spawner);
     }
 
@@ -32,8 +35,6 @@ public abstract class Passive
         }
 
         InjectedPassiveSpawners.Clear();
-        CastSpawner = null;
+        _castSpawner = null;
     }
-
-    public abstract void Activate(Spawner spawner);
 }

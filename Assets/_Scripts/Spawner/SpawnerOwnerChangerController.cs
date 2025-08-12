@@ -37,9 +37,9 @@ namespace Stage.Building
         {
             if (_currentOwner == OwnerType.Neutral && !_spawner.IsEmpty)
             {
-                if (_spawner.Building.Table.passiveTargetGroup != BuildingGroupType.DirectionSign)
+                if (_spawner.Building.Table.group != BuildingGroupType.DirectionSign)
                 {
-                    if (_spawner.Building.Table.passiveTargetGroup == BuildingGroupType.WheatField)
+                    if (_spawner.Building.Table.group == BuildingGroupType.WheatField)
                     {
                         HandleOwnerChange(changer);
                     }

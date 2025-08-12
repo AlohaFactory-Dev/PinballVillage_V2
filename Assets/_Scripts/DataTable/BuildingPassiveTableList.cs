@@ -9,8 +9,9 @@ using UnityEngine;
 public class BuildingPassiveTable
 {
     [CSVColumn] public string id;
+    [CSVColumn] public BuildingGroupType targetGroup;
     [CSVColumn] public int range;
-    [CSVColumn] public int effectValue;
+    [CSVColumn] public float effectValue;
     [CSVColumn] public List<float> values;
 }
 

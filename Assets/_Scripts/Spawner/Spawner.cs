@@ -149,7 +149,6 @@ public class Spawner : MonoBehaviour
         col = colIndex;
         row = rowIndex;
         ownerChangerController.Init(defaultOwnerType, this);
-        _spawnerPassiveContainer = new SpawnerPassiveContainer(this);
         AllBuildAbleHighlightOff();
         ShowRangeHighlight(false);
     }

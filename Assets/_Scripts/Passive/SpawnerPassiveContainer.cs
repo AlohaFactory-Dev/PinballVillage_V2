@@ -7,7 +7,7 @@ using UnityEngine;
 // </summary>
 public class SpawnerPassiveContainer
 {
-    private readonly List<Passive> _passives = new List<Passive>();
+    private readonly Dictionary<string, List<Passive>> _passiveDic = new();
 
     private readonly Spawner _spawner;
 
@@ -19,24 +19,50 @@ public class SpawnerPassiveContainer
 
     public void AddPassive(Passive passive)
     {
-        _passives.Add(passive);
+        if (!_passiveDic.ContainsKey(passive.PassiveId))
+        {
+            _passiveDic[passive.PassiveId] = new List<Passive>();
+        }
+
+        if (!_spawner.IsEmpty)
+        {
+            _spawner.Building.UpdatePerformance(passive);
+        }
+
+        _passiveDic[passive.PassiveId].Add(passive);
     }
 
     public void RemovePassive(Passive passive)
     {
-        if (!_passives.Remove(passive))
+        if (_passiveDic.ContainsKey(passive.PassiveId))
         {
-            Debug.LogWarning($"Passive {nameof(passive)} not found in SpawnerPassiveContainer.");
+            _passiveDic[passive.PassiveId].Remove(passive);
+            if (_passiveDic[passive.PassiveId].Count == 0)
+            {
+                _passiveDic.Remove(passive.PassiveId);
+            }
+
+            if (!_spawner.IsEmpty)
+            {
+                _spawner.Building.DowngradePerformance(passive);
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Passive with ID {passive.PassiveId} not found in SpawnerPassiveContainer.");
         }
     }
 
     public void ActivePassives()
     {
-        foreach (var passive in _passives)
+        foreach (var passives in _passiveDic)
         {
-            if (passive.OwnerType == _spawner.CurrentOwner)
+            foreach (var passive in passives.Value)
             {
-                passive.Activate(_spawner);
+                if (passive.OwnerType == _spawner.CurrentOwner)
+                {
+                    _spawner.Building.UpdatePerformance(passive);
+                }
             }
         }
     }

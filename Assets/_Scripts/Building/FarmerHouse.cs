@@ -13,7 +13,7 @@ public class FarmerHouse : Building
         foreach (var neighbor in neighbors)
         {
             if (neighbor.IsEmpty) continue;
-            if (neighbor.Building.PassiveTargetGroupType == BuildingGroupType.WheatField)
+            if (neighbor.Building.GroupType == BuildingGroupType.WheatField)
             {
                 wheatFieldCount++;
             }

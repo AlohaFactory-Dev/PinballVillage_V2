@@ -21,7 +21,7 @@ public enum SpawnPointType
 
 public class BuildingTable
 {
-    [CSVColumn] public BuildingGroupType passiveTargetGroup;
+    [CSVColumn] public BuildingGroupType group;
     [CSVColumn] public string levelUpTargetGroup;
     [CSVColumn] public string id;
     [CSVColumn] public int level;

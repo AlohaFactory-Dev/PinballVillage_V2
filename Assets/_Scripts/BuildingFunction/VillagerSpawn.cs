@@ -12,7 +12,7 @@ public class VillagerSpawn : BuildingFunction
 
     public override void PerformAction(ActionContext actionContext)
     {
-        int count = actionContext.Value;
+        int count = actionContext.Value + UpgradeValue;
         for (int i = 0; i < count; i++)
         {
             _villagers.Add(_villagerManager.SpawnVillager(Spawner, villagerType));
@@ -27,9 +27,30 @@ public class VillagerSpawn : BuildingFunction
         }
     }
 
-    public override void UpgradePerformance(float value)
+    public override void UpgradePerformance(Passive passive)
     {
-        _villagers.Add(_villagerManager.SpawnVillager(Spawner, villagerType));
+        UpgradeValue += passive.UpgradeValue;
+        for (int i = 0; i < UpgradeValue; i++)
+            _villagers.Add(_villagerManager.SpawnVillager(Spawner, villagerType));
+    }
+
+    public override void DowngradePerformance(Passive passive)
+    {
+        UpgradeValue -= passive.UpgradeValue;
+        if (_villagers.Count > 0)
+        {
+            int countToRemove = Mathf.Min(passive.UpgradeValue, _villagers.Count);
+            for (int i = 0; i < countToRemove; i++)
+            {
+                var villager = _villagers[^1];
+                _villagerManager.RemoveVillager(villager);
+                _villagers.Remove(villager);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No villagers to remove during downgrade.");
+        }
     }
 
     public override void DestroyAction()

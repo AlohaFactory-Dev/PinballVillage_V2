@@ -7,7 +7,6 @@ public class VillagerTracker : MonoBehaviour
     [SerializeField] private List<Villager> villagerInSpawner = new List<Villager>();
 
 
-    public IReadOnlyList<Villager> VillagerInSpawner => villagerInSpawner;
     private Action<Villager> _villagerAdded;
     private Action<Villager> _villagerRemoved;
     private VillagerType _villagerType;

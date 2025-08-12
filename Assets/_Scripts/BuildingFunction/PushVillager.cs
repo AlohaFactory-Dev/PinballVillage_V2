@@ -18,7 +18,11 @@ public class PushVillager : BuildingFunction
     }
 
 
-    public override void UpgradePerformance(float value)
+    public override void UpgradePerformance(Passive passive)
+    {
+    }
+
+    public override void DowngradePerformance(Passive passive)
     {
     }
 

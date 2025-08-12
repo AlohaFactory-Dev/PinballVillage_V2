@@ -5,7 +5,6 @@ using Zenject;
 public class EarnGold : BuildingFunction
 {
     [Inject] GoldManager _goldManager;
-    private float _upgradeValue;
     private readonly string _floatingTextKey = "FloatingText/EarnGold";
 
     public override void PerformAction(ActionContext actionContext)
@@ -22,7 +21,7 @@ public class EarnGold : BuildingFunction
 
     private void EarnGoldAction(int value)
     {
-        var gold = Mathf.CeilToInt(_upgradeValue + Table.effectValue + value);
+        var gold = Mathf.CeilToInt(UpgradeValue + Table.effectValue + value);
         _goldManager.AddGold(gold);
 
         string content = TextTableV2.Get(_floatingTextKey, new TextTableV2.Param("value", $"{gold}"));
@@ -31,10 +30,14 @@ public class EarnGold : BuildingFunction
         floatingText.Play(Spawner.transform.position);
     }
 
-
-    public override void UpgradePerformance(float value)
+    public override void UpgradePerformance(Passive passive)
     {
-        _upgradeValue += value;
+        UpgradeValue += passive.UpgradeValue;
+    }
+
+    public override void DowngradePerformance(Passive passive)
+    {
+        UpgradeValue -= passive.UpgradeValue;
     }
 
     public override void DestroyAction()

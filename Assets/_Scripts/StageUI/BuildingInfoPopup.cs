@@ -90,7 +90,7 @@ public class BuildingInfoPopup : UISlice, IDimClosable
                         if (!isDestroyed)
                         {
                             levelUpButton.gameObject.SetActive(!_openArgs.Building.IsMaxLevel);
-                            rotateButton.gameObject.SetActive(_openArgs.Table.passiveTargetGroup == BuildingGroupType.DirectionSign && OwnerType.Player == _openArgs.Building.Spawner.CurrentOwner);
+                            rotateButton.gameObject.SetActive(_openArgs.Table.group == BuildingGroupType.DirectionSign && OwnerType.Player == _openArgs.Building.Spawner.CurrentOwner);
                             _levelUpCostText.color = _goldManager.EnoughGold(_openArgs.Table.levelUpCost) ? Color.white : Color.red;
                             _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestroeCost) ? Color.white : Color.red;
                             restoreButton.gameObject.SetActive(false);
@@ -116,7 +116,7 @@ public class BuildingInfoPopup : UISlice, IDimClosable
             }
 
             popupContent.transform.position = RectTransformUtility.WorldToScreenPoint(_camera, _openArgs.Position);
-            rotateButton.gameObject.SetActive(_openArgs.Table.passiveTargetGroup == BuildingGroupType.DirectionSign && OwnerType.Player == _openArgs.Building.Spawner.CurrentOwner);
+            rotateButton.gameObject.SetActive(_openArgs.Table.group == BuildingGroupType.DirectionSign && OwnerType.Player == _openArgs.Building.Spawner.CurrentOwner);
             _levelUpCostText.color = _goldManager.EnoughGold(_openArgs.Table.levelUpCost) ? Color.white : Color.red;
             _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestroeCost) ? Color.white : Color.red;
             _restoreCostText.text = $"복구\n" +

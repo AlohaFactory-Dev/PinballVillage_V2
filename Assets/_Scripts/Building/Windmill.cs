@@ -18,7 +18,7 @@ public class Windmill : Building
         foreach (var neighbor in neighbors)
         {
             if (neighbor.IsEmpty) continue;
-            if (neighbor.Building.PassiveTargetGroupType == BuildingGroupType.WheatField && neighbor.CurrentOwner == Spawner.CurrentOwner)
+            if (neighbor.Building.GroupType == BuildingGroupType.WheatField && neighbor.CurrentOwner == Spawner.CurrentOwner)
             {
                 wheatCount++;
             }

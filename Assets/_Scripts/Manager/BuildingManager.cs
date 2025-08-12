@@ -35,7 +35,7 @@ public class BuildingManager
         if (building != null)
         {
             _allBuildings.Add(building);
-            if (table.passiveTargetGroup == BuildingGroupType.DirectionSign)
+            if (table.group == BuildingGroupType.DirectionSign)
             {
                 (building as DirectionSign)?.Init(table, spawner, (Direction)Random.Range(0, 4), isLevelUp);
             }
@@ -46,40 +46,40 @@ public class BuildingManager
 
             if (spawner.CurrentOwner == OwnerType.Player)
             {
-                if (table.passiveTargetGroup == BuildingGroupType.Castle)
+                if (table.group == BuildingGroupType.Castle)
                 {
                     PlayerCastles.Add(building as Castle);
                 }
 
-                if (!_playerBuildings.ContainsKey(table.passiveTargetGroup))
+                if (!_playerBuildings.ContainsKey(table.group))
                 {
-                    _playerBuildings[table.passiveTargetGroup] = new List<Building>();
+                    _playerBuildings[table.group] = new List<Building>();
                 }
 
-                _playerBuildings[table.passiveTargetGroup].Add(building);
+                _playerBuildings[table.group].Add(building);
             }
             else if (spawner.CurrentOwner == OwnerType.Enemy)
             {
-                if (table.passiveTargetGroup == BuildingGroupType.Castle)
+                if (table.group == BuildingGroupType.Castle)
                 {
                     EnemyCastles.Add(building as EnemyCastle);
                 }
 
-                if (!_enemyBuildings.ContainsKey(table.passiveTargetGroup))
+                if (!_enemyBuildings.ContainsKey(table.group))
                 {
-                    _enemyBuildings[table.passiveTargetGroup] = new List<Building>();
+                    _enemyBuildings[table.group] = new List<Building>();
                 }
 
-                _enemyBuildings[table.passiveTargetGroup].Add(building);
+                _enemyBuildings[table.group].Add(building);
             }
             else
             {
-                if (!_neutralBuildings.ContainsKey(table.passiveTargetGroup))
+                if (!_neutralBuildings.ContainsKey(table.group))
                 {
-                    _neutralBuildings[table.passiveTargetGroup] = new List<Building>();
+                    _neutralBuildings[table.group] = new List<Building>();
                 }
 
-                _neutralBuildings[table.passiveTargetGroup].Add(building);
+                _neutralBuildings[table.group].Add(building);
             }
         }
         else
@@ -94,10 +94,10 @@ public class BuildingManager
     public void RemoveBuilding(Building building)
     {
         // 빌딩 제거 로직
-        if (building.OwnerType == OwnerType.Player && _playerBuildings.ContainsKey(building.Table.passiveTargetGroup))
+        if (building.OwnerType == OwnerType.Player && _playerBuildings.ContainsKey(building.Table.group))
         {
-            _playerBuildings[building.Table.passiveTargetGroup].Remove(building);
-            if (building.Table.passiveTargetGroup == BuildingGroupType.Castle)
+            _playerBuildings[building.Table.group].Remove(building);
+            if (building.Table.group == BuildingGroupType.Castle)
             {
                 PlayerCastles.Remove(building as Castle);
                 if (PlayerCastles.Count == 0)
@@ -106,11 +106,11 @@ public class BuildingManager
                 }
             }
         }
-        else if (building.OwnerType == OwnerType.Enemy && _enemyBuildings.ContainsKey(building.Table.passiveTargetGroup))
+        else if (building.OwnerType == OwnerType.Enemy && _enemyBuildings.ContainsKey(building.Table.group))
         {
-            _enemyBuildings[building.Table.passiveTargetGroup].Remove(building);
+            _enemyBuildings[building.Table.group].Remove(building);
 
-            if (building.Table.passiveTargetGroup == BuildingGroupType.Castle)
+            if (building.Table.group == BuildingGroupType.Castle)
             {
                 EnemyCastles.Remove(building as EnemyCastle);
                 if (EnemyCastles.Count == 0)
@@ -119,9 +119,9 @@ public class BuildingManager
                 }
             }
         }
-        else if (building.OwnerType == OwnerType.Neutral && _neutralBuildings.ContainsKey(building.Table.passiveTargetGroup))
+        else if (building.OwnerType == OwnerType.Neutral && _neutralBuildings.ContainsKey(building.Table.group))
         {
-            _neutralBuildings[building.Table.passiveTargetGroup].Remove(building);
+            _neutralBuildings[building.Table.group].Remove(building);
         }
         else
         {

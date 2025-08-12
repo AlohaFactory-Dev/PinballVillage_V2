@@ -7,7 +7,6 @@ public class CavalrymanStatuePassive : Passive
 {
     private VillagerTracker _villagerTracker;
     private int Range => PassiveTable.range;
-    private int AddSpeedValue => PassiveTable.effectValue;
 
     protected override void InjectPassive(Spawner spawner)
     {
@@ -27,15 +26,11 @@ public class CavalrymanStatuePassive : Passive
 
     private void AddSpeed(Villager villager)
     {
-        villager.VillagerMoveSystem.AdjustSpeed(AddSpeedValue);
+        villager.VillagerMoveSystem.AdjustSpeed(UpgradeValue);
     }
 
     private void DecreaseSpeed(Villager villager)
     {
-        villager.VillagerMoveSystem.AdjustSpeed(-AddSpeedValue);
-    }
-
-    public override void Activate(Spawner spawner)
-    {
+        villager.VillagerMoveSystem.AdjustSpeed(-UpgradeValue);
     }
 }
