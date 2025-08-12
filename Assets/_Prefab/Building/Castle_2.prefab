@@ -211,6 +211,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2375885749602342132, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467321463180533003, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3115409940412964301, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_Radius
       value: 0.7
@@ -241,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_Name
-      value: Castle_1
+      value: Castle_2
       objectReference: {fileID: 0}
     - target: {fileID: 7590475778206604445, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_SizeDelta.x

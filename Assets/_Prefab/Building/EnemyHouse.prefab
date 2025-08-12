@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9411765
       objectReference: {fileID: 0}
+    - target: {fileID: 2375885749602342132, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467321463180533003, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3629278500305009312, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       propertyPath: m_Layer
       value: 14
