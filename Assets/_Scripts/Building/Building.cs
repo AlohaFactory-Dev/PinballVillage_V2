@@ -1,7 +1,6 @@
 using System.Collections;
 using Aloha.Coconut;
 using FactorySystem;
-using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -12,44 +11,38 @@ using Zenject;
 [RequireComponent(typeof(BuildingHp))]
 public class Building : MonoBehaviour
 {
-    public enum CalculateType
-    {
-        Add,
-        Multiply,
-    }
-
     [Inject] private StageUI _stageUI;
     [Inject] private BuildingManager _buildingManager;
+    [Inject] private StageGlobalClock _stageGlobalClock;
+
     [SerializeField] private float lordActionInterval = 0.15f;
-    [SerializeField] GameObject buildingObj;
-    [SerializeField] GameObject rubbleObj;
+    [SerializeField] private GameObject buildingObj;
+    [SerializeField] private GameObject rubbleObj;
+
     private SortingGroup _sortingGroup;
+    private ReactiveProperty<bool> _isDestroyed = new(false);
+    public IReadOnlyReactiveProperty<bool> IsDestroyedReadOnly => _isDestroyed;
 
-
-    protected ReactiveProperty<bool> IsDestroyed = new ReactiveProperty<bool>(false);
-    public IReadOnlyReactiveProperty<bool> IsDestroyedReadOnly => IsDestroyed;
     private BuildingAnimationSystem _animationSystem;
     private string _timerId;
     private RecycleObject _recycleObject;
     private Passive _passive;
-
-    public bool IsMaxLevel => Table.level == Table.maxLevel;
-    protected Collider2D Collider2D;
-    public Spawner Spawner { get; private set; }
-    protected BuildingFunction BuildingFunction;
-
-    [Inject] private StageGlobalClock _stageGlobalClock;
     private BuildingHp _buildingHp;
+    private BuildingInfoPopupPoint _popupPoint;
+    private bool _hasPassive;
+    private bool _hasComponents;
     private bool _hasHp;
 
+    protected Collider2D Collider2D;
+    protected BuildingFunction BuildingFunction;
+
+    public Spawner Spawner { get; private set; }
     public bool HasHp => _hasHp;
     public OwnerType OwnerType => Spawner.CurrentOwner;
     public BuildingTable Table { get; private set; }
     public BuildingGroupType PassiveTargetGroupType => Table.passiveTargetGroup;
     public int RestroeCost => Mathf.CeilToInt(Table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
-    private BuildingInfoPopupPoint _popupPoint;
-    private bool _hasPassive;
-    private bool _hasComponents;
+    public bool IsMaxLevel => Table.level == Table.maxLevel;
 
     public virtual void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
@@ -60,19 +53,13 @@ public class Building : MonoBehaviour
         rubbleObj.SetActive(false);
 
         _hasHp = _buildingHp.HasBar;
-        IsDestroyed.Value = false;
-        if (_hasHp)
-        {
-            _buildingHp.Init(table.maxHp);
-        }
+        _isDestroyed.Value = false;
+        if (_hasHp) _buildingHp.Init(table.maxHp);
 
         Spawner = spawner;
         Table = table;
         transform.position = spawner.transform.position;
-        if (_animationSystem)
-        {
-            _animationSystem.Init();
-        }
+        if (_animationSystem) _animationSystem.Init();
 
         if (table.triggerTiming != TriggerTiming.None)
         {
@@ -87,7 +74,7 @@ public class Building : MonoBehaviour
                 StartTimer();
                 break;
             case TriggerTiming.OnSpawn:
-                _animationSystem.SetOnSpawnEvent(() => PerformAction());
+                _animationSystem.SetOnSpawnEvent(OnSpawnPerformAction);
                 break;
         }
 
@@ -121,14 +108,13 @@ public class Building : MonoBehaviour
                 if (OwnerType == OwnerType.Player)
                 {
                     _animationSystem.Activate();
-                    PerformAction();
+                    AutoPerformAction();
                 }
             }))
         {
             Debug.Log($"{_timerId} started with {Table.interval}s interval");
         }
     }
-
 
     protected void OnCollisionExit2D(Collision2D other)
     {
@@ -141,28 +127,20 @@ public class Building : MonoBehaviour
     public void TakeDamage(int attackPower)
     {
         _animationSystem.TakeDamage();
-        if (_hasHp)
+        if (_hasHp && _buildingHp.TakeDamage(attackPower))
         {
-            if (_buildingHp.TakeDamage(attackPower))
-            {
-                // 건물이 파괴되면 제거
-                Destroy();
-            }
+            Destroy();
         }
     }
 
     public void RecoverHp(float value)
     {
-        if (_hasHp)
-        {
-            _buildingHp.Recover(value);
-        }
+        if (_hasHp) _buildingHp.Recover(value);
     }
 
     public void OnCollisionFunction(IChanger changer)
     {
-        if (Table.triggerTiming != TriggerTiming.OnCollision)
-            return;
+        if (Table.triggerTiming != TriggerTiming.OnCollision) return;
 
         // 중립 또는 소유자 일치 시 처리
         if (changer.OwnerType == OwnerType || OwnerType == OwnerType.Neutral)
@@ -173,24 +151,47 @@ public class Building : MonoBehaviour
             }
             else
             {
-                _animationSystem.Activate();
-                PerformAction(changer);
+                OnCollisionPerformAction(changer);
             }
         }
     }
 
     private IEnumerator LordMultiplierCoroutine(IChanger changer)
     {
-        _animationSystem.Activate();
-        PerformAction(changer);
+        OnCollisionPerformAction(changer);
         yield return new WaitForSeconds(lordActionInterval);
-        _animationSystem.Activate();
-        PerformAction(changer);
+        OnCollisionPerformAction(changer);
     }
 
-    protected virtual void PerformAction(IChanger changer = null, int value = 0, CalculateType calculate = CalculateType.Add)
+    protected virtual void OnCollisionPerformAction(IChanger changer)
     {
-        BuildingFunction.PerformAction(changer, value, calculate);
+        if (Table.triggerTiming == TriggerTiming.OnCollision)
+        {
+            _animationSystem.Activate();
+            PerformAction(new ActionContext(changer));
+        }
+    }
+
+
+    protected virtual void AutoPerformAction()
+    {
+        if (Table.triggerTiming == TriggerTiming.Auto)
+        {
+            PerformAction();
+        }
+    }
+
+    protected virtual void OnSpawnPerformAction()
+    {
+        if (Table.triggerTiming == TriggerTiming.OnSpawn)
+        {
+            PerformAction();
+        }
+    }
+
+    protected void PerformAction(ActionContext actionContext = null)
+    {
+        BuildingFunction.PerformAction(actionContext);
     }
 
     private void Destroy()
@@ -205,10 +206,11 @@ public class Building : MonoBehaviour
             BuildingFunction.DestroyAction();
         }
 
-        IsDestroyed.Value = true;
+        _isDestroyed.Value = true;
         Collider2D.enabled = false;
         rubbleObj.SetActive(true);
         buildingObj.SetActive(false);
+
         if (Table.triggerTiming == TriggerTiming.Auto)
         {
             _stageGlobalClock.UnregisterTimer(_timerId);

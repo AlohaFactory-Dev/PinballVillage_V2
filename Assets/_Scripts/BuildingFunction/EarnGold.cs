@@ -6,37 +6,29 @@ public class EarnGold : BuildingFunction
 {
     [Inject] GoldManager _goldManager;
     private float _upgradeValue;
-    private string floatingTextKey = "FloatingText/EarnGold";
+    private readonly string _floatingTextKey = "FloatingText/EarnGold";
 
-    public override void PerformAction(IChanger changer, int value, Building.CalculateType calculate)
+    public override void PerformAction(ActionContext actionContext)
     {
-        if (changer == null)
+        if (actionContext.Changer == null)
         {
-            var gold = Mathf.CeilToInt(_upgradeValue + Table.effectValue + value);
-            _goldManager.AddGold(gold);
-
-            string content = TextTableV2.Get(floatingTextKey, new TextTableV2.Param("value", gold.ToString()));
-            var floatingText = FactoryManager.FloatingTextFactory.GetText();
-            floatingText.SetText(content);
-            floatingText.Play(Spawner.transform.position);
+            EarnGoldAction(actionContext.Value);
             return;
         }
 
-        if (changer.OwnerType == OwnerType.Player)
-        {
-            if (value == 0)
-            {
-                value = 1; // Ensure at least one gold is earned
-            }
+        if (actionContext.Changer.OwnerType != OwnerType.Player) return;
+        EarnGoldAction(actionContext.Value);
+    }
 
-            var gold = Mathf.CeilToInt((_upgradeValue + Table.effectValue) * value);
-            _goldManager.AddGold(gold);
+    private void EarnGoldAction(int value)
+    {
+        var gold = Mathf.CeilToInt(_upgradeValue + Table.effectValue + value);
+        _goldManager.AddGold(gold);
 
-            string content = TextTableV2.Get(floatingTextKey, new TextTableV2.Param("value", gold.ToString()));
-            var floatingText = FactoryManager.FloatingTextFactory.GetText();
-            floatingText.SetText(content);
-            floatingText.Play(Spawner.transform.position);
-        }
+        string content = TextTableV2.Get(_floatingTextKey, new TextTableV2.Param("value", gold.ToString()));
+        var floatingText = FactoryManager.FloatingTextFactory.GetText();
+        floatingText.SetText(content);
+        floatingText.Play(Spawner.transform.position);
     }
 
 

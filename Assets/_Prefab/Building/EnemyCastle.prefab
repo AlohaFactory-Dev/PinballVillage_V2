@@ -333,7 +333,7 @@ PrefabInstance:
       addedObject: {fileID: 91274975420424866}
     - targetCorrespondingSourceObject: {fileID: 6737947060850798541, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3374355170074839219}
+      addedObject: {fileID: 3923026738916425516}
     - targetCorrespondingSourceObject: {fileID: 4093905285476084477, guid: 4f8413a5bb443d443a63d5be758eeadb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4856008663085516754}
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagerType: 0
---- !u!114 &3374355170074839219
+--- !u!114 &3923026738916425516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4561921062580990406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2159413ba5424e9cab0e67c85a2c6781, type: 3}
+  m_Script: {fileID: 11500000, guid: 022bf4b5ac9e489e8687e707aa5d71fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lordActionInterval: 0.15

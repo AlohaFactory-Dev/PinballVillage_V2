@@ -4,6 +4,7 @@ using Zenject;
 public class WheatField : Building
 {
     [Inject] SpawnerGridManager _spawnerGridManager;
+    private int GoldPerWheatField => (int)Table.values[0];
 
     public override void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
@@ -11,27 +12,26 @@ public class WheatField : Building
         Collider2D.isTrigger = true;
     }
 
-    protected override void PerformAction(IChanger changer = null, int value = 0, CalculateType calculate = CalculateType.Add)
+    protected override void AutoPerformAction()
     {
-        if (Spawner.CurrentOwner == OwnerType.Player)
+        if (Spawner.CurrentOwner != OwnerType.Player) return;
+
+        var neighbors = _spawnerGridManager.GetNeighbors(Spawner, Table.targetRange);
+        int wheatFieldCount = 0;
+        foreach (var neighbor in neighbors)
         {
-            var neighbors = _spawnerGridManager.GetNeighbors(Spawner, Table.targetRange);
-            int wheatFieldCount = 0;
-            foreach (var neighbor in neighbors)
+            if (neighbor.CurrentOwner == OwnerType.Player)
             {
-                if (neighbor.CurrentOwner == OwnerType.Player)
+                if (!neighbor.IsEmpty)
                 {
-                    if (!neighbor.IsEmpty)
+                    if (neighbor.Building.PassiveTargetGroupType == BuildingGroupType.WheatField)
                     {
-                        if (neighbor.Building.PassiveTargetGroupType == BuildingGroupType.WheatField)
-                        {
-                            wheatFieldCount++;
-                        }
+                        wheatFieldCount++;
                     }
                 }
             }
-
-            base.PerformAction(changer, wheatFieldCount * (int)Table.values[0], calculate);
         }
+
+        PerformAction(new ActionContext(wheatFieldCount * GoldPerWheatField));
     }
 }

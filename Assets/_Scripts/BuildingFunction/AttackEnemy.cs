@@ -17,7 +17,7 @@ public class AttackEnemy : BuildingFunction, IChanger
     [Inject] FactoryManager _factoryManager;
     private int _upgradeAttackCount = 0;
 
-    public override void PerformAction(IChanger changer, int value, Building.CalculateType calculate)
+    public override void PerformAction(ActionContext actionContext)
     {
         var neighbors = _spawnerGridManager.GetNeighbors(Spawner, Table.targetRange);
 

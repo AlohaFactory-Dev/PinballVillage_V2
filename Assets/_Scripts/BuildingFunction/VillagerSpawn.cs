@@ -6,22 +6,13 @@ using Zenject;
 
 public class VillagerSpawn : BuildingFunction
 {
-    [Inject] VillagerManager _villagerManager;
-    [SerializeField] VillagerType villagerType = VillagerType.Normal;
-    List<Villager> _villagers = new List<Villager>();
+    [Inject] private VillagerManager _villagerManager;
+    [SerializeField] private VillagerType villagerType = VillagerType.Normal;
+    private readonly List<Villager> _villagers = new();
 
-    public override void PerformAction(IChanger changer, int value, Building.CalculateType calculate)
+    public override void PerformAction(ActionContext actionContext)
     {
-        int count = _villagers.Count;
-        if (calculate == Building.CalculateType.Add)
-        {
-            count = (int)Table.effectValue + value;
-        }
-        else if (calculate == Building.CalculateType.Multiply)
-        {
-            count = Mathf.CeilToInt(Table.effectValue * value);
-        }
-
+        int count = actionContext.Value;
         for (int i = 0; i < count; i++)
         {
             _villagers.Add(_villagerManager.SpawnVillager(Spawner, villagerType));

@@ -4,8 +4,9 @@ using Zenject;
 public class FarmerHouse : Building
 {
     [Inject] SpawnerGridManager _spawnerGridManager;
+    private int VillagerPerWheatField => (int)Table.effectValue;
 
-    protected override void PerformAction(IChanger changer = null, int value = 0, CalculateType calculate = CalculateType.Add)
+    protected override void OnSpawnPerformAction()
     {
         int wheatFieldCount = 0;
         var neighbors = _spawnerGridManager.GetNeighbors(Spawner, Table.targetRange);
@@ -18,6 +19,6 @@ public class FarmerHouse : Building
             }
         }
 
-        base.PerformAction(changer, wheatFieldCount, CalculateType.Multiply);
+        PerformAction(new ActionContext(wheatFieldCount * VillagerPerWheatField));
     }
 }

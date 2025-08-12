@@ -1,4 +1,4 @@
-public class EnemyHouse : Building
+public class EnemyCastle : Building
 {
     private int VillagerCount => (int)Table.effectValue;
 

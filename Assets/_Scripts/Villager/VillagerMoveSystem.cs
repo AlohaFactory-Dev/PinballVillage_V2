@@ -137,7 +137,7 @@ namespace _Scripts.Unit
             var boostable = collision.transform.GetComponent<PushVillager>();
             if (boostable != null)
             {
-                boostable.PerformAction(_villager, 0, Building.CalculateType.Add);
+                boostable.PerformAction(new ActionContext(_villager));
             }
             else
             {

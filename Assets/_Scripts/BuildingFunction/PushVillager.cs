@@ -4,16 +4,17 @@ using UnityEngine;
 public class PushVillager : BuildingFunction
 {
     private Direction _direction;
+    private float Duration => Table.values[0];
 
     public void SetVillager(Villager villager, Direction direction)
     {
         _direction = direction;
-        PerformAction(villager, 0, Building.CalculateType.Add);
+        PerformAction(new ActionContext(villager));
     }
 
-    public override void PerformAction(IChanger changer, int value, Building.CalculateType calculate)
+    public override void PerformAction(ActionContext actionContext)
     {
-        changer.VillagerMoveSystem?.BoostSpeedToDirection(Table.effectValue, Table.values[0], _direction);
+        actionContext.Changer.VillagerMoveSystem?.BoostSpeedToDirection(Table.effectValue, Duration, _direction);
     }
 
 

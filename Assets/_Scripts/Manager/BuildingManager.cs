@@ -15,7 +15,7 @@ public class BuildingManager
     private List<Building> _allBuildings = new();
 
     public List<Castle> PlayerCastles { get; private set; } = new();
-    public List<Castle> EnemyCastles { get; private set; } = new();
+    public List<EnemyCastle> EnemyCastles { get; private set; } = new();
 
     private float _recoveryMultiple = 0f;
 
@@ -62,7 +62,7 @@ public class BuildingManager
             {
                 if (table.passiveTargetGroup == BuildingGroupType.Castle)
                 {
-                    EnemyCastles.Add(building as Castle);
+                    EnemyCastles.Add(building as EnemyCastle);
                 }
 
                 if (!_enemyBuildings.ContainsKey(table.passiveTargetGroup))
@@ -112,7 +112,7 @@ public class BuildingManager
 
             if (building.Table.passiveTargetGroup == BuildingGroupType.Castle)
             {
-                EnemyCastles.Remove(building as Castle);
+                EnemyCastles.Remove(building as EnemyCastle);
                 if (EnemyCastles.Count == 0)
                 {
                     StageContainer.Get<StageManager>().StageResult(OwnerType.Player);
@@ -152,7 +152,7 @@ public class BuildingManager
         if (ownerType == OwnerType.Enemy)
         {
             int selectedIndex = Random.Range(0, EnemyCastles.Count);
-            Castle enemyCastle = EnemyCastles[selectedIndex];
+            EnemyCastle enemyCastle = EnemyCastles[selectedIndex];
             return enemyCastle.Spawner;
         }
 

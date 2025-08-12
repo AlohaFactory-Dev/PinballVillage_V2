@@ -25,14 +25,12 @@ public class Tree : Building
     }
 
 
-    protected override void PerformAction(IChanger changer = null, int value = 0, CalculateType calculate = CalculateType.Add)
+    protected override void OnCollisionPerformAction(IChanger changer)
     {
-        if (_currentSpriteIndex >= treeSkinNames.Length)
-        {
-            return; // 이미 모든 스프라이트를 사용한 경우
-        }
+        if (_currentSpriteIndex >= treeSkinNames.Length) return; // 이미 모든 스프라이트를 사용한 경우
 
-        base.PerformAction(changer, value, calculate);
+
+        PerformAction(new ActionContext(changer));
         _currentSpriteIndex++;
         if (_currentSpriteIndex < treeSkinNames.Length)
         {

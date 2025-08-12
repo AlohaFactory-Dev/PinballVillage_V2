@@ -3,13 +3,14 @@ using Stage.Building;
 using UnityEngine;
 using Zenject;
 
+
 public abstract class BuildingFunction : MonoBehaviour
 {
     protected BuildingTable Table { get; set; }
     [Inject] protected FactoryManager FactoryManager;
 
 
-    public abstract void PerformAction(IChanger changer, int value, Building.CalculateType calculate);
+    public abstract void PerformAction(ActionContext actionContext);
 
 
     public abstract void UpgradePerformance(float value);

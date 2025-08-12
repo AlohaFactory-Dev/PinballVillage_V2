@@ -37,7 +37,6 @@ public class BuildingInfoPopup : UISlice, IDimClosable
 
     [SerializeField] TextMeshProUGUI buildingLevelText;
 
-    // [SerializeField] TextMeshProUGUI buildingPassiveText;
     private TextMeshProUGUI _levelUpCostText;
     private TextMeshProUGUI _restoreCostText;
 
