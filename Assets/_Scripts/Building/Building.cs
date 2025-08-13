@@ -1,30 +1,31 @@
 using System.Collections;
-using Aloha.Coconut;
-using FactorySystem;
-using UniRx;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UniRx;
 using Zenject;
+using FactorySystem;
+using Aloha.Coconut;
 
 
 [RequireComponent(typeof(RecycleObject))]
 [RequireComponent(typeof(BuildingHp))]
 public abstract class Building : MonoBehaviour
 {
+    // ===== [DI] =====
     [Inject] private StageUI _stageUI;
     [Inject] private BuildingManager _buildingManager;
     [Inject] private StageGlobalClock _stageGlobalClock;
     [Inject] private FactoryManager _factoryManager;
 
+    // ===== [Serialized Fields] =====
     [SerializeField] private float lordActionInterval = 0.15f;
     [SerializeField] private GameObject buildingObj;
     [SerializeField] private GameObject rubbleObj;
 
+    // ===== [Private Fields] =====
     private BuildingFloatingTextPoint _floatingTextPoint;
     private SortingGroup _sortingGroup;
     private readonly ReactiveProperty<bool> _isDestroyed = new(false);
-    public IReadOnlyReactiveProperty<bool> IsDestroyedReadOnly => _isDestroyed;
-
     private BuildingAnimationSystem _animationSystem;
     private string _timerId;
     private RecycleObject _recycleObject;
@@ -35,9 +36,11 @@ public abstract class Building : MonoBehaviour
     private bool _hasComponents;
     private bool _hasHp;
 
+    // ===== [Protected Fields] =====
     protected Collider2D Collider2D;
     protected BuildingFunction BuildingFunction;
 
+    // ===== [Public Properties] =====
     public Spawner Spawner { get; private set; }
     public bool HasHp => _hasHp;
     public OwnerType OwnerType => Spawner.CurrentOwner;
@@ -46,7 +49,9 @@ public abstract class Building : MonoBehaviour
     public int RestoreCost { get; private set; }
     public bool IsMaxLevel => Table.level == Table.maxLevel;
     public BuildingFloatingTextPoint FloatingTextPoint => _floatingTextPoint;
+    public IReadOnlyReactiveProperty<bool> IsDestroyedReadOnly => _isDestroyed;
 
+    // ===== [Init] =====
     public virtual void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
         Spawner = spawner;
@@ -97,6 +102,7 @@ public abstract class Building : MonoBehaviour
         _sortingGroup.sortingOrder = spawner.GridPosition.x + spawner.GridPosition.y * 100;
     }
 
+    // ===== [Component Getter] =====
     private void GetComponents()
     {
         if (_hasComponents) return;
@@ -110,6 +116,7 @@ public abstract class Building : MonoBehaviour
         _floatingTextPoint = GetComponentInChildren<BuildingFloatingTextPoint>(true);
     }
 
+    // ===== [Timer] =====
     private void StartTimer()
     {
         if (_stageGlobalClock.RegisterRepeatingTimer(_timerId, Table.interval, () =>
@@ -125,27 +132,13 @@ public abstract class Building : MonoBehaviour
         }
     }
 
+    // ===== [Collision] =====
     protected void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.TryGetComponent(out Villager villager))
         {
             OnCollisionFunction(villager);
         }
-    }
-
-    public void TakeDamage(int attackPower)
-    {
-        _animationSystem.TakeDamage();
-        _floatingTextPoint.ShowDamageText(attackPower);
-        if (_hasHp && _buildingHp.TakeDamage(attackPower))
-        {
-            Destroy();
-        }
-    }
-
-    public void RecoverHp(float value)
-    {
-        if (_hasHp) _buildingHp.Recover(value);
     }
 
     public void OnCollisionFunction(IChanger changer)
@@ -175,9 +168,26 @@ public abstract class Building : MonoBehaviour
         PerformAction(changer);
     }
 
+    // ===== [Damage & HP] =====
+    public void TakeDamage(int attackPower)
+    {
+        _animationSystem.TakeDamage();
+        _floatingTextPoint.ShowDamageText(attackPower);
+        if (_hasHp && _buildingHp.TakeDamage(attackPower))
+        {
+            Destroy();
+        }
+    }
+
+    public void RecoverHp(float value)
+    {
+        if (_hasHp) _buildingHp.Recover(value);
+    }
+
+    // ===== [Action] =====
     protected abstract void PerformAction(IChanger changer);
 
-
+    // ===== [Destroy/Restore] =====
     private void Destroy()
     {
         if (!_hasHp || OwnerType == OwnerType.Enemy)
@@ -233,6 +243,7 @@ public abstract class Building : MonoBehaviour
         }
     }
 
+    // ===== [Performance] =====
     public void UpdatePerformance(Passive passive)
     {
         if (GroupType != passive.TargetGroupType) return;
@@ -245,6 +256,7 @@ public abstract class Building : MonoBehaviour
         BuildingFunction.DowngradePerformance(passive);
     }
 
+    // ===== [UI] =====
     public void OpenInfo()
     {
         BuildingInfoPopup.Args args = new BuildingInfoPopup.Args
