@@ -4,16 +4,14 @@ using Zenject;
 
 public class Tree : Building
 {
-    [SerializeField] private SpriteRenderer treeRenderer;
-
     [Header("Index 0 = 초기 나무 스프라이트")]
     [SerializeField]
     private string[] treeSkinNames;
 
-    private int _currentSpriteIndex = 0;
+    private int _currentSpriteIndex;
     private int GoldAmount => (int)Table.effectValue;
-    [Inject] BuildingManager _buildingManager;
-    [SerializeField] SkeletonMecanim skeletonMecanim;
+    [Inject] private BuildingManager _buildingManager;
+    [SerializeField] private SkeletonMecanim skeletonMecanim;
 
     public override void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
