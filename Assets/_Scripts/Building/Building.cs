@@ -119,17 +119,15 @@ public abstract class Building : MonoBehaviour
     // ===== [Timer] =====
     private void StartTimer()
     {
-        if (_stageGlobalClock.RegisterRepeatingTimer(_timerId, Table.interval, () =>
-            {
-                if (OwnerType == OwnerType.Player)
-                {
-                    _animationSystem.Activate();
-                    PerformAction(null);
-                }
-            }))
+        _stageGlobalClock.RegisterRepeatingTimer(_timerId, Table.interval, () =>
         {
-            Debug.Log($"{_timerId} started with {Table.interval}s interval");
-        }
+            if (OwnerType == OwnerType.Player)
+            {
+                _animationSystem.Activate();
+                PerformAction(null);
+            }
+        });
+        // Debug.Log($"{_timerId} started with {Table.interval}s interval");
     }
 
     // ===== [Collision] =====

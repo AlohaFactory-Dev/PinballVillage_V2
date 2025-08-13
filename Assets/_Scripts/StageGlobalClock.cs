@@ -104,7 +104,7 @@ public class StageGlobalClock : MonoBehaviour
         timer.disposable = obs;
         timers.Add(timer);
 
-        Debug.Log($"StageGlobalClock: Registered repeating timer '{id}' with interval {interval}s");
+        // Debug.Log($"StageGlobalClock: Registered repeating timer '{id}' with interval {interval}s");
         return true;
     }
 
