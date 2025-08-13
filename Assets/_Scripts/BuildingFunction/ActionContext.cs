@@ -5,6 +5,10 @@ public class ActionContext
     public IChanger Changer { get; private set; }
     public int Value { get; private set; }
 
+    public ActionContext()
+    {
+    }
+
     public ActionContext(IChanger changer, int value)
     {
         Changer = changer;

@@ -9,7 +9,7 @@ using Zenject;
 
 [RequireComponent(typeof(RecycleObject))]
 [RequireComponent(typeof(BuildingHp))]
-public class Building : MonoBehaviour
+public abstract class Building : MonoBehaviour
 {
     [Inject] private StageUI _stageUI;
     [Inject] private BuildingManager _buildingManager;
@@ -22,7 +22,7 @@ public class Building : MonoBehaviour
 
     private BuildingFloatingTextPoint _floatingTextPoint;
     private SortingGroup _sortingGroup;
-    private ReactiveProperty<bool> _isDestroyed = new(false);
+    private readonly ReactiveProperty<bool> _isDestroyed = new(false);
     public IReadOnlyReactiveProperty<bool> IsDestroyedReadOnly => _isDestroyed;
 
     private BuildingAnimationSystem _animationSystem;
@@ -43,13 +43,17 @@ public class Building : MonoBehaviour
     public OwnerType OwnerType => Spawner.CurrentOwner;
     public BuildingTable Table { get; private set; }
     public BuildingGroupType GroupType => Table.group;
-    public int RestroeCost => Mathf.CeilToInt(Table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
+    public int RestoreCost { get; private set; }
     public bool IsMaxLevel => Table.level == Table.maxLevel;
     public BuildingFloatingTextPoint FloatingTextPoint => _floatingTextPoint;
 
     public virtual void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
+        Spawner = spawner;
+        Table = table;
         GetComponents();
+
+        RestoreCost = Mathf.CeilToInt(table.buildCost * TableListContainer.Get<EtcTableList>().GetEtcTable("restoreCost").values[0]);
         _hasPassive = false;
         Collider2D.enabled = true;
         buildingObj.SetActive(true);
@@ -59,8 +63,7 @@ public class Building : MonoBehaviour
         _isDestroyed.Value = false;
         if (_hasHp) _buildingHp.Init(table.maxHp);
 
-        Spawner = spawner;
-        Table = table;
+
         transform.position = spawner.transform.position;
         if (_animationSystem) _animationSystem.Init();
 
@@ -80,7 +83,7 @@ public class Building : MonoBehaviour
                 StartTimer();
                 break;
             case TriggerTiming.OnSpawn:
-                _animationSystem.SetOnSpawnEvent(OnSpawnPerformAction);
+                _animationSystem.SetOnSpawnEvent(() => PerformAction(null));
                 break;
         }
 
@@ -114,7 +117,7 @@ public class Building : MonoBehaviour
                 if (OwnerType == OwnerType.Player)
                 {
                     _animationSystem.Activate();
-                    AutoPerformAction();
+                    PerformAction(null);
                 }
             }))
         {
@@ -158,7 +161,7 @@ public class Building : MonoBehaviour
             else
             {
                 _animationSystem.Activate();
-                OnCollisionPerformAction(changer);
+                PerformAction(changer);
             }
         }
     }
@@ -166,42 +169,14 @@ public class Building : MonoBehaviour
     private IEnumerator LordMultiplierCoroutine(IChanger changer)
     {
         _animationSystem.Activate();
-        OnCollisionPerformAction(changer);
+        PerformAction(changer);
         yield return new WaitForSeconds(lordActionInterval);
         _animationSystem.Activate();
-        OnCollisionPerformAction(changer);
+        PerformAction(changer);
     }
 
-    protected virtual void OnCollisionPerformAction(IChanger changer)
-    {
-        if (Table.triggerTiming == TriggerTiming.OnCollision)
-        {
-            PerformAction(new ActionContext(changer));
-        }
-    }
+    protected abstract void PerformAction(IChanger changer);
 
-
-    protected virtual void AutoPerformAction()
-    {
-        if (Table.triggerTiming == TriggerTiming.Auto)
-        {
-            _animationSystem.Activate();
-            PerformAction();
-        }
-    }
-
-    protected virtual void OnSpawnPerformAction()
-    {
-        if (Table.triggerTiming == TriggerTiming.OnSpawn)
-        {
-            PerformAction();
-        }
-    }
-
-    protected void PerformAction(ActionContext actionContext = null)
-    {
-        BuildingFunction.PerformAction(actionContext);
-    }
 
     private void Destroy()
     {

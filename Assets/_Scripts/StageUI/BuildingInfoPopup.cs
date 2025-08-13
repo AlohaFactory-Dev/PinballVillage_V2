@@ -92,7 +92,7 @@ public class BuildingInfoPopup : UISlice, IDimClosable
                             levelUpButton.gameObject.SetActive(!_openArgs.Building.IsMaxLevel);
                             rotateButton.gameObject.SetActive(_openArgs.Table.group == BuildingGroupType.DirectionSign && OwnerType.Player == _openArgs.Building.Spawner.CurrentOwner);
                             _levelUpCostText.color = _goldManager.EnoughGold(_openArgs.Table.levelUpCost) ? Color.white : Color.red;
-                            _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestroeCost) ? Color.white : Color.red;
+                            _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestoreCost) ? Color.white : Color.red;
                             restoreButton.gameObject.SetActive(false);
                         }
                         else
@@ -118,9 +118,9 @@ public class BuildingInfoPopup : UISlice, IDimClosable
             popupContent.transform.position = RectTransformUtility.WorldToScreenPoint(_camera, _openArgs.Position);
             rotateButton.gameObject.SetActive(_openArgs.Table.group == BuildingGroupType.DirectionSign && OwnerType.Player == _openArgs.Building.Spawner.CurrentOwner);
             _levelUpCostText.color = _goldManager.EnoughGold(_openArgs.Table.levelUpCost) ? Color.white : Color.red;
-            _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestroeCost) ? Color.white : Color.red;
+            _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestoreCost) ? Color.white : Color.red;
             _restoreCostText.text = $"복구\n" +
-                $"<sprite name=Gold>x{_openArgs.Building.RestroeCost}";
+                $"<sprite name=Gold>x{_openArgs.Building.RestoreCost}";
         }
         else if (_openArgs.OpenType == BuildingPopupOpenType.DraggingBuilding)
         {
@@ -150,17 +150,17 @@ public class BuildingInfoPopup : UISlice, IDimClosable
             if (_openArgs.OpenType == BuildingPopupOpenType.Building)
             {
                 _levelUpCostText.color = _goldManager.EnoughGold(_openArgs.Table.levelUpCost) ? Color.white : Color.red;
-                _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestroeCost) ? Color.white : Color.red;
+                _restoreCostText.color = _goldManager.EnoughGold(_openArgs.Building.RestoreCost) ? Color.white : Color.red;
             }
         }).AddTo(this);
     }
 
     private void OnRestoreBuildingClicked()
     {
-        if (_goldManager.EnoughGold(_openArgs.Building.RestroeCost))
+        if (_goldManager.EnoughGold(_openArgs.Building.RestoreCost))
         {
             _openArgs.Building.Restore();
-            _goldManager.UseGold(_openArgs.Building.RestroeCost);
+            _goldManager.UseGold(_openArgs.Building.RestoreCost);
         }
     }
 

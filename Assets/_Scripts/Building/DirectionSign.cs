@@ -61,4 +61,8 @@ public class DirectionSign : Building
             psuhVillager.SetVillager(villager, _currentDirection);
         }
     }
+
+    protected override void PerformAction(IChanger changer)
+    {
+    }
 }

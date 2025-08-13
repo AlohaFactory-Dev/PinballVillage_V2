@@ -2,8 +2,9 @@ public class ArcherTrainingCenter : Building
 {
     private int ArcherCount => (int)Table.effectValue;
 
-    protected override void OnSpawnPerformAction()
+
+    protected override void PerformAction(IChanger changer)
     {
-        PerformAction(new ActionContext(ArcherCount));
+        BuildingFunction.PerformAction(new ActionContext(ArcherCount));
     }
 }

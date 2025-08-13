@@ -6,7 +6,7 @@ public class FarmerHouse : Building
     [Inject] SpawnerGridManager _spawnerGridManager;
     private int VillagerPerWheatField => (int)Table.effectValue;
 
-    protected override void OnSpawnPerformAction()
+    protected override void PerformAction(IChanger changer)
     {
         int wheatFieldCount = 0;
         var neighbors = _spawnerGridManager.GetNeighbors(Spawner, Table.targetRange);
@@ -19,6 +19,6 @@ public class FarmerHouse : Building
             }
         }
 
-        PerformAction(new ActionContext(wheatFieldCount * VillagerPerWheatField));
+        BuildingFunction.PerformAction(new ActionContext(wheatFieldCount * VillagerPerWheatField));
     }
 }

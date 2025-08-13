@@ -15,9 +15,8 @@ public class Castle : Building
             _villagerManager.SpawnVillager(Spawner, VillagerType.Lord);
     }
 
-    protected override void OnCollisionPerformAction(IChanger changer)
+    protected override void PerformAction(IChanger changer)
     {
-        // Whidmill은 wheatCount에 따라 성능을 조정함.
-        PerformAction(new ActionContext(changer, GoldAmount));
+        BuildingFunction.PerformAction(new ActionContext(changer, GoldAmount));
     }
 }

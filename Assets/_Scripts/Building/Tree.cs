@@ -10,7 +10,8 @@ public class Tree : Building
     [SerializeField]
     private string[] treeSkinNames;
 
-    int _currentSpriteIndex = 0;
+    private int _currentSpriteIndex = 0;
+    private int GoldAmount => (int)Table.effectValue;
     [Inject] BuildingManager _buildingManager;
     [SerializeField] SkeletonMecanim skeletonMecanim;
 
@@ -24,12 +25,11 @@ public class Tree : Building
         }
     }
 
-
-    protected override void OnCollisionPerformAction(IChanger changer)
+    protected override void PerformAction(IChanger changer)
     {
         if (_currentSpriteIndex >= treeSkinNames.Length) return; // 이미 모든 스프라이트를 사용한 경우
 
-        PerformAction(new ActionContext(changer));
+        BuildingFunction.PerformAction(new ActionContext(changer, GoldAmount));
         _currentSpriteIndex++;
         if (_currentSpriteIndex < treeSkinNames.Length)
         {

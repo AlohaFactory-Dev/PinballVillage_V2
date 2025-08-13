@@ -13,7 +13,7 @@ public class WheatField : Building
         Collider2D.isTrigger = true;
     }
 
-    protected override void AutoPerformAction()
+    protected override void PerformAction(IChanger changer)
     {
         if (Spawner.CurrentOwner != OwnerType.Player) return;
 
@@ -33,6 +33,6 @@ public class WheatField : Building
             }
         }
 
-        PerformAction(new ActionContext(DefalutGoldAmount + wheatFieldCount * GoldPerWheatField));
+        BuildingFunction.PerformAction(new ActionContext(DefalutGoldAmount + wheatFieldCount * GoldPerWheatField));
     }
 }

@@ -37,7 +37,7 @@ public class AttackEnemy : BuildingFunction, IChanger
 
         if (enemySpawners.Count == 0) return;
 
-        int attackCount = Mathf.Min((int)Table.effectValue + UpgradeValue, enemySpawners.Count);
+        int attackCount = Mathf.Min(actionContext.Value + UpgradeValue, enemySpawners.Count);
 
         for (int i = 0; i < attackCount; i++)
         {

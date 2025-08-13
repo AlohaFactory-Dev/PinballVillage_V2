@@ -10,7 +10,7 @@ public class Windmill : Building
     [Inject] SpawnerGridManager _spawnerGridManager;
     private int GoldPerWheatField => (int)Table.effectValue;
 
-    protected override void OnCollisionPerformAction(IChanger changer)
+    protected override void PerformAction(IChanger changer)
     {
         var neighbors = _spawnerGridManager.GetNeighbors(Spawner, Table.targetRange);
         int wheatCount = 0;
@@ -25,6 +25,6 @@ public class Windmill : Building
         }
 
         // Whidmill은 wheatCount에 따라 성능을 조정함.
-        PerformAction(new ActionContext(changer, GoldPerWheatField * wheatCount));
+        BuildingFunction.PerformAction(new ActionContext(changer, GoldPerWheatField * wheatCount));
     }
 }

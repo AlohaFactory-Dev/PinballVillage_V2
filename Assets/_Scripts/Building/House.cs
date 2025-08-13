@@ -2,8 +2,8 @@ public class House : Building
 {
     private int VillagerCount => (int)Table.effectValue;
 
-    protected override void OnSpawnPerformAction()
+    protected override void PerformAction(IChanger changer)
     {
-        PerformAction(new ActionContext(VillagerCount));
+        BuildingFunction.PerformAction(new ActionContext(VillagerCount));
     }
 }

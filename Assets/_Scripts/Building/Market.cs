@@ -2,8 +2,8 @@ public class Market : Building
 {
     private int GoldAmount => (int)Table.effectValue;
 
-    protected override void OnCollisionPerformAction(IChanger changer)
+    protected override void PerformAction(IChanger changer)
     {
-        PerformAction(new ActionContext(changer, GoldAmount));
+        BuildingFunction.PerformAction(new ActionContext(changer, GoldAmount));
     }
 }
