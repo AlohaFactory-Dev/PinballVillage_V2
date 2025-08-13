@@ -19,14 +19,39 @@ using Random = UnityEngine.Random;
     "\nI : 적과의 충돌 무시 토글")]
 public class TestManager : MonoBehaviour
 {
-    [Inject] private GoldManager goldManager;
+    [Serializable]
+    public struct SpawnBuildingList
+    {
+        public string buildingId;
+        public Vector2Int gridPosition;
+    }
 
+    [Serializable]
+    public struct SpawnList
+    {
+        public List<SpawnBuildingList> spawnBuildingList;
+    }
+
+    [Inject] private GoldManager _goldManager;
+
+    [Space]
     [InfoBox("모든 건물 레벨업을 할지, 특정 건물만 레벨업할지 선택하세요.")]
     [SerializeField]
     private bool allBuildingLevelUp = false;
 
     [SerializeField] private List<string> levelUpBuildingIds = new();
     private static bool _onEnemyCollsionIgnore = false;
+
+    [Space]
+    [InfoBox("생성 할 건물 리스트입니다." +
+        "\n각 건물의 ID와 생성할 위치를 설정하세요." +
+        "\n생성할 위치는 그리드 좌표로 설정합니다." +
+        "\nSpawnInterval은 각 건물이 생성될 때 시간 간격입니다."
+    )]
+    [SerializeField]
+    SpawnList[] spawnList;
+
+    [SerializeField] private float spawnInterval = 0.1f;
 
     public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
 
@@ -38,7 +63,7 @@ public class TestManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
-            goldManager.AddGold(10000);
+            _goldManager.AddGold(10000);
         if (Input.GetKeyDown(KeyCode.L))
         {
             if (allBuildingLevelUp)
