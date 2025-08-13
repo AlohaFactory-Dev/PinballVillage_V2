@@ -18,6 +18,7 @@ public class Tree : Building
     public override void Init(BuildingTable table, Spawner spawner, bool isLevelUp)
     {
         base.Init(table, spawner, isLevelUp);
+        Collider2D.enabled = false;
         _currentSpriteIndex = 0;
         if (treeSkinNames.Length > 0)
         {

@@ -1,18 +1,15 @@
 using System;
 using System.Collections.Generic;
-using FactorySystem;
 using UniRx;
 using UnityEngine;
 
-/// <summary>
-/// 전역 시계 시스템 - 여러 오브젝트가 서로 다른 주기로 동작할 수 있도록 관리
-/// </summary>
 public class StageGlobalClock : MonoBehaviour
 {
-    private ReactiveProperty<string> _formattedTime = new ReactiveProperty<string>("00:00");
+    private readonly ReactiveProperty<string> _formattedTime = new("00:00");
     public IReadOnlyReactiveProperty<string> FormattedTime => _formattedTime;
     public IReactiveProperty<int> CurrentTick { get; private set; } = new ReactiveProperty<int>(0);
-    private int _stageEndCondition = 0; // 스테이지 종료 조건 (예: 60초 후 종료 등)
+
+    private int _stageEndCondition = 0;
 
     private class Timer
     {
@@ -31,10 +28,9 @@ public class StageGlobalClock : MonoBehaviour
         }
     }
 
-    private List<Timer> timers = new List<Timer>();
+    private readonly Dictionary<string, Timer> _timers = new();
 
-
-    void Awake()
+    public void Init()
     {
         _stageEndCondition = (int)TableListContainer.Get<EtcTableList>().GetEtcTable("stageClearCondition").values[0];
         _formattedTime.Value = GetFormattedElapsedTime();
@@ -43,13 +39,10 @@ public class StageGlobalClock : MonoBehaviour
             {
                 CurrentTick.Value++;
                 if (CurrentTick.Value >= _stageEndCondition)
-                {
                     StageContainer.Get<StageManager>().StageResult();
-                }
 
                 _formattedTime.Value = GetFormattedElapsedTime();
-            })
-            .AddTo(this);
+            }).AddTo(this);
     }
 
     private IObservable<long> IntervalWithTimeScale(float intervalSeconds)
@@ -80,70 +73,39 @@ public class StageGlobalClock : MonoBehaviour
 
     public bool RegisterRepeatingTimer(string id, float interval, Action callback, bool isOneShot = false)
     {
-        if (HasTimer(id))
+        if (_timers.ContainsKey(id))
         {
             Debug.LogWarning($"StageGlobalClock: Timer with ID '{id}' already exists");
             return false;
         }
 
         var timer = new Timer(id, interval, callback, isOneShot);
-
-        // CurrentTick을 구독하여 전체 시간에서 interval마다 콜백 실행
-        var obs = CurrentTick
-            .Skip(1) // 0초는 제외
+        timer.disposable = CurrentTick
+            .Skip(1)
             .Where(tick => tick % Mathf.RoundToInt(interval) == 0)
             .Subscribe(_ =>
             {
                 timer.callback?.Invoke();
                 if (timer.isOneShot)
-                {
                     UnregisterTimer(timer.id);
-                }
             });
 
-        timer.disposable = obs;
-        timers.Add(timer);
-
-        // Debug.Log($"StageGlobalClock: Registered repeating timer '{id}' with interval {interval}s");
+        _timers.Add(id, timer);
         return true;
     }
 
     public bool RegisterTimer(string id, float interval, Action callback)
-    {
-        return RegisterRepeatingTimer(id, interval, callback, true);
-    }
+        => RegisterRepeatingTimer(id, interval, callback, true);
 
-    public bool UnregisterTimer(string id)
+    public void UnregisterTimer(string id)
     {
-        Timer timerToRemove = null;
-        foreach (Timer timer in timers)
+        if (_timers.TryGetValue(id, out var timer))
         {
-            if (timer.id == id)
-            {
-                timerToRemove = timer;
-                break;
-            }
-        }
-
-        if (timerToRemove != null)
-        {
-            timerToRemove.disposable?.Dispose();
-            timers.Remove(timerToRemove);
+            timer.disposable?.Dispose();
+            _timers.Remove(id);
             Debug.Log($"StageGlobalClock: Unregistered timer '{id}'");
-            return true;
         }
-
-        return false;
     }
 
-    public bool HasTimer(string id)
-    {
-        foreach (Timer timer in timers)
-        {
-            if (timer.id == id)
-                return true;
-        }
-
-        return false;
-    }
+    private bool HasTimer(string id) => _timers.ContainsKey(id);
 }

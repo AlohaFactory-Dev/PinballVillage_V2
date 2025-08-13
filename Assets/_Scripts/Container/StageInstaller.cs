@@ -42,9 +42,10 @@ public class StageInstaller : MonoInstaller
         Init();
     }
 
-    public async void Init()
+    private async void Init()
     {
         await Container.Resolve<FactoryManager>().Init(Container);
         Container.Resolve<SpawnerGridManager>().Init();
+        Container.Resolve<StageGlobalClock>().Init();
     }
 }
