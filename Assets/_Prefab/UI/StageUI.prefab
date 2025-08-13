@@ -710,13 +710,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec10bea9e51bb948ae5f7a6253aac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldText: {fileID: 0}
   stageResultPanel: {fileID: 6279721723528091424}
   failText: {fileID: 9166003267844434420}
   winText: {fileID: 7219722649955588316}
   restartButton: {fileID: 8087581512852068175}
   stagePercentGauge: {fileID: 4609034812374086825}
   conditionRect: {fileID: 177670879243664534}
-  goldText: {fileID: 2595083761652908770}
   timerText: {fileID: 4437758723674633588}
 --- !u!1 &9166003267844434420
 GameObject:
@@ -1980,14 +1980,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8365646449685117706, guid: cff81b6116f3d0a4ab5434355c9ae6f8, type: 3}
   m_PrefabInstance: {fileID: 9194320414891216173}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2595083761652908770 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6600974521795235791, guid: cff81b6116f3d0a4ab5434355c9ae6f8, type: 3}
-  m_PrefabInstance: {fileID: 9194320414891216173}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

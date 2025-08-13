@@ -195,21 +195,14 @@ namespace _Scripts.Unit
         private Vector2 CalculateBounceDirection(Collision2D collision)
         {
             Vector2 normal = collision.contacts[0].normal;
-            Vector2 incomingDirection = _lastDirection.normalized;
-            Vector2 reflectedDirection = Vector2.Reflect(incomingDirection, normal);
+            Vector2 incoming = _lastDirection.normalized;
+            Vector2 reflected = Vector2.Reflect(incoming, normal).normalized;
 
+            // dot 보정 제거: 항상 표준 반사각만 사용
             float randomAngle = Random.Range(-randomDirectionRange, randomDirectionRange);
-            Quaternion rot = Quaternion.AngleAxis(randomAngle, Vector3.forward);
-            Vector2 finalDirection = rot * reflectedDirection;
+            reflected = Quaternion.AngleAxis(randomAngle, Vector3.forward) * reflected;
 
-            float dot = Mathf.Abs(Vector2.Dot(finalDirection, normal));
-            if (dot > 0.9f)
-            {
-                Vector2 perpendicular = new Vector2(-normal.y, normal.x);
-                finalDirection = (finalDirection + perpendicular * 0.3f).normalized;
-            }
-
-            return finalDirection.normalized;
+            return reflected.normalized;
         }
 
         private IEnumerator SpeedBoostCoroutine(float additionalSpeed, float duration)
