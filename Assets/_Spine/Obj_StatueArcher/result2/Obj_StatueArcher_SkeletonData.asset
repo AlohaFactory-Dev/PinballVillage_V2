@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Obj_StatueArcher_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: eb7fd8a3744293b4987f02027d43187c, type: 2}
+  - {fileID: 11400000, guid: 350d79f6e8d3716478d1c4148daaa216, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 014ce87f273682b488bd967718dc4932, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 4155d382338f5ba4ba08914800c52639, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 9100000, guid: b59d9bd82a4ab71468829f17b56f5670, type: 2}
+  controller: {fileID: 9100000, guid: 79e0ce3df8a8ab740a570c67d0604f21, type: 2}
