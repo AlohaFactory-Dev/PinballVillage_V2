@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FactorySystem;
 using Stage.Building;
 using UnityEngine;
@@ -179,6 +180,16 @@ public class BuildingManager
                     LevelUpBuilding(b.Spawner);
                 }
             }
+        }
+    }
+
+    public void SelectedBuildingLevelUp(string id)
+    {
+        var building = _playerBuildings.SelectMany(b => b.Value)
+            .FirstOrDefault(b => b.Table.id == id);
+        if (building != null && building.Table.level < building.Table.maxLevel)
+        {
+            LevelUpBuilding(building.Spawner);
         }
     }
 #endif
