@@ -8,7 +8,6 @@ using Zenject;
 public class BuildingManager
 {
     private FactoryManager _factoryManager;
-    private StageGlobalClock _stageGlobalClock;
     private Dictionary<BuildingGroupType, List<Building>> _playerBuildings = new();
     private Dictionary<BuildingGroupType, List<Building>> _enemyBuildings = new();
     private Dictionary<BuildingGroupType, List<Building>> _neutralBuildings = new();
@@ -17,15 +16,14 @@ public class BuildingManager
     public List<Castle> PlayerCastles { get; private set; } = new();
     public List<EnemyCastle> EnemyCastles { get; private set; } = new();
 
-    private float _recoveryMultiple = 0f;
+    private readonly float _recoveryMultiple = 0f;
 
     public BuildingManager(FactoryManager factoryManager, StageGlobalClock stageGlobalClock)
     {
         _factoryManager = factoryManager;
-        _stageGlobalClock = stageGlobalClock;
         var etcTable = TableListContainer.Get<EtcTableList>().GetEtcTable("recoveryHp");
         _recoveryMultiple = etcTable.values[1];
-        _stageGlobalClock.RegisterRepeatingTimer("recoveryHp", etcTable.values[0], RecoverBuildHp);
+        stageGlobalClock.RegisterRepeatingTimer("recoveryHp", etcTable.values[0], RecoverBuildHp);
     }
 
     public Building SpawnBuilding(string buildingId, Spawner spawner, bool isLevelUp = false)
@@ -91,7 +89,7 @@ public class BuildingManager
         return building;
     }
 
-    public void RemoveBuilding(Building building)
+    public void RemoveBuilding(Building building, bool isLevelUp = false)
     {
         // 빌딩 제거 로직
         if (building.OwnerType == OwnerType.Player && _playerBuildings.ContainsKey(building.Table.group))
@@ -100,7 +98,7 @@ public class BuildingManager
             if (building.Table.group == BuildingGroupType.Castle)
             {
                 PlayerCastles.Remove(building as Castle);
-                if (PlayerCastles.Count == 0)
+                if (PlayerCastles.Count == 0 && !isLevelUp)
                 {
                     StageContainer.Get<StageManager>().StageResult(OwnerType.Enemy);
                 }
@@ -162,8 +160,26 @@ public class BuildingManager
     public Building LevelUpBuilding(Spawner spawner)
     {
         var buildingTable = spawner.Building.Table;
-        spawner.Building.RemoveBuilding();
+        RemoveBuilding(spawner.Building, true);
         var nextBuildingTable = TableListContainer.Get<BuildingTableList>().GetBuildingTableByGroup(buildingTable.levelUpTargetGroup, buildingTable.level + 1);
         return SpawnBuilding(nextBuildingTable.id, spawner, true);
     }
+
+#if UNITY_EDITOR
+    public void PlayerAllBuildingLevelUp()
+    {
+        foreach (var building in _playerBuildings)
+        {
+            // 복사본 생성
+            var buildingsCopy = new List<Building>(building.Value);
+            foreach (var b in buildingsCopy)
+            {
+                if (b.Table.level < b.Table.maxLevel)
+                {
+                    LevelUpBuilding(b.Spawner);
+                }
+            }
+        }
+    }
+#endif
 }
