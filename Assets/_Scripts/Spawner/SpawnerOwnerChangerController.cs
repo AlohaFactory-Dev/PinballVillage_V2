@@ -33,40 +33,49 @@ namespace Stage.Building
             Change(villager);
         }
 
+        private bool IsEmptySpawner() => _spawner.IsEmpty;
+
+        private bool IsNeutralAndNotDirectionSign() =>
+            _currentOwner == OwnerType.Neutral && _spawner.Building.Table.group != BuildingGroupType.DirectionSign;
+
+        private bool IsWheatField() =>
+            _spawner.Building.Table.group == BuildingGroupType.WheatField;
+
+        private bool IsNeutralAndDirectionSign() =>
+            _currentOwner == OwnerType.Neutral && _spawner.Building.Table.group == BuildingGroupType.DirectionSign;
+
+        private bool ShouldTakeDamage(IChanger changer) =>
+            changer.OwnerType != _currentOwner && _spawner.Building.HasHp;
+
         public void Change(IChanger changer)
         {
-            if (_currentOwner == OwnerType.Neutral && !_spawner.IsEmpty)
+            if (IsEmptySpawner())
             {
-                if (_spawner.Building.Table.group != BuildingGroupType.DirectionSign)
-                {
-                    if (_spawner.Building.Table.group == BuildingGroupType.WheatField)
-                    {
-                        HandleOwnerChange(changer);
-                    }
-                    else
-                    {
-                        _spawner.Building.OnCollisionFunction(changer);
-                    }
-                }
-                else
-                {
-                    HandleOwnerChange(changer);
-                }
-
+                HandleOwnerChange(changer);
                 return;
             }
 
-            if (changer.OwnerType != _currentOwner && !_spawner.IsEmpty)
+            if (IsNeutralAndNotDirectionSign())
             {
-                if (_spawner.Building.HasHp)
-                {
-                    _spawner.Building.TakeDamage(changer.AttackPower);
-                    return;
-                }
+                if (IsWheatField())
+                    HandleOwnerChange(changer);
+                else
+                    _spawner.Building.OnCollisionFunction(changer);
+                return;
             }
 
-            HandleOwnerChange(changer);
+            if (IsNeutralAndDirectionSign())
+            {
+                HandleOwnerChange(changer);
+                return;
+            }
+
+            if (ShouldTakeDamage(changer))
+            {
+                _spawner.Building.TakeDamage(changer.AttackPower);
+            }
         }
+
 
         private void HandleOwnerChange(IChanger changer)
         {

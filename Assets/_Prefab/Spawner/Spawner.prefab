@@ -475,6 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544277768580623671}
   - component: {fileID: 807107064639223702}
+  - component: {fileID: 354317088435890927}
   m_Layer: 0
   m_Name: BuildAbleHighlight
   m_TagString: Untagged
@@ -509,6 +510,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4954853783829768448}
   m_CullTransparentMesh: 1
+--- !u!210 &354317088435890927
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954853783829768448}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_SortAtRoot: 0
 --- !u!1 &5050271674345253865
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3668409370568619143}
   - component: {fileID: 1751670141698396661}
+  - component: {fileID: 5140848330405890723}
   m_Layer: 0
   m_Name: 'BuildDisableHighlight '
   m_TagString: Untagged
@@ -553,6 +567,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5050271674345253865}
   m_CullTransparentMesh: 1
+--- !u!210 &5140848330405890723
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050271674345253865}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_SortAtRoot: 0
 --- !u!1 &6484614935590301413
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,17 +864,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462ae0e7b67941fca14a664c9c50d283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultOwnerType: 0
   row: -1
   col: -1
+  defaultOwnerType: 0
   ownerChangerController: {fileID: 6231343523236387744}
-  defaultDirection: 0
   defaultBuildingId: 
   buildAbleHighlight: {fileID: 4954853783829768448}
   buildDisableHighlight: {fileID: 5050271674345253865}
   showRangeHighlight: {fileID: 1991603106522831235}
-  _autoSpawnTime: 0
+  autoSpawnTime: 0
+  spawnPercent: 0
   autoBuildingId: 
+  defaultDirection: 0
 --- !u!1 &8897988319710020127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1219,10 @@ PrefabInstance:
     - target: {fileID: 2504604980406447263, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
       propertyPath: m_Name
       value: ShowRangeHighlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504604980406447263, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3695230560737561623, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
       propertyPath: m_LocalPosition.x

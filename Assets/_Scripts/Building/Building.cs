@@ -133,6 +133,7 @@ public abstract class Building : MonoBehaviour
     // ===== [Collision] =====
     protected void OnCollisionExit2D(Collision2D other)
     {
+        if (Table.triggerTiming != TriggerTiming.OnCollision) return;
         if (other.gameObject.TryGetComponent(out Villager villager))
         {
             OnCollisionFunction(villager);
@@ -141,8 +142,6 @@ public abstract class Building : MonoBehaviour
 
     public void OnCollisionFunction(IChanger changer)
     {
-        if (Table.triggerTiming != TriggerTiming.OnCollision) return;
-
         if (changer.OwnerType == OwnerType || OwnerType == OwnerType.Neutral)
         {
             if (changer.VillagerType == VillagerType.Lord)

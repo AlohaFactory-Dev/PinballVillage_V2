@@ -90,9 +90,9 @@ public class BuildModeManager : MonoBehaviour
         return false;
     }
 
-    private void OnDragging(Vector2 iconPoint)
+    private void OnDragging(Vector2 pointer)
     {
-        Vector3 worldPosition = GetWorldPosition(iconPoint);
+        Vector3 worldPosition = GetWorldPosition(pointer);
         var raySpawner = GetSpawnerAtPosition(worldPosition);
 
         if (raySpawner)
@@ -106,13 +106,19 @@ public class BuildModeManager : MonoBehaviour
                 SetShowRangeSpawners(_spawnerGridManager.GetNeighbors(raySpawner, _buildingCard.Table.showRange), true);
                 _currentPointerSpawner.BuildAbleHighlight(_currentPointerSpawner.IsEmpty && _currentPointerSpawner.CurrentOwner == OwnerType.Player);
             }
+
+            Vector3 spawnerScreenPosition = GetScreenPosition(_currentPointerSpawner.transform.position);
+            _draggingBuilding.SnapToSpawner(spawnerScreenPosition);
         }
         else if (_currentPointerSpawner)
         {
             SetShowRangeSpawners(_showRangeSpawners, false);
             _currentPointerSpawner.AllBuildAbleHighlightOff();
             _currentPointerSpawner = null;
+            _draggingBuilding.SnapToPointer();
         }
+
+        _draggingBuilding.SetPopupPosition();
     }
 
     private void DragEnd()
@@ -192,6 +198,13 @@ public class BuildModeManager : MonoBehaviour
     private Vector3 GetWorldPosition(Vector2 screenPosition)
     {
         var pos = _camera.ScreenToWorldPoint(screenPosition);
+        pos.z = 0f;
+        return pos;
+    }
+
+    private Vector3 GetScreenPosition(Vector2 worldPosition)
+    {
+        var pos = _camera.WorldToScreenPoint(worldPosition);
         pos.z = 0f;
         return pos;
     }
