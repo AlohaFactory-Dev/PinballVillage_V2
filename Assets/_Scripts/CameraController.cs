@@ -17,14 +17,14 @@ public class CameraController : MonoBehaviour
     private float _currentPathPosition = 0f;
     private CinemachineTrackedDolly _trackedDolly;
     private float _pathLength;
-    private Vector3 _dragStartWorldPos; // 드래그 시작 시 월드 좌표
     private float _dragStartMouseY; // 드래그 시작 시 마우스 Y
     private float _dragStartPathPosition; // 드래그 시작 시 패스 위치
-    private Camera _camera;
+
+    private int _lastScreenWidth;
+    private int _lastScreenHeight;
 
     private void Start()
     {
-        _camera = Camera.main;
         _trackedDolly = virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>();
         _trackedDolly.m_PositionUnits = CinemachinePathBase.PositionUnits.Normalized; // 추가
         _currentPathPosition = _trackedDolly.m_PathPosition;
@@ -35,6 +35,9 @@ public class CameraController : MonoBehaviour
             _pathLength = smoothPath.PathLength;
         else
             _pathLength = 1f;
+
+        _lastScreenWidth = Screen.width;
+        _lastScreenHeight = Screen.height;
     }
 
     private void SetWidthBasedOrthographicSize()
@@ -52,6 +55,14 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        // 해상도 변경 감지 및 카메라 사이즈 갱신
+        if (Screen.width != _lastScreenWidth || Screen.height != _lastScreenHeight)
+        {
+            SetWidthBasedOrthographicSize();
+            _lastScreenWidth = Screen.width;
+            _lastScreenHeight = Screen.height;
+        }
+
         if (Input.GetMouseButtonDown(0) && !_buildModeManager.IsBuildMode)
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -68,7 +79,6 @@ public class CameraController : MonoBehaviour
                     _isDragging = true;
                     _dragStartMouseY = Input.mousePosition.y;
                     _dragStartPathPosition = _currentPathPosition;
-                    _dragStartWorldPos = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
                 }
             }
             else
@@ -76,7 +86,6 @@ public class CameraController : MonoBehaviour
                 _isDragging = true;
                 _dragStartMouseY = Input.mousePosition.y;
                 _dragStartPathPosition = _currentPathPosition;
-                _dragStartWorldPos = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
             }
         }
 
