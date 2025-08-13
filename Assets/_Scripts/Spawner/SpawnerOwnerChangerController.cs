@@ -49,6 +49,11 @@ namespace Stage.Building
 
         public void Change(IChanger changer)
         {
+            if (changer.OwnerType == OwnerType.Enemy)
+            {
+                if (TestManager.OnEnemyCollsionIgnore) return;
+            }
+
             if (IsEmptySpawner())
             {
                 HandleOwnerChange(changer);

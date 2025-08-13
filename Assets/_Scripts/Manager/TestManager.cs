@@ -15,7 +15,8 @@ using Random = UnityEngine.Random;
     "\nL : 건물 레벨업" +
     "\nUpArrow : Time Scale + 1" +
     "\nDownArrow : Time Scale - 1" +
-    "\nRightArrow, LeftArrow : Time Scale = 1")]
+    "\nRightArrow, LeftArrow : Time Scale = 1" +
+    "\nI : 적과의 충돌 무시 토글")]
 public class TestManager : MonoBehaviour
 {
     [Inject] private GoldManager goldManager;
@@ -25,6 +26,14 @@ public class TestManager : MonoBehaviour
     private bool allBuildingLevelUp = false;
 
     [SerializeField] private List<string> levelUpBuildingIds = new();
+    private static bool _onEnemyCollsionIgnore = false;
+
+    public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
+
+    private void Start()
+    {
+        _onEnemyCollsionIgnore = false;
+    }
 
     private void Update()
     {
@@ -43,6 +52,12 @@ public class TestManager : MonoBehaviour
                     StageContainer.Get<BuildingManager>().SelectedBuildingLevelUp(id);
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            _onEnemyCollsionIgnore = !_onEnemyCollsionIgnore;
+            Debug.Log($"On Enemy Collision Ignore: {_onEnemyCollsionIgnore}");
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
