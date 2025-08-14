@@ -16,6 +16,7 @@ using Random = UnityEngine.Random;
     "\nI : 적과의 충돌 무시 토글" +
     "\nB : 건물 생성 시작" +
     "\nC : 카메라 줌 인" +
+    "\nU : CPIUI OnOff" +
     "\nUpArrow : Time Scale + 1" +
     "\nDownArrow : Time Scale - 1" +
     "\nRightArrow, LeftArrow : Time Scale = 1")]
@@ -43,6 +44,8 @@ public class TestManager : MonoBehaviour
 
     [Inject] private GoldManager _goldManager;
     [Inject] private StageGlobalClock _stageGlobalClock;
+    [Inject] StageUI stageUI;
+    [Inject] CPIUI cpiui;
 
     [Space]
     [InfoBox("모든 건물 레벨업을 할지, 특정 건물만 레벨업할지 선택하세요.")]
@@ -83,7 +86,14 @@ public class TestManager : MonoBehaviour
     private static bool _onSettingBuildingCardMode = false;
     [SerializeField] private List<string> settingBuildingCardIds;
     public static List<string> SettingBuildingCardIds;
+
+    [Space]
+    [InfoBox("CPIUI를 On/Off 합니다.")]
+    [SerializeField]
+    private bool cpiuiOnOff = false;
+
     public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
+
     public static bool OnSettingBuildingCardMode => _onSettingBuildingCardMode;
 
     [Serializable]
@@ -117,6 +127,8 @@ public class TestManager : MonoBehaviour
         {
             StartCoroutine(ExecuteTestAction(action));
         }
+
+        CPIUIOnOff();
     }
 
     private IEnumerator ExecuteTestAction(TestAction action)
@@ -164,7 +176,22 @@ public class TestManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            StageContainer.Get<CameraController>().ZoomIn();
+            if (StageContainer.Get<CameraController>().ZoomIn())
+            {
+                cpiuiOnOff = true;
+                CPIUIOnOff();
+            }
+            else
+            {
+                cpiuiOnOff = false;
+                CPIUIOnOff();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            cpiuiOnOff = !cpiuiOnOff;
+            CPIUIOnOff();
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -255,6 +282,24 @@ public class TestManager : MonoBehaviour
         }
 
         levelUpBuildingIndex++;
+    }
+
+    #endregion
+
+    #region CPIUI On/Off
+
+    private void CPIUIOnOff()
+    {
+        if (cpiuiOnOff)
+        {
+            cpiui.On();
+            stageUI.Off();
+        }
+        else
+        {
+            cpiui.Off();
+            stageUI.On();
+        }
     }
 
     #endregion

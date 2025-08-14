@@ -117,8 +117,9 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] Animator zoomInCamera;
     [SerializeField] CinemachineVirtualCamera zoomInVirtualCamera;
+
     bool _isZooming = false;
-    public void ZoomIn()
+    public bool ZoomIn()
     {
         Transform target = StageContainer.Get<VillagerManager>().LordCharacter.transform;
         _isZooming = !_isZooming;
@@ -133,6 +134,8 @@ public class CameraController : MonoBehaviour
 
         zoomInVirtualCamera.Follow = target;
         zoomInVirtualCamera.LookAt = target;
+
+        return _isZooming;
     }
 #endif
 }

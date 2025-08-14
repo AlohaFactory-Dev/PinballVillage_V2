@@ -21,6 +21,7 @@ public class StageInstaller : MonoInstaller
         var buildModeManager = GetComponentInChildren<BuildModeManager>();
         var stageUI = GetComponentInChildren<StageUI>();
         var cameraController = GetComponentInChildren<CameraController>();
+        var CPIUI = GetComponentInChildren<CPIUI>();
 
 
         Container.Bind<CoconutCanvas>().FromInstance(coconutCanvas).AsSingle().NonLazy();
@@ -37,6 +38,7 @@ public class StageInstaller : MonoInstaller
 
         Container.Bind<StageManager>().FromInstance(stageManager).AsSingle().NonLazy();
         Container.Bind<StageUI>().FromInstance(stageUI).AsSingle().NonLazy();
+        Container.Bind<CPIUI>().FromInstance(CPIUI).AsSingle().NonLazy();
 
         Container.Bind<BuildModeManager>().FromInstance(buildModeManager).AsSingle().NonLazy();
         Container.Bind<EnemyAutoBuildManager>().AsSingle().NonLazy();

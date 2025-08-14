@@ -82,4 +82,15 @@ public class StageUI : MonoBehaviour
     {
         timerText.text = timeText;
     }
+# if UNITY_EDITOR
+    public void On()
+    {
+        GetComponent<CanvasGroup>().alpha = 1f;
+    }
+
+    public void Off()
+    {
+        GetComponent<CanvasGroup>().alpha = 0f;
+    }
+#endif
 }
