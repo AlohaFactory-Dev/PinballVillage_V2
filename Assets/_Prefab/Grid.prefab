@@ -16555,7 +16555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8199236446200734977, guid: cf29903f75f71d64eb99c65891188409, type: 3}
       propertyPath: defaultBuildingId
-      value: CavalrymanStatue
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8486320857124530474, guid: cf29903f75f71d64eb99c65891188409, type: 3}
       propertyPath: m_Size.x
@@ -18645,7 +18645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8199236446200734977, guid: cf29903f75f71d64eb99c65891188409, type: 3}
       propertyPath: defaultBuildingId
-      value: ArcherStatue
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8486320857124530474, guid: cf29903f75f71d64eb99c65891188409, type: 3}
       propertyPath: m_Sprite
