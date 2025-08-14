@@ -3,9 +3,11 @@ size:1024,1024
 filter:Linear,Linear
 pma:true
 Obj_StatueCavalryman
-bounds:2,188,467,473
-offsets:1,1,469,475
+bounds:477,531,422,368
+offsets:1,1,424,370
+horse
+bounds:2,540,473,359
+offsets:1,1,475,361
 shadow
-bounds:471,378,283,190
+bounds:2,348,283,190
 offsets:1,1,285,192
-rotate:90
