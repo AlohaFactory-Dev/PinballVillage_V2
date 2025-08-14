@@ -112,4 +112,27 @@ public class CameraController : MonoBehaviour
         // 카메라 실제 위치 갱신
         _trackedDolly.m_PathPosition = _currentPathPosition;
     }
+
+#if UNITY_EDITOR
+
+    [SerializeField] Animator zoomInCamera;
+    [SerializeField] CinemachineVirtualCamera zoomInVirtualCamera;
+    bool _isZooming = false;
+    public void ZoomIn()
+    {
+        Transform target = StageContainer.Get<VillagerManager>().LordCharacter.transform;
+        _isZooming = !_isZooming;
+        if (_isZooming)
+        {
+            zoomInCamera.SetTrigger("ZoomIn");
+        }
+        else
+        {
+            zoomInCamera.SetTrigger("Default");
+        }
+
+        zoomInVirtualCamera.Follow = target;
+        zoomInVirtualCamera.LookAt = target;
+    }
+#endif
 }

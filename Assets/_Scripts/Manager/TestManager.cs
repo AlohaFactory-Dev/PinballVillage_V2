@@ -15,6 +15,7 @@ using Random = UnityEngine.Random;
     "\nL : 건물 레벨업" +
     "\nI : 적과의 충돌 무시 토글" +
     "\nB : 건물 생성 시작" +
+    "\nC : 카메라 줌 인" +
     "\nUpArrow : Time Scale + 1" +
     "\nDownArrow : Time Scale - 1" +
     "\nRightArrow, LeftArrow : Time Scale = 1")]
@@ -159,6 +160,11 @@ public class TestManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             StartCoroutine(SpawnBuilding());
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            StageContainer.Get<CameraController>().ZoomIn();
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
