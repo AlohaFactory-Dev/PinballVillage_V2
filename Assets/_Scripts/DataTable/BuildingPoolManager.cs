@@ -64,6 +64,11 @@ public class BuildingPoolManager
 
     public BuildingTable Draw()
     {
+        if (TestManager.OnSettingBuildingCardMode)
+        {
+            return TestManager.GetSettingBuildingTable();
+        }
+
         var candidates = new List<PoolEntry>();
         var weights = new List<int>();
         int totalWeight = 0;

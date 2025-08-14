@@ -317,6 +317,11 @@ namespace Stage.Building
                 spawner.SetSprite(sprites);
             }
         }
+
+        public Spawner GetSpawner(Vector2Int gridPos)
+        {
+            return IsValidArrayIndex(gridPos.x, gridPos.y) ? _spawnerGrid[gridPos.x, gridPos.y] : null;
+        }
 #endif
     }
 }

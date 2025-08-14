@@ -220,5 +220,10 @@ public class Spawner : MonoBehaviour
             );
         }
     }
+
+    public void ResetOwner(OwnerType ownerType)
+    {
+        ownerChangerController.ResetOwner(ownerType);
+    }
 #endif
 }

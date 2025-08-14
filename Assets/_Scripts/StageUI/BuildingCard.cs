@@ -49,6 +49,7 @@ public class BuildingCard : MonoBehaviour, IPointerDownHandler
     public void Draw()
     {
         _table = _poolManager.Draw();
+
         for (int i = 0; i < gradeBgs.Length; i++)
         {
             gradeBgs[i].SetActive(false);
