@@ -18,7 +18,7 @@ ArrowTower_3,Tower,Tower,Obj_ArrowTower03,Building/Name/ArrowTower_3,Building/De
 House_1,House,House,Obj_House01,Building/Name/House_1,Building/Desc/House_1,Soil,1,1,250,100,0,-99999,30,-99999,-99999,OnSpawn,-99999,0,1,[-99999;-99999;-99999;-99999]
 House_2,House,House,Obj_House02,Building/Name/House_2,Building/Desc/House_2,Soil,1,2,1200,300,0,-99999,45,-99999,-99999,OnSpawn,-99999,0,2,[-99999;-99999;-99999;-99999]
 House_3,House,House,Obj_House03,Building/Name/House_3,Building/Desc/House_3,Soil,1,3,-99999,1300,1,House_3,60,-99999,-99999,OnSpawn,-99999,0,3,[-99999;-99999;-99999;-99999]
-DirectionSign,DirectionSign,DirectionSign,Obj_DirectionalSign,Building/Name/DirectionSign,Building/Desc/DirectionSign,Soil,2,1,-99999,300,0,-99999,-99999,-99999,-99999,OnCollision,-99999,0,10,[1;0.5;-99999;-99999]
+DirectionSign,DirectionSign,DirectionSign,Obj_DirectionalSign,Building/Name/DirectionSign,Building/Desc/DirectionSign,Soil,2,1,-99999,300,0,-99999,-99999,-99999,-99999,OnCollision,-99999,0,10,[1;0.3;-99999;-99999]
 ArmsMarket,Market,ArmsMarket,Obj_MarketWeapon,Building/Name/ArmsMarket,Building/Desc/ArmsMarket,Soil,3,1,-99999,500,3,ArmsMarket,30,-99999,-99999,OnCollision,-99999,0,5,[-99999;-99999;-99999;-99999]
 FarmerHouse,House,FarmerHouse,Obj_HouseFarmer,Building/Name/FarmerHouse,Building/Desc/FarmerHouse,Soil,3,1,-99999,300,1,-99999,40,-99999,-99999,OnSpawn,-99999,1,1,[-99999;-99999;-99999;-99999]
 ArcherTrainingCenter,ArcherTrainingCenter,ArcherTrainingCenter,Obj_ArcherTrainingCenter,Building/Name/ArcherTrainingCenter,Building/Desc/ArcherTrainingCenter,Soil,2,1,-99999,400,0,-99999,40,-99999,-99999,OnSpawn,-99999,0,1,[-99999;-99999;-99999;-99999]
