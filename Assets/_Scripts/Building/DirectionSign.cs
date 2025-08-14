@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum Direction
@@ -12,13 +13,20 @@ public enum Direction
 public class DirectionSign : Building
 {
     [SerializeField] private new Transform renderer;
+    private float _cooldownSeconds; // Villager별 쿨타임(초)
     private Direction _currentDirection;
+
+    // Villager별 마지막 Push 시간 저장용 Dictionary
+    private Dictionary<Villager, float> villagerCooldowns = new();
+    private List<Villager> toRemove = new();
 
     public void Init(BuildingTable table, Spawner spawner, Direction initialDirection, bool isLevelUp)
     {
         base.Init(table, spawner, isLevelUp);
+        _cooldownSeconds = Table.values[1];
         Collider2D.isTrigger = true;
         ChangeDirection(initialDirection);
+        villagerCooldowns.Clear();
     }
 
 
@@ -53,12 +61,39 @@ public class DirectionSign : Building
         ChangeDirection((Direction)nextDirection);
     }
 
+    private void Update()
+    {
+        float now = Time.time;
+        toRemove.Clear();
+        foreach (var pair in villagerCooldowns)
+        {
+            if (now - pair.Value >= _cooldownSeconds)
+            {
+                toRemove.Add(pair.Key);
+            }
+        }
+
+        foreach (var villager in toRemove)
+        {
+            villagerCooldowns.Remove(villager);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (Table.triggerTiming == TriggerTiming.OnCollision && other.gameObject.TryGetComponent(out Villager villager) && villager.OwnerType == OwnerType)
         {
-            var psuhVillager = BuildingFunction as PushVillager;
-            psuhVillager.SetVillager(villager, _currentDirection);
+            if (villagerCooldowns.ContainsKey(villager))
+            {
+                // 쿨타임 중이면 Push 무시
+                return;
+            }
+
+            // Push 처리 및 쿨타임 등록
+            villagerCooldowns[villager] = Time.time;
+
+            var pushVillager = BuildingFunction as PushVillager;
+            pushVillager.SetVillager(villager, _currentDirection);
         }
     }
 
