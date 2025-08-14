@@ -13,11 +13,11 @@ using Random = UnityEngine.Random;
 
 [InfoBox("G : 10000골드 추가" +
     "\nL : 건물 레벨업" +
+    "\nI : 적과의 충돌 무시 토글" +
+    "\nB : 건물 생성 시작" +
     "\nUpArrow : Time Scale + 1" +
     "\nDownArrow : Time Scale - 1" +
-    "\nRightArrow, LeftArrow : Time Scale = 1" +
-    "\nI : 적과의 충돌 무시 토글" +
-    "\nB : 건물 생성 시작")]
+    "\nRightArrow, LeftArrow : Time Scale = 1")]
 public class TestManager : MonoBehaviour
 {
     [Serializable]
@@ -28,19 +28,27 @@ public class TestManager : MonoBehaviour
     }
 
     [Serializable]
+    public struct LevelUpBuildingList
+    {
+        public bool allBuildingLevelUp;
+        public List<string> buildingIds;
+    }
+
+    [Serializable]
     public struct SpawnList
     {
         public List<SpawnBuildingList> spawnBuildingList;
     }
 
     [Inject] private GoldManager _goldManager;
+    [Inject] private StageGlobalClock _stageGlobalClock;
 
     [Space]
     [InfoBox("모든 건물 레벨업을 할지, 특정 건물만 레벨업할지 선택하세요.")]
     [SerializeField]
-    private bool allBuildingLevelUp = false;
+    private List<LevelUpBuildingList> levelUpBuildingLists = new();
 
-    [SerializeField] private List<string> levelUpBuildingIds = new();
+    private int levelUpBuildingIndex = 0;
 
     [Space]
     [InfoBox("적과의 충돌을 무시할지 설정합니다.")]
@@ -77,11 +85,59 @@ public class TestManager : MonoBehaviour
     public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
     public static bool OnSettingBuildingCardMode => _onSettingBuildingCardMode;
 
+    [Serializable]
+    public enum TestActionType
+    {
+        AddGold,
+        LevelUp,
+        ToggleEnemyCollisionIgnore,
+        SpawnBuilding,
+    }
+
+    [Serializable]
+    public struct TestAction
+    {
+        public float executeAfterSeconds;
+        public TestActionType actionType;
+    }
+
+    [Space]
+    [InfoBox("몇 초 뒤에 어떤 기능을 실행할지 설정합니다.")]
+    [SerializeField]
+    private List<TestAction> testActions = new();
+
     private void Start()
     {
         _onSettingBuildingCardMode = onSettingBuildingCardMode;
         _onEnemyCollsionIgnore = onEnemyCollisionIgnore;
         SettingBuildingCardIds = settingBuildingCardIds;
+
+        foreach (var action in testActions)
+        {
+            StartCoroutine(ExecuteTestAction(action));
+        }
+    }
+
+    private IEnumerator ExecuteTestAction(TestAction action)
+    {
+        yield return new WaitForSeconds(action.executeAfterSeconds);
+        switch (action.actionType)
+        {
+            case TestActionType.AddGold:
+                _goldManager.AddGold(10000);
+                break;
+            case TestActionType.LevelUp:
+                LevelUpBuilding();
+                break;
+            case TestActionType.ToggleEnemyCollisionIgnore:
+                onEnemyCollisionIgnore = !onEnemyCollisionIgnore;
+                _onEnemyCollsionIgnore = onEnemyCollisionIgnore;
+                Debug.Log($"On Enemy Collision Ignore: {onEnemyCollisionIgnore}");
+                break;
+            case TestActionType.SpawnBuilding:
+                StartCoroutine(SpawnBuilding());
+                break;
+        }
     }
 
     private void Update()
@@ -90,17 +146,7 @@ public class TestManager : MonoBehaviour
             _goldManager.AddGold(10000);
         if (Input.GetKeyDown(KeyCode.L))
         {
-            if (allBuildingLevelUp)
-            {
-                StageContainer.Get<BuildingManager>().PlayerAllBuildingLevelUp();
-            }
-            else
-            {
-                foreach (var id in levelUpBuildingIds)
-                {
-                    StageContainer.Get<BuildingManager>().SelectedBuildingLevelUp(id);
-                }
-            }
+            LevelUpBuilding();
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -175,6 +221,34 @@ public class TestManager : MonoBehaviour
         }
 
         return TableListContainer.Get<BuildingTableList>().GetBuildingTable(buildingId);
+    }
+
+    #endregion
+
+    #region Level Up Building Mode
+
+    private void LevelUpBuilding()
+    {
+        if (levelUpBuildingIndex >= levelUpBuildingLists.Count)
+        {
+            Debug.Log("모든 건물 레벨업 완료");
+            return;
+        }
+
+        var levelUpList = levelUpBuildingLists[levelUpBuildingIndex];
+        if (levelUpList.allBuildingLevelUp)
+        {
+            StageContainer.Get<BuildingManager>().PlayerAllBuildingLevelUp();
+        }
+        else
+        {
+            foreach (var buildingId in levelUpList.buildingIds)
+            {
+                StageContainer.Get<BuildingManager>().SelectedBuildingLevelUp(buildingId);
+            }
+        }
+
+        levelUpBuildingIndex++;
     }
 
     #endregion
