@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using TMPro;
 using UniRx;
@@ -6,22 +7,50 @@ using Zenject;
 
 public class GoldText : MonoBehaviour
 {
+    public enum GoldTextType
+    {
+        None,
+        Second,
+        Minute
+    }
+
     private int _actionTrigger;
     [Inject] private GoldManager _goldManager;
-    private Animator _animator;
     [SerializeField] private TextMeshProUGUI goldText;
+    [SerializeField] private Animator goldTextAnimator;
+    [SerializeField] private TextMeshProUGUI goldPerSecondText;
+    [SerializeField] private GoldTextType goldTextType = GoldTextType.Second;
     private int _lastGoldValue = 0;
     private Tween _goldTween;
-    private float _goldTweenDuration = 0.1f; // 애니메이션 지속 시간
+    [SerializeField] private float goldTextTweenDuration = 0.1f; // 애니메이션 지속 시간
+
+    [SerializeField] private int decimalPlaces = 2; // Inspector에서 소수점 자리수 조절
 
     public void Init()
     {
         _actionTrigger = Animator.StringToHash("Action");
-        _animator = GetComponent<Animator>();
         _goldManager.GoldAmount.Subscribe(UpdateGoldText).AddTo(this);
         _lastGoldValue = _goldManager.GoldAmount.Value;
 
         UpdateGoldText(_goldManager.GoldAmount.Value);
+        if (goldTextType == GoldTextType.None)
+        {
+            goldPerSecondText.gameObject.SetActive(false);
+        }
+        else
+        {
+            goldPerSecondText.gameObject.SetActive(true);
+            if (goldTextType == GoldTextType.Minute)
+            {
+                _goldManager.GoldPerMinute.Subscribe(UpdateGoldPerSecondText).AddTo(this);
+                UpdateGoldPerSecondText(_goldManager.GoldPerMinute.Value);
+            }
+            else
+            {
+                _goldManager.GoldPerSecond.Subscribe(UpdateGoldPerSecondText).AddTo(this);
+                UpdateGoldPerSecondText(_goldManager.GoldPerSecond.Value);
+            }
+        }
     }
 
     private void UpdateGoldText(int value)
@@ -33,7 +62,7 @@ public class GoldText : MonoBehaviour
             {
                 goldText.text = $"{x}";
                 startValue = x;
-            }, endValue, _goldTweenDuration)
+            }, endValue, goldTextTweenDuration)
             .SetEase(Ease.OutQuad)
             .OnComplete(() =>
             {
@@ -42,7 +71,19 @@ public class GoldText : MonoBehaviour
             }).Play();
         if (_lastGoldValue < value)
         {
-            _animator.SetTrigger(_actionTrigger);
+            goldTextAnimator.SetTrigger(_actionTrigger);
         }
+    }
+
+    private void UpdateGoldPerSecondText(float value)
+    {
+        string format = $"F{decimalPlaces}";
+        if (goldTextType == GoldTextType.Minute)
+        {
+            goldPerSecondText.text = $"{value.ToString(format)}/m";
+            return;
+        }
+
+        goldPerSecondText.text = $"{value.ToString(format)}/s";
     }
 }
