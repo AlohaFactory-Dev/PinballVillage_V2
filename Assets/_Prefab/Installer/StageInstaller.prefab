@@ -559,10 +559,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottom
       objectReference: {fileID: 0}
-    - target: {fileID: 4058913430968108870, guid: b2343c7693973294ca6c279d6e883ad5, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
     - target: {fileID: 5204165325869024958, guid: b2343c7693973294ca6c279d6e883ad5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
