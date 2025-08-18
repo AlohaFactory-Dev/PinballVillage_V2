@@ -6,61 +6,79 @@
     "mouseX": 0.0,
     "mouseY": 0.0,
     "mouseZ": 0.0,
-    "time": 1.18571687
+    "time": 2.33374166
   },
   {
     "type": 2,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 893.147461,
-    "mouseY": 1137.21118,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
     "mouseZ": 0.0,
-    "time": 1.18571687
+    "time": 2.33374166
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 893.147461,
-    "mouseY": 1137.21118,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
     "mouseZ": 0.0,
-    "time": 1.18571687
+    "time": 2.33374166
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 893.147461,
-    "mouseY": 1137.21118,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
     "mouseZ": 0.0,
-    "time": 1.20332122
+    "time": 2.361824
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 893.147461,
-    "mouseY": 1137.21118,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
     "mouseZ": 0.0,
-    "time": 1.22097063
+    "time": 2.37663174
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 893.147461,
-    "mouseY": 1137.21118,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
     "mouseZ": 0.0,
-    "time": 1.23624587
+    "time": 2.39236736
+  },
+  {
+    "type": 4,
+    "keyCode": 0,
+    "mouseButton": 0,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
+    "mouseZ": 0.0,
+    "time": 2.41268587
+  },
+  {
+    "type": 4,
+    "keyCode": 0,
+    "mouseButton": 0,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
+    "mouseZ": 0.0,
+    "time": 2.42931271
   },
   {
     "type": 3,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 893.147461,
-    "mouseY": 1137.21118,
+    "mouseX": 931.3945,
+    "mouseY": 678.247,
     "mouseZ": 0.0,
-    "time": 1.25509715
+    "time": 2.4452
   },
   {
     "type": 0,
@@ -69,61 +87,79 @@
     "mouseX": 0.0,
     "mouseY": 0.0,
     "mouseZ": 0.0,
-    "time": 1.8708272
+    "time": 7.436525
   },
   {
     "type": 2,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 875.2988,
-    "mouseY": 1073.46619,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
     "mouseZ": 0.0,
-    "time": 1.8708272
+    "time": 7.436525
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 875.2988,
-    "mouseY": 1073.46619,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
     "mouseZ": 0.0,
-    "time": 1.8708272
+    "time": 7.436525
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 875.2988,
-    "mouseY": 1073.46619,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
     "mouseZ": 0.0,
-    "time": 1.89774084
+    "time": 7.456223
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 875.2988,
-    "mouseY": 1073.46619,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
     "mouseZ": 0.0,
-    "time": 1.9383595
+    "time": 7.47167635
   },
   {
     "type": 4,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 875.2988,
-    "mouseY": 1073.46619,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
     "mouseZ": 0.0,
-    "time": 1.96777487
+    "time": 7.487023
+  },
+  {
+    "type": 4,
+    "keyCode": 0,
+    "mouseButton": 0,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
+    "mouseZ": 0.0,
+    "time": 7.503123
+  },
+  {
+    "type": 4,
+    "keyCode": 0,
+    "mouseButton": 0,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
+    "mouseZ": 0.0,
+    "time": 7.52124453
   },
   {
     "type": 3,
     "keyCode": 0,
     "mouseButton": 0,
-    "mouseX": 875.2988,
-    "mouseY": 1073.46619,
+    "mouseX": 1000.23907,
+    "mouseY": 1509.48218,
     "mouseZ": 0.0,
-    "time": 1.99094319
+    "time": 7.53929663
   },
   {
     "type": 0,
@@ -132,16 +168,43 @@
     "mouseX": 0.0,
     "mouseY": 0.0,
     "mouseZ": 0.0,
-    "time": 2.07858419
+    "time": 7.725182
   },
   {
     "type": 0,
-    "keyCode": 100,
+    "keyCode": 98,
     "mouseButton": 0,
     "mouseX": 0.0,
     "mouseY": 0.0,
     "mouseZ": 0.0,
-    "time": 2.438096
+    "time": 7.90816927
+  },
+  {
+    "type": 0,
+    "keyCode": 98,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 8.095281
+  },
+  {
+    "type": 0,
+    "keyCode": 98,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 8.271044
+  },
+  {
+    "type": 0,
+    "keyCode": 98,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 8.4505415
   },
   {
     "type": 0,
@@ -150,6 +213,42 @@
     "mouseX": 0.0,
     "mouseY": 0.0,
     "mouseZ": 0.0,
-    "time": 2.91511
+    "time": 8.67328
+  },
+  {
+    "type": 0,
+    "keyCode": 103,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 8.843207
+  },
+  {
+    "type": 0,
+    "keyCode": 103,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 9.000892
+  },
+  {
+    "type": 0,
+    "keyCode": 103,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 9.204567
+  },
+  {
+    "type": 0,
+    "keyCode": 103,
+    "mouseButton": 0,
+    "mouseX": 0.0,
+    "mouseY": 0.0,
+    "mouseZ": 0.0,
+    "time": 9.382578
   }
 ]

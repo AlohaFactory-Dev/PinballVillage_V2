@@ -11,6 +11,7 @@ using Stage.Building;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
+using UnityEditor; // 추가
 
 #if UNITY_EDITOR
 
@@ -149,7 +150,7 @@ public class TestManager : MonoBehaviour
 
         RegisterReplayEventHandlers();
 
-        if (File.Exists(inputRecordPath))
+        if (autoReplayOnStart)
         {
             LoadInputEvents();
             if (autoReplayOnStart)
@@ -158,6 +159,26 @@ public class TestManager : MonoBehaviour
                 replayInput = true;
                 isReplaying = true;
                 Debug.Log($"입력 기록 자동 재생 시작 (총 {inputEvents.Count}개 이벤트)");
+            }
+        }
+        // recordInput이 true일 때 파일이 이미 있으면 덮어쓸지 물어봄
+        else if (recordInput && File.Exists(inputRecordPath))
+        {
+            bool overwrite = EditorUtility.DisplayDialog(
+                "입력 기록 파일 덮어쓰기",
+                $"기존 입력 기록 파일이 존재합니다.\n{inputRecordPath}\n덮어쓰시겠습니까?",
+                "예(덮어쓰기)", "아니오(기록 안함)"
+            );
+            if (overwrite)
+            {
+                inputEvents.Clear();
+                SaveInputEvents(); // 기존 파일 덮어쓰기(초기화)
+                Debug.Log("기존 입력 기록 파일을 덮어썼습니다.");
+            }
+            else
+            {
+                recordInput = false;
+                Debug.Log("입력 기록을 시작하지 않습니다.");
             }
         }
     }
