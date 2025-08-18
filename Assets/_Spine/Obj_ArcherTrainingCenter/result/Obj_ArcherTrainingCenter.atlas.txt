@@ -3,12 +3,12 @@ size:1024,1024
 filter:Linear,Linear
 pma:true
 Mark
-bounds:636,610,218,244
-offsets:1,1,220,246
+bounds:671,651,207,227
+offsets:2,1,211,229
 Obj_CastleWall02
-bounds:2,481,440,373
-offsets:1,1,442,375
+bounds:2,494,475,384
+offsets:1,1,477,386
 shadow
-bounds:444,571,283,190
+bounds:479,595,283,190
 offsets:1,1,285,192
 rotate:90
