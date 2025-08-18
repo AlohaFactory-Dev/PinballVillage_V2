@@ -26,8 +26,7 @@ using Random = UnityEngine.Random;
     "\nRightArrow, LeftArrow : Time Scale = 1")]
 [InfoBox("입력 기록/재생:\n" +
     "- recordInput: 입력 기록 시작\n" +
-    "- autoReplayOnStart: 다음 런타임 시 자동 재생\n" +
-    "- F11: 재생 중지")]
+    "- autoReplayOnStart: 다음 런타임 시 자동 재생")]
 public class TestManager : MonoBehaviour
 {
     [Serializable]
@@ -101,7 +100,7 @@ public class TestManager : MonoBehaviour
     [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
-    private string fileName = "input_record.json";
+    private string fileName = "input_record";
 
     [SerializeField] private bool recordInput = false;
 
@@ -113,9 +112,8 @@ public class TestManager : MonoBehaviour
     private List<InputEvent> inputEvents = new List<InputEvent>();
     private float recordStartTime;
     private int replayIndex = 0;
-    private string inputRecordPath => Path.Combine(Application.dataPath, fileName);
+    private string inputRecordPath => Path.Combine(Application.dataPath, fileName + ".json");
     private bool isReplaying = false;
-    private GUIStyle replayStatusStyle;
 
     // 정적 프로퍼티
     public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
@@ -132,6 +130,17 @@ public class TestManager : MonoBehaviour
 
     private void Start()
     {
+        if (recordInput)
+        {
+            Debug.Log("입력 기록 시작");
+            inputEvents.Clear();
+            recordStartTime = Time.time;
+            if (File.Exists(inputRecordPath))
+            {
+                File.Delete(inputRecordPath);
+            }
+        }
+
         InitializeSettings();
         InitializeReplaySystem();
         CPIUIOnOff();
@@ -147,13 +156,6 @@ public class TestManager : MonoBehaviour
     private void InitializeReplaySystem()
     {
         recordStartTime = Time.time;
-
-        replayStatusStyle = new GUIStyle
-        {
-            fontSize = 20,
-            fontStyle = FontStyle.Bold
-        };
-        replayStatusStyle.normal.textColor = Color.red;
 
         RegisterReplayEventHandlers();
 
@@ -281,13 +283,6 @@ public class TestManager : MonoBehaviour
         if (replayInput && inputEvents.Count > 0)
             ReplayInputs();
 
-        if (Input.GetKeyDown(KeyCode.F11) && isReplaying)
-        {
-            replayInput = false;
-            isReplaying = false;
-            Debug.Log("입력 재생 중지됨");
-        }
-
         if (!isReplaying)
             HandleRealTimeInput();
     }
@@ -356,19 +351,8 @@ public class TestManager : MonoBehaviour
         }
     }
 
-    private void OnGUI()
-    {
-        if (showReplayStatus && isReplaying)
-        {
-            string status = $"입력 자동 재생 중... ({replayIndex}/{inputEvents.Count}) - F11 키로 중지";
-            GUI.Label(new Rect(10, 10, 500, 30), status, replayStatusStyle);
-        }
-    }
-
     private void RecordInputs()
     {
-        bool hasNewEvent = false;
-
         // 키 입력 기록
         foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
         {
@@ -380,47 +364,30 @@ public class TestManager : MonoBehaviour
                     keyCode = key,
                     time = Time.time - recordStartTime
                 });
-                hasNewEvent = true;
-            }
-
-            if (Input.GetKeyUp(key))
-            {
-                inputEvents.Add(new InputEvent
-                {
-                    type = InputEventType.KeyUp,
-                    keyCode = key,
-                    time = Time.time - recordStartTime
-                });
-                hasNewEvent = true;
             }
         }
 
-        // 마우스 입력 기록
-        for (int i = 0; i < 3; i++)
-        {
-            if (Input.GetMouseButtonDown(i))
-            {
-                inputEvents.Add(new InputEvent
-                {
-                    type = InputEventType.MouseDown,
-                    mouseButton = i,
-                    MousePosition = Input.mousePosition,
-                    time = Time.time - recordStartTime
-                });
-                hasNewEvent = true;
-            }
 
-            if (Input.GetMouseButtonUp(i))
+        if (Input.GetMouseButtonDown(0))
+        {
+            inputEvents.Add(new InputEvent
             {
-                inputEvents.Add(new InputEvent
-                {
-                    type = InputEventType.MouseUp,
-                    mouseButton = i,
-                    MousePosition = Input.mousePosition,
-                    time = Time.time - recordStartTime
-                });
-                hasNewEvent = true;
-            }
+                type = InputEventType.MouseDown,
+                mouseButton = 0,
+                MousePosition = Input.mousePosition,
+                time = Time.time - recordStartTime
+            });
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            inputEvents.Add(new InputEvent
+            {
+                type = InputEventType.MouseUp,
+                mouseButton = 0,
+                MousePosition = Input.mousePosition,
+                time = Time.time - recordStartTime
+            });
         }
 
         // 마우스 드래그 기록
@@ -433,13 +400,6 @@ public class TestManager : MonoBehaviour
                 MousePosition = Input.mousePosition,
                 time = Time.time - recordStartTime
             });
-            hasNewEvent = true;
-        }
-
-        // 이벤트가 추가된 경우에만 저장
-        if (hasNewEvent)
-        {
-            SaveInputEvents();
         }
     }
 
@@ -620,7 +580,20 @@ public class TestManager : MonoBehaviour
         if (recordInput && inputEvents.Count > 0)
         {
             SaveInputEvents();
-            Debug.Log("애플리케이션 종료 시 입력 기록 자동 저장됨");
+            // 파일이 즉시 디스크에 기록되도록 Flush 처리
+            try
+            {
+                using (var fs = new FileStream(inputRecordPath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                    fs.Flush(true);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"파일 즉시 기록 실패: {e.Message}");
+            }
+
+            Debug.Log("애플리케이션 종료 시 입력 기록 자동 저장 및 즉시 파일 업데이트됨");
         }
     }
 
@@ -666,10 +639,4 @@ public class InputEvent
             mouseZ = value.z;
         }
     }
-}
-
-// 클릭 가능한 오브젝트를 위한 인터페이스 (필요한 경우 사용)
-public interface IClickable
-{
-    void OnClick();
 }
