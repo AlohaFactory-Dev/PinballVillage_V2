@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: 77876811f7039bb489d99c1caa8f06ea, type: 2}
-  initialSkinName: Obj_WheatField02
+  initialSkinName: Obj_WheatField01
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0

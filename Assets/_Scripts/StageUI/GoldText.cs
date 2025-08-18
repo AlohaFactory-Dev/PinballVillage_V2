@@ -79,11 +79,9 @@ public class GoldText : MonoBehaviour
     private void UpdateGoldPerSecondText(float value)
     {
         _goldPerSecondTween?.Kill();
-        float startValue;
+        float startValue = 0f;
         if (float.TryParse(goldPerSecondText.text.Replace("/s", "").Replace("/m", ""), out var parsed))
             startValue = parsed;
-        else
-            startValue = value;
 
         _goldPerSecondTween = DOTween.To(() => startValue, x =>
             {
