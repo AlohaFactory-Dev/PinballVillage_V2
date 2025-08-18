@@ -17,6 +17,7 @@ public class GoldManager
     public IReadOnlyReactiveProperty<float> GoldPerSecond => _goldPerSecond;
     private readonly ReactiveProperty<float> _goldPerMinute = new(0f);
     public IReadOnlyReactiveProperty<float> GoldPerMinute => _goldPerMinute;
+    private bool _onSetGoldHistory = false;
 
     public GoldManager(StageGlobalClock stageGlobalClock)
     {
@@ -37,6 +38,7 @@ public class GoldManager
 
     private void OnTickChanged(int tick)
     {
+        if (_onSetGoldHistory) return;
         int gained = _goldAmount.Value - _lastGoldAmount;
         if (gained > 0)
         {
@@ -92,4 +94,16 @@ public class GoldManager
 
         return enough;
     }
+
+#if UNITY_EDITOR
+
+    public void SetGoldHistory(int goldAmount)
+    {
+        _lastGoldAmount = goldAmount;
+        _goldGainHistory.Clear();
+        _onSetGoldHistory = true;
+        _goldPerSecond.Value = goldAmount;
+        _goldPerMinute.Value = goldAmount;
+    }
+#endif
 }

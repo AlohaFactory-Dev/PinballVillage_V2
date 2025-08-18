@@ -8,7 +8,7 @@ public class CPIUI : MonoBehaviour
     [SerializeField] private GoldText goldText;
     private CanvasGroup _canvasGroup;
 
-    public void Start()
+    public void Awake()
     {
         goldText.Init();
         _canvasGroup = GetComponent<CanvasGroup>();

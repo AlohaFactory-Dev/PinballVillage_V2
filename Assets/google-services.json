@@ -1,116 +1,26 @@
 {
   "project_info": {
-    "project_number": "717431915505",
-    "firebase_url": "https://aloha-demo-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "aloha-demo",
-    "storage_bucket": "aloha-demo.firebasestorage.app"
+    "project_number": "322150899850",
+    "project_id": "pinball-village",
+    "storage_bucket": "pinball-village.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:717431915505:android:d53c41c8e40f66c4faba50",
+        "mobilesdk_app_id": "1:322150899850:android:97422fb6e7f0ccae164d73",
         "android_client_info": {
-          "package_name": "com.alohacorp.aihdemo"
+          "package_name": "kr.co.alohacorp.pinballvillage"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "717431915505-ggmspsnj1uk5i7ns3oin25ii6u0d8s95.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCt-D90Po8BncjTI8SnLdmTMNTY8Dc8HAs"
+          "current_key": "AIzaSyBcISoSKLGJHZ_v1oVbrX5dJZKLN4J9_Kw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "717431915505-ggmspsnj1uk5i7ns3oin25ii6u0d8s95.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "717431915505-dp3afcavarmchqttnitfofbue7necib6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.alohacorp.demo"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:717431915505:android:0609768ea4c5b9befaba50",
-        "android_client_info": {
-          "package_name": "com.alohacorp.demo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "717431915505-ggmspsnj1uk5i7ns3oin25ii6u0d8s95.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCt-D90Po8BncjTI8SnLdmTMNTY8Dc8HAs"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "717431915505-ggmspsnj1uk5i7ns3oin25ii6u0d8s95.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "717431915505-dp3afcavarmchqttnitfofbue7necib6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.alohacorp.demo"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:717431915505:android:1cb15ed900482a99faba50",
-        "android_client_info": {
-          "package_name": "kr.co.alohacorp.alohatestapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "717431915505-ggmspsnj1uk5i7ns3oin25ii6u0d8s95.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCt-D90Po8BncjTI8SnLdmTMNTY8Dc8HAs"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "717431915505-ggmspsnj1uk5i7ns3oin25ii6u0d8s95.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "717431915505-dp3afcavarmchqttnitfofbue7necib6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.alohacorp.demo"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
