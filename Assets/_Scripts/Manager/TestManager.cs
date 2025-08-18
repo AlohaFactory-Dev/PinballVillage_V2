@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using Aloha.Coconut;
 using FactorySystem;
+using Newtonsoft.Json;
 using Sirenix.OdinInspector;
 using Stage.Building;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
 
-# if UNITY_EDITOR
+#if UNITY_EDITOR
 
 [InfoBox("G : 10000골드 추가" +
     "\nH : 골드 획등량 세팅" +
@@ -21,6 +24,10 @@ using Random = UnityEngine.Random;
     "\nUpArrow : Time Scale + 1" +
     "\nDownArrow : Time Scale - 1" +
     "\nRightArrow, LeftArrow : Time Scale = 1")]
+[InfoBox("입력 기록/재생:\n" +
+    "- recordInput: 입력 기록 시작\n" +
+    "- autoReplayOnStart: 다음 런타임 시 자동 재생\n" +
+    "- F11: 재생 중지")]
 public class TestManager : MonoBehaviour
 {
     [Serializable]
@@ -46,41 +53,32 @@ public class TestManager : MonoBehaviour
     [Inject] private GoldManager _goldManager;
     [Inject] private StageGlobalClock _stageGlobalClock;
     [Inject] StageUI stageUI;
-    [Inject] CPIUI cpiui;
+    [Inject] private CPIUI cpiui;
 
     [Space]
-    [InfoBox("모든 건물 레벨업을 할지, 특정 건물만 레벨업할지 선택하세요.")]
+    [InfoBox("건물 레벨업 설정")]
     [SerializeField]
     private List<LevelUpBuildingList> levelUpBuildingLists = new();
 
     private int _levelUpBuildingIndex = 0;
 
     [Space]
-    [InfoBox("적과의 충돌을 무시할지 설정합니다.")]
+    [InfoBox("적과의 충돌 무시 설정")]
     [SerializeField]
     private bool onEnemyCollisionIgnore = false;
 
     private static bool _onEnemyCollsionIgnore = false;
 
     [Space]
-    [InfoBox("생성 할 건물 리스트입니다." +
-        "\n각 건물의 ID와 생성할 위치를 설정하세요." +
-        "\n생성할 위치는 그리드 좌표로 설정합니다." +
-        "\nSpawnInterval은 각 건물이 생성될 때 시간 간격입니다."
-    )]
+    [InfoBox("건물 생성 설정")]
     [SerializeField]
     private int spawnBuildingIndex;
 
     [SerializeField] private SpawnList[] spawnList;
-
     [SerializeField] private float spawnInterval = 0.1f;
 
     [Space]
-    [InfoBox("이 모드를 활성화 하면 설정된 건물 카드가 생성됩니다." +
-        "\n건물 카드의 ID는 SettingBuildingCardIds에 설정된 값들 중에서 순차적으로 사용됩니다." +
-        "\n모드가 활성화되면 SettingBuildingCardIds의 첫 번째 ID가 사용되고, 사용 후에는 제거됩니다." +
-        "\nSettingBuildingCardIds가 비어 있으면 모드가 비활성화됩니다."
-    )]
+    [InfoBox("건물 카드 생성 모드")]
     [SerializeField]
     private bool onSettingBuildingCardMode = false;
 
@@ -89,90 +87,217 @@ public class TestManager : MonoBehaviour
     public static List<string> SettingBuildingCardIds;
 
     [Space]
-    [InfoBox("CPIUI를 On/Off 합니다.")]
+    [InfoBox("CPIUI On/Off")]
     [SerializeField]
     private bool cpiuiOnOff = false;
 
     [Space]
-    [InfoBox(" 골드 획득량을 설정합니다." +
-        "\n이 값은 골드 획득량을 변경할 때 사용됩니다." +
-        "\n각 값은 골드 획득량을 설정하는 데 사용되며, 순차적으로 적용됩니다."
-    )]
+    [InfoBox("골드 획득량 설정")]
     [SerializeField]
     private List<int> settingGoldHistory = new();
 
     private int _goldHistoryIndex = 0;
 
-    public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
+    [Space]
+    [InfoBox("입력 기록/재생 기능")]
+    [SerializeField]
+    private string fileName = "input_record.json";
 
+    [SerializeField] private bool recordInput = false;
+
+    private bool replayInput = false;
+    [SerializeField] private bool autoReplayOnStart = true;
+    [SerializeField] private bool showReplayStatus = true;
+
+    // 입력 기록/재생 관련 변수
+    private List<InputEvent> inputEvents = new List<InputEvent>();
+    private float recordStartTime;
+    private int replayIndex = 0;
+    private string inputRecordPath => Path.Combine(Application.dataPath, fileName);
+    private bool isReplaying = false;
+    private GUIStyle replayStatusStyle;
+
+    // 정적 프로퍼티
+    public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
     public static bool OnSettingBuildingCardMode => _onSettingBuildingCardMode;
 
-    [Serializable]
-    public enum TestActionType
-    {
-        AddGold,
-        LevelUp,
-        ToggleEnemyCollisionIgnore,
-        SpawnBuilding,
-    }
+    // 재생 이벤트
+    private event Action<int, Vector3> OnReplayMouseDown;
+    private event Action<int, Vector3> OnReplayMouseUp;
+    private event Action<int, Vector3> OnReplayMouseDrag;
+    private event Action<KeyCode> OnReplayKeyDown;
+    private event Action<KeyCode> OnReplayKeyUp;
 
-    [Serializable]
-    public struct TestAction
-    {
-        public float executeAfterSeconds;
-        public TestActionType actionType;
-    }
-
-    [Space]
-    [InfoBox("몇 초 뒤에 어떤 기능을 실행할지 설정합니다.")]
-    [SerializeField]
-    private List<TestAction> testActions = new();
+    [Inject] private BuildModeManager _buildModeManager; // BuildModeManager 참조 추가
 
     private void Start()
+    {
+        InitializeSettings();
+        InitializeReplaySystem();
+        CPIUIOnOff();
+    }
+
+    private void InitializeSettings()
     {
         _onSettingBuildingCardMode = onSettingBuildingCardMode;
         _onEnemyCollsionIgnore = onEnemyCollisionIgnore;
         SettingBuildingCardIds = settingBuildingCardIds;
-
-        foreach (var action in testActions)
-        {
-            StartCoroutine(ExecuteTestAction(action));
-        }
-
-        CPIUIOnOff();
     }
 
-    private IEnumerator ExecuteTestAction(TestAction action)
+    private void InitializeReplaySystem()
     {
-        yield return new WaitForSeconds(action.executeAfterSeconds);
-        switch (action.actionType)
+        recordStartTime = Time.time;
+
+        replayStatusStyle = new GUIStyle
         {
-            case TestActionType.AddGold:
+            fontSize = 20,
+            fontStyle = FontStyle.Bold
+        };
+        replayStatusStyle.normal.textColor = Color.red;
+
+        RegisterReplayEventHandlers();
+
+        if (File.Exists(inputRecordPath))
+        {
+            LoadInputEvents();
+            if (autoReplayOnStart)
+            {
+                replayInput = true;
+                isReplaying = true;
+                Debug.Log($"입력 기록 자동 재생 시작 (총 {inputEvents.Count}개 이벤트)");
+            }
+        }
+    }
+
+    private void RegisterReplayEventHandlers()
+    {
+        OnReplayKeyDown += HandleReplayKeyDown;
+        OnReplayKeyUp += HandleReplayKeyUp;
+        OnReplayMouseDown += HandleReplayMouseDown;
+        OnReplayMouseUp += HandleReplayMouseUp;
+        OnReplayMouseDrag += HandleReplayMouseDrag;
+    }
+
+    private void HandleReplayKeyDown(KeyCode keyCode)
+    {
+        switch (keyCode)
+        {
+            case KeyCode.G:
                 _goldManager.AddGold(10000);
                 break;
-            case TestActionType.LevelUp:
+            case KeyCode.L:
                 LevelUpBuilding();
                 break;
-            case TestActionType.ToggleEnemyCollisionIgnore:
+            case KeyCode.I:
                 onEnemyCollisionIgnore = !onEnemyCollisionIgnore;
                 _onEnemyCollsionIgnore = onEnemyCollisionIgnore;
-                Debug.Log($"On Enemy Collision Ignore: {onEnemyCollisionIgnore}");
+                Debug.Log($"재생: On Enemy Collision Ignore: {onEnemyCollisionIgnore}");
                 break;
-            case TestActionType.SpawnBuilding:
+            case KeyCode.B:
                 StartCoroutine(SpawnBuilding());
+                break;
+            case KeyCode.C:
+                if (StageContainer.Get<CameraController>().ZoomIn())
+                {
+                    cpiuiOnOff = true;
+                    CPIUIOnOff();
+                }
+                else
+                {
+                    cpiuiOnOff = false;
+                    CPIUIOnOff();
+                }
+
+                break;
+            case KeyCode.U:
+                cpiuiOnOff = !cpiuiOnOff;
+                CPIUIOnOff();
+                break;
+            case KeyCode.H:
+                if (_goldHistoryIndex >= settingGoldHistory.Count)
+                {
+                    Debug.Log("모든 골드 획득량 설정 완료");
+                    return;
+                }
+
+                _goldManager.SetGoldHistory(settingGoldHistory[_goldHistoryIndex]);
+                _goldHistoryIndex++;
+                break;
+            case KeyCode.UpArrow:
+                Time.timeScale += 1f;
+                SystemUI.ShowToastMessage($"재생: Time Scale: {Time.timeScale}");
+                break;
+            case KeyCode.DownArrow:
+                Time.timeScale -= 1f;
+                SystemUI.ShowToastMessage($"재생: Time Scale: {Time.timeScale}");
+                break;
+            case KeyCode.RightArrow:
+            case KeyCode.LeftArrow:
+                Time.timeScale = 1f;
+                SystemUI.ShowToastMessage($"재생: Time Scale: {Time.timeScale}");
                 break;
         }
     }
 
+    private void HandleReplayKeyUp(KeyCode keyCode)
+    {
+        Debug.Log($"재생: 키 업 {keyCode}");
+        // 필요한 KeyUp 처리 로직 추가 가능
+    }
+
+    private void HandleReplayMouseDown(int button, Vector3 position)
+    {
+        Debug.Log($"재생: 마우스 다운 - 버튼: {button}, 위치: {position}");
+        // 마우스 다운 시 BuildModeManager의 Update 호출
+#if UNITY_EDITOR
+        _buildModeManager?.Update(InputEventType.MouseDown, position);
+#endif
+    }
+
+    private void HandleReplayMouseUp(int button, Vector3 position)
+    {
+        Debug.Log($"재생: 마우스 업 - 버튼: {button}, 위치: {position}");
+        // 마우스 업 시 BuildModeManager의 Update 호출
+#if UNITY_EDITOR
+        _buildModeManager?.Update(InputEventType.MouseUp, position);
+#endif
+    }
+
+    private void HandleReplayMouseDrag(int button, Vector3 position)
+    {
+        Debug.Log($"재생: 마우스 드래그 - 버튼: {button}, 위치: {position}");
+        // 마우스 드래그 시 BuildModeManager의 Update 호출
+#if UNITY_EDITOR
+        _buildModeManager?.Update(InputEventType.MouseDrag, position);
+#endif
+    }
+
+
     private void Update()
+    {
+        if (recordInput)
+            RecordInputs();
+
+        if (replayInput && inputEvents.Count > 0)
+            ReplayInputs();
+
+        if (Input.GetKeyDown(KeyCode.F11) && isReplaying)
+        {
+            replayInput = false;
+            isReplaying = false;
+            Debug.Log("입력 재생 중지됨");
+        }
+
+        if (!isReplaying)
+            HandleRealTimeInput();
+    }
+
+    private void HandleRealTimeInput()
     {
         if (Input.GetKeyDown(KeyCode.G))
             _goldManager.AddGold(10000);
         if (Input.GetKeyDown(KeyCode.L))
-        {
             LevelUpBuilding();
-        }
-
         if (Input.GetKeyDown(KeyCode.I))
         {
             onEnemyCollisionIgnore = !onEnemyCollisionIgnore;
@@ -181,10 +306,7 @@ public class TestManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.B))
-        {
             StartCoroutine(SpawnBuilding());
-        }
-
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (StageContainer.Get<CameraController>().ZoomIn())
@@ -213,7 +335,6 @@ public class TestManager : MonoBehaviour
                 return;
             }
 
-            // 골드 획득량 설정
             _goldManager.SetGoldHistory(settingGoldHistory[_goldHistoryIndex]);
             _goldHistoryIndex++;
         }
@@ -234,6 +355,172 @@ public class TestManager : MonoBehaviour
             SystemUI.ShowToastMessage($"Time Scale: {Time.timeScale}");
         }
     }
+
+    private void OnGUI()
+    {
+        if (showReplayStatus && isReplaying)
+        {
+            string status = $"입력 자동 재생 중... ({replayIndex}/{inputEvents.Count}) - F11 키로 중지";
+            GUI.Label(new Rect(10, 10, 500, 30), status, replayStatusStyle);
+        }
+    }
+
+    private void RecordInputs()
+    {
+        bool hasNewEvent = false;
+
+        // 키 입력 기록
+        foreach (KeyCode key in Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKeyDown(key))
+            {
+                inputEvents.Add(new InputEvent
+                {
+                    type = InputEventType.KeyDown,
+                    keyCode = key,
+                    time = Time.time - recordStartTime
+                });
+                hasNewEvent = true;
+            }
+
+            if (Input.GetKeyUp(key))
+            {
+                inputEvents.Add(new InputEvent
+                {
+                    type = InputEventType.KeyUp,
+                    keyCode = key,
+                    time = Time.time - recordStartTime
+                });
+                hasNewEvent = true;
+            }
+        }
+
+        // 마우스 입력 기록
+        for (int i = 0; i < 3; i++)
+        {
+            if (Input.GetMouseButtonDown(i))
+            {
+                inputEvents.Add(new InputEvent
+                {
+                    type = InputEventType.MouseDown,
+                    mouseButton = i,
+                    MousePosition = Input.mousePosition,
+                    time = Time.time - recordStartTime
+                });
+                hasNewEvent = true;
+            }
+
+            if (Input.GetMouseButtonUp(i))
+            {
+                inputEvents.Add(new InputEvent
+                {
+                    type = InputEventType.MouseUp,
+                    mouseButton = i,
+                    MousePosition = Input.mousePosition,
+                    time = Time.time - recordStartTime
+                });
+                hasNewEvent = true;
+            }
+        }
+
+        // 마우스 드래그 기록
+        if (Input.GetMouseButton(0))
+        {
+            inputEvents.Add(new InputEvent
+            {
+                type = InputEventType.MouseDrag,
+                mouseButton = 0,
+                MousePosition = Input.mousePosition,
+                time = Time.time - recordStartTime
+            });
+            hasNewEvent = true;
+        }
+
+        // 이벤트가 추가된 경우에만 저장
+        if (hasNewEvent)
+        {
+            SaveInputEvents();
+        }
+    }
+
+    private void ReplayInputs()
+    {
+        if (replayIndex >= inputEvents.Count)
+        {
+            if (isReplaying)
+            {
+                isReplaying = false;
+                Debug.Log("입력 재생 완료");
+            }
+
+            return;
+        }
+
+        float elapsed = Time.time - recordStartTime;
+        while (replayIndex < inputEvents.Count && inputEvents[replayIndex].time <= elapsed)
+        {
+            var e = inputEvents[replayIndex];
+            switch (e.type)
+            {
+                case InputEventType.MouseDown:
+                    OnReplayMouseDown?.Invoke(e.mouseButton, new Vector3(e.mouseX, e.mouseY, e.mouseZ));
+                    Debug.Log($"재생: 마우스 버튼 {e.mouseButton} 다운 ({e.MousePosition})");
+                    break;
+                case InputEventType.MouseUp:
+                    OnReplayMouseUp?.Invoke(e.mouseButton, new Vector3(e.mouseX, e.mouseY, e.mouseZ));
+                    Debug.Log($"재생: 마우스 버튼 {e.mouseButton} 업 ({e.MousePosition})");
+                    break;
+                case InputEventType.MouseDrag:
+                    OnReplayMouseDrag?.Invoke(e.mouseButton, new Vector3(e.mouseX, e.mouseY, e.mouseZ));
+                    break;
+                case InputEventType.KeyDown:
+                    OnReplayKeyDown?.Invoke(e.keyCode);
+                    Debug.Log($"재생: 키 다운 {e.keyCode}");
+                    break;
+                case InputEventType.KeyUp:
+                    OnReplayKeyUp?.Invoke(e.keyCode);
+                    Debug.Log($"재생: 키 업 {e.keyCode}");
+                    break;
+            }
+
+            replayIndex++;
+        }
+    }
+
+    private void LoadInputEvents()
+    {
+        if (File.Exists(inputRecordPath))
+        {
+            try
+            {
+                var json = File.ReadAllText(inputRecordPath, Encoding.UTF8);
+                inputEvents = JsonConvert.DeserializeObject<List<InputEvent>>(json) ?? new List<InputEvent>();
+                recordStartTime = Time.time;
+                replayIndex = 0;
+                Debug.Log($"Input 기록 로드됨: {inputRecordPath} (총 {inputEvents.Count}개 이벤트)");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"입력 기록 로드 실패: {e.Message}");
+                inputEvents = new List<InputEvent>();
+            }
+        }
+    }
+
+    private void SaveInputEvents()
+    {
+        try
+        {
+            var json = JsonConvert.SerializeObject(inputEvents, Formatting.Indented);
+            File.WriteAllText(inputRecordPath, json, Encoding.UTF8);
+            Debug.Log($"Input 기록 저장됨: {inputRecordPath} (총 {inputEvents.Count}개 이벤트)");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"입력 기록 저장 실패: {e.Message}");
+        }
+    }
+
 
     #region Spawn Building Mode
 
@@ -327,5 +614,62 @@ public class TestManager : MonoBehaviour
     }
 
     #endregion
+
+    private void OnApplicationQuit()
+    {
+        if (recordInput && inputEvents.Count > 0)
+        {
+            SaveInputEvents();
+            Debug.Log("애플리케이션 종료 시 입력 기록 자동 저장됨");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        OnReplayKeyDown -= HandleReplayKeyDown;
+        OnReplayKeyUp -= HandleReplayKeyUp;
+        OnReplayMouseDown -= HandleReplayMouseDown;
+        OnReplayMouseUp -= HandleReplayMouseUp;
+        OnReplayMouseDrag -= HandleReplayMouseDrag;
+    }
 }
 #endif
+
+public enum InputEventType
+{
+    KeyDown,
+    KeyUp,
+    MouseDown,
+    MouseUp,
+    MouseDrag
+}
+
+[Serializable]
+public class InputEvent
+{
+    public InputEventType type;
+    public KeyCode keyCode;
+    public int mouseButton;
+    public float mouseX;
+    public float mouseY;
+    public float mouseZ;
+    public float time;
+
+    [JsonIgnore]
+    public Vector3 MousePosition
+    {
+        get => new Vector3(mouseX, mouseY, mouseZ);
+        set
+        {
+            mouseX = value.x;
+            mouseY = value.y;
+            mouseZ = value.z;
+        }
+    }
+}
+
+// 클릭 가능한 오브젝트를 위한 인터페이스 (필요한 경우 사용)
+public interface IClickable
+{
+    void OnClick();
+}

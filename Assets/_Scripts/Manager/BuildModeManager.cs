@@ -55,6 +55,7 @@ public class BuildModeManager : MonoBehaviour
 
     private void Update()
     {
+        if (_onReplayMode) return;
         if (IsBuildMode)
         {
             var pointerPosition = _draggingBuilding.OnDrag(Input.mousePosition);
@@ -214,4 +215,63 @@ public class BuildModeManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero, Mathf.Infinity, _spawnerLayerMask);
         return hit.collider ? hit.collider.GetComponentInParent<Spawner>() : null;
     }
+
+#if UNITY_EDITOR
+    private bool _onReplayMode = false;
+
+    public void Update(InputEventType eventType, Vector2 position)
+    {
+        _onReplayMode = true;
+        // 마우스 다운 시 BuildingCard의 OnPointerDown 호출
+        if (eventType == InputEventType.MouseDown)
+        {
+            var pointerData = new PointerEventData(EventSystem.current) { position = position };
+            var results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointerData, results);
+            foreach (var result in results)
+            {
+                var card = result.gameObject.GetComponentInParent<BuildingCard>();
+                if (card != null)
+                {
+                    card.OnPointerDown(pointerData);
+                    break;
+                }
+            }
+        }
+
+        if (IsBuildMode)
+        {
+            var pointerPosition = _draggingBuilding.OnDrag(position);
+            if (!Replay(position))
+            {
+                OnDragging(pointerPosition);
+            }
+            else
+            {
+                OnDragging(new Vector2(99999, 99999));
+            }
+
+            if (eventType == InputEventType.MouseUp)
+                DragEnd();
+        }
+        else if (eventType == InputEventType.MouseUp)
+        {
+            HandleTouch();
+        }
+    }
+
+    private bool Replay(Vector2 screenPosition)
+    {
+        var pointerData = new PointerEventData(EventSystem.current) { position = screenPosition };
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+        foreach (var result in results)
+        {
+            if (result.gameObject.GetComponentInParent<BuildingCard>())
+                return true;
+        }
+
+        return false;
+    }
+#endif
 }
