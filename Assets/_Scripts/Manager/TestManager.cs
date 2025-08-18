@@ -26,8 +26,9 @@ using UnityEditor; // 추가
     "\nDownArrow : Time Scale - 1" +
     "\nRightArrow, LeftArrow : Time Scale = 1")]
 [InfoBox("입력 기록/재생:\n" +
-    "- recordInput: 입력 기록 시작\n" +
-    "- autoReplayOnStart: 다음 런타임 시 자동 재생")]
+    "- onRecord: 입력 기록 시작\n" +
+    "- onReplay: 다음 런타임 시 자동 재생\n" +
+    "- 두개 모두 true면 onRecord 무시")]
 public class TestManager : MonoBehaviour
 {
     [Serializable]
@@ -105,10 +106,10 @@ public class TestManager : MonoBehaviour
 
     [SerializeField] private string fileName = "input_record";
 
-    [SerializeField] private bool recordInput = false;
+    [SerializeField] private bool onRecord = false;
 
     private bool replayInput = false;
-    [SerializeField] private bool autoReplayOnStart = true;
+    [SerializeField] private bool onReplay = true;
 
     // 입력 기록/재생 관련 변수
     private List<InputEvent> inputEvents = new List<InputEvent>();
@@ -150,19 +151,15 @@ public class TestManager : MonoBehaviour
 
         RegisterReplayEventHandlers();
 
-        if (autoReplayOnStart)
+        if (onReplay)
         {
             LoadInputEvents();
-            if (autoReplayOnStart)
-            {
-                recordInput = false;
-                replayInput = true;
-                isReplaying = true;
-                Debug.Log($"입력 기록 자동 재생 시작 (총 {inputEvents.Count}개 이벤트)");
-            }
+            onRecord = false;
+            replayInput = true;
+            isReplaying = true;
         }
         // recordInput이 true일 때 파일이 이미 있으면 덮어쓸지 물어봄
-        else if (recordInput && File.Exists(inputRecordPath))
+        else if (onRecord && File.Exists(inputRecordPath))
         {
             bool overwrite = EditorUtility.DisplayDialog(
                 "입력 기록 파일 덮어쓰기",
@@ -177,7 +174,7 @@ public class TestManager : MonoBehaviour
             }
             else
             {
-                recordInput = false;
+                onRecord = false;
                 Debug.Log("입력 기록을 시작하지 않습니다.");
             }
         }
@@ -289,7 +286,7 @@ public class TestManager : MonoBehaviour
 
     private void Update()
     {
-        if (recordInput)
+        if (onRecord)
             RecordInputs();
 
         if (replayInput && inputEvents.Count > 0)
@@ -589,7 +586,7 @@ public class TestManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if (recordInput && inputEvents.Count > 0)
+        if (onRecord && inputEvents.Count > 0)
         {
             SaveInputEvents();
             // 파일이 즉시 디스크에 기록되도록 Flush 처리
