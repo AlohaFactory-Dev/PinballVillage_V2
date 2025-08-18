@@ -314,7 +314,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: fileName
-      value: CPITEST1
+      value: Test1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: recordInput
@@ -330,7 +330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: autoReplayOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: testActions.Array.size
@@ -358,11 +358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[0]
-      value: House_3
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[1]

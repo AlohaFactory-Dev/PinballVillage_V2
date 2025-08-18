@@ -100,7 +100,9 @@ public class TestManager : MonoBehaviour
     [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
-    private string fileName = "input_record";
+    private string inputRecordFilePath = "Assets/CPIAction/Aiden";
+
+    [SerializeField] private string fileName = "input_record";
 
     [SerializeField] private bool recordInput = false;
 
@@ -111,7 +113,7 @@ public class TestManager : MonoBehaviour
     private List<InputEvent> inputEvents = new List<InputEvent>();
     private float recordStartTime;
     private int replayIndex = 0;
-    private string inputRecordPath => Path.Combine(Application.dataPath, fileName + ".json");
+    private string inputRecordPath => Path.Combine(inputRecordFilePath, fileName + ".json");
     private bool isReplaying = false;
 
     // 정적 프로퍼티
@@ -129,17 +131,6 @@ public class TestManager : MonoBehaviour
 
     private void Start()
     {
-        if (recordInput)
-        {
-            Debug.Log("입력 기록 시작");
-            inputEvents.Clear();
-            recordStartTime = Time.time;
-            if (File.Exists(inputRecordPath))
-            {
-                File.Delete(inputRecordPath);
-            }
-        }
-
         InitializeSettings();
         InitializeReplaySystem();
         CPIUIOnOff();
@@ -163,6 +154,7 @@ public class TestManager : MonoBehaviour
             LoadInputEvents();
             if (autoReplayOnStart)
             {
+                recordInput = false;
                 replayInput = true;
                 isReplaying = true;
                 Debug.Log($"입력 기록 자동 재생 시작 (총 {inputEvents.Count}개 이벤트)");
