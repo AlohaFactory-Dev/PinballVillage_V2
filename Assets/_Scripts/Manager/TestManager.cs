@@ -106,7 +106,6 @@ public class TestManager : MonoBehaviour
 
     private bool replayInput = false;
     [SerializeField] private bool autoReplayOnStart = true;
-    [SerializeField] private bool showReplayStatus = true;
 
     // 입력 기록/재생 관련 변수
     private List<InputEvent> inputEvents = new List<InputEvent>();
