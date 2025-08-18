@@ -164,7 +164,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.alohacorp.aihdemo
+    Android: kr.co.alohacorp.pinballvillage
     Standalone: com.Aloha.Coconut
     iPhone: kr.co.alohacorp.alohatestapp
   buildNumber:

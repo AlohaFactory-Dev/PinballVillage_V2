@@ -22,6 +22,7 @@ public class GoldText : MonoBehaviour
     [SerializeField] private GoldTextType goldTextType = GoldTextType.Second;
     private int _lastGoldValue = 0;
     private Tween _goldTween;
+    private Tween _goldPerSecondTween; // 추가
     [SerializeField] private float goldTextTweenDuration = 0.1f; // 애니메이션 지속 시간
 
     [SerializeField] private int decimalPlaces = 2; // Inspector에서 소수점 자리수 조절
@@ -77,13 +78,20 @@ public class GoldText : MonoBehaviour
 
     private void UpdateGoldPerSecondText(float value)
     {
-        string format = $"F{decimalPlaces}";
-        if (goldTextType == GoldTextType.Minute)
-        {
-            goldPerSecondText.text = $"{value.ToString(format)}/m";
-            return;
-        }
+        _goldPerSecondTween?.Kill();
+        float startValue = 0f;
+        if (float.TryParse(goldPerSecondText.text.Replace("/s", "").Replace("/m", ""), out var parsed))
+            startValue = parsed;
 
-        goldPerSecondText.text = $"{value.ToString(format)}/s";
+        _goldPerSecondTween = DOTween.To(() => startValue, x =>
+            {
+                string format = $"F{decimalPlaces}";
+                if (goldTextType == GoldTextType.Minute)
+                    goldPerSecondText.text = $"{x.ToString(format)}/m";
+                else
+                    goldPerSecondText.text = $"{x.ToString(format)}/s";
+            }, value, goldTextTweenDuration)
+            .SetEase(Ease.OutQuad)
+            .Play();
     }
 }
