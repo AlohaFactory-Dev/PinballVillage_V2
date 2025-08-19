@@ -28,6 +28,7 @@ public class StageUI : MonoBehaviour
     [SerializeField] private BarGauge stagePercentGauge;
     [SerializeField] private RectTransform conditionRect;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private float resultPanelDelay = 1f;
     private BuildingCardContainer _buildingCardContainer;
 
     public void Start()
@@ -53,6 +54,12 @@ public class StageUI : MonoBehaviour
 
     public void OnStageResult(OwnerType owner)
     {
+        StartCoroutine(StageResultCo(owner));
+    }
+
+    IEnumerator StageResultCo(OwnerType owner)
+    {
+        yield return new WaitForSecondsRealtime(resultPanelDelay);
         if (owner == OwnerType.Player)
         {
             winText.SetActive(true);
