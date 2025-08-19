@@ -375,7 +375,6 @@ public class TestManager : MonoBehaviour
             SystemUI.ShowToastMessage($"Time Scale: {Time.timeScale}");
         }
 
-        // 키패드 1~9 입력 시 카메라 이동
         for (int i = 0; i < cameraNomalizedPathPositions.Length && i < 9; i++)
         {
             if (Input.GetKeyDown(KeyCode.Keypad1 + i))
