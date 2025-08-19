@@ -1,5 +1,5 @@
 villagerType,ownerType,attackPower,moveSpeed,id,attackObjectId,values
 Normal,Player,5,30,Villager_Normal,-99999,[-99999;-99999;-99999;-99999;-99999]
-Archer,Player,5,30,Villager_Archer,Arrow,[2;1;-99999;-99999;-99999]
+Archer,Player,5,30,Villager_Archer,Arrow,[3;1;-99999;-99999;-99999]
 Lord,Player,5,30,Villager_Lord,-99999,[-99999;-99999;-99999;-99999;-99999]
 Normal,Enemy,5,30,Enemy_Villager_Normal,-99999,[-99999;-99999;-99999;-99999;-99999]

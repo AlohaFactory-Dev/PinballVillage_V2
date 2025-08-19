@@ -41,12 +41,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 20c75515ea9660a449fe8086bcc72d4f
-    m_Address: ArrowTower_2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Building
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e2e082111dda6349bf509b4012f17ef
     m_Address: Castle_1
     m_ReadOnly: 0
@@ -97,12 +91,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b9de6b1f4b65334aa795b1003624d23
     m_Address: Tree
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7bbc3481fbece6a4ca0bd304ffaf0ee8
-    m_Address: ArrowTower_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
