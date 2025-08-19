@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4623096236094557420}
   - component: {fileID: 6286901692166678944}
   - component: {fileID: 7900330062785197987}
-  - component: {fileID: 5578290456053805869}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -67,10 +66,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC7A5\uCC29"
+  m_text: '[MISSING TEXT]_Popup/EquipmentInfo/Button/Equip'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6284194e46ea02849855239b0279835a, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e5f205fe8dd278e43898ca4ebae78339, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
+  m_sharedMaterial: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -94,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 18
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -157,19 +156,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5578290456053805869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9056460251801361527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d0fa3b310df4144ad2e1479fd149b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: Popup/EquipmentInfo/Button/Equip
-  fontType: 0
-  parameters: []
-  _text: {fileID: 6286901692166678944}
