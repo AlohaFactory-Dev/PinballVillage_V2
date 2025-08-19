@@ -128,6 +128,11 @@ public class BuildingPoolManager
 
     public BuildingTable RefreshDraw(BuildingTable table)
     {
+        if (TestManager.OnSettingBuildingCardMode)
+        {
+            return TestManager.GetSettingBuildingTable();
+        }
+
         var entry1 = _poolEntries.Find(e => e.Table.id == table.id);
         if (entry1.IndividualDrawCount > 0)
             entry1.IndividualDrawCount--; // 개별 DrawCount 초기화
