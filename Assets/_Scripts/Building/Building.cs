@@ -192,6 +192,11 @@ public abstract class Building : MonoBehaviour
             _buildingManager.RemoveBuilding(this);
         }
 
+        if (GroupType == BuildingGroupType.Castle)
+        {
+            _buildingManager.RemoveCastle(this);
+        }
+
         if (Table.triggerTiming != TriggerTiming.None)
         {
             BuildingFunction.DestroyAction();
@@ -213,6 +218,10 @@ public abstract class Building : MonoBehaviour
     public void Restore()
     {
         Init(Table, Spawner, false);
+        if (GroupType == BuildingGroupType.Castle)
+        {
+            _buildingManager.RestoreCastle(this);
+        }
     }
 
     public void RemoveBuilding()

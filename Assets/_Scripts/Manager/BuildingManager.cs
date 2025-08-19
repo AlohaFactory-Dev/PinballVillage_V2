@@ -90,33 +90,16 @@ public class BuildingManager
         return building;
     }
 
-    public void RemoveBuilding(Building building, bool isLevelUp = false)
+    public void RemoveBuilding(Building building)
     {
         // 빌딩 제거 로직
         if (building.OwnerType == OwnerType.Player && _playerBuildings.ContainsKey(building.Table.group))
         {
             _playerBuildings[building.Table.group].Remove(building);
-            if (building.Table.group == BuildingGroupType.Castle)
-            {
-                PlayerCastles.Remove(building as Castle);
-                if (PlayerCastles.Count == 0 && !isLevelUp)
-                {
-                    StageContainer.Get<StageManager>().StageResult(OwnerType.Enemy);
-                }
-            }
         }
         else if (building.OwnerType == OwnerType.Enemy && _enemyBuildings.ContainsKey(building.Table.group))
         {
             _enemyBuildings[building.Table.group].Remove(building);
-
-            if (building.Table.group == BuildingGroupType.Castle)
-            {
-                EnemyCastles.Remove(building as EnemyCastle);
-                if (EnemyCastles.Count == 0)
-                {
-                    StageContainer.Get<StageManager>().StageResult(OwnerType.Player);
-                }
-            }
         }
         else if (building.OwnerType == OwnerType.Neutral && _neutralBuildings.ContainsKey(building.Table.group))
         {
@@ -125,6 +108,75 @@ public class BuildingManager
         else
         {
             Debug.LogWarning($"Building with ID '{building.Table.id}' not found in manager.");
+        }
+
+        _allBuildings.Remove(building);
+        building.RemoveBuilding();
+    }
+
+    public void RestoreCastle(Building building)
+    {
+        if (building.OwnerType == OwnerType.Player)
+        {
+            if (!PlayerCastles.Contains(building as Castle))
+            {
+                PlayerCastles.Add(building as Castle);
+            }
+
+            if (!_playerBuildings.ContainsKey(BuildingGroupType.Castle))
+            {
+                _playerBuildings[BuildingGroupType.Castle] = new List<Building>();
+            }
+
+            _playerBuildings[BuildingGroupType.Castle].Add(building);
+        }
+        else if (building.OwnerType == OwnerType.Enemy)
+        {
+            if (!EnemyCastles.Contains(building as EnemyCastle))
+            {
+                EnemyCastles.Add(building as EnemyCastle);
+            }
+
+            if (!_enemyBuildings.ContainsKey(BuildingGroupType.Castle))
+            {
+                _enemyBuildings[BuildingGroupType.Castle] = new List<Building>();
+            }
+
+            _enemyBuildings[BuildingGroupType.Castle].Add(building);
+        }
+        else
+        {
+            Debug.LogWarning($"Building with ID '{building.Table.id}' is not a castle.");
+            return;
+        }
+
+        _allBuildings.Add(building);
+    }
+
+    public void RemoveCastle(Building building)
+    {
+        if (building.OwnerType == OwnerType.Player)
+        {
+            PlayerCastles.Remove(building as Castle);
+            _playerBuildings[BuildingGroupType.Castle].Remove(building);
+            if (PlayerCastles.Count == 0)
+            {
+                StageContainer.Get<StageManager>().StageResult(OwnerType.Enemy);
+            }
+        }
+        else if (building.OwnerType == OwnerType.Enemy)
+        {
+            EnemyCastles.Remove(building as EnemyCastle);
+            _enemyBuildings[BuildingGroupType.Castle].Remove(building);
+            if (EnemyCastles.Count == 0)
+            {
+                StageContainer.Get<StageManager>().StageResult(OwnerType.Player);
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Building with ID '{building.Table.id}' is not a castle.");
+            return;
         }
 
         _allBuildings.Remove(building);
@@ -161,7 +213,7 @@ public class BuildingManager
     public Building LevelUpBuilding(Spawner spawner)
     {
         var buildingTable = spawner.Building.Table;
-        RemoveBuilding(spawner.Building, true);
+        RemoveBuilding(spawner.Building);
         var nextBuildingTable = TableListContainer.Get<BuildingTableList>().GetBuildingTableByGroup(buildingTable.levelUpTargetGroup, buildingTable.level + 1);
         return SpawnBuilding(nextBuildingTable.id, spawner, true);
     }
