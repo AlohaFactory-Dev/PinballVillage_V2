@@ -84,8 +84,8 @@ namespace Stage.Building
 
         private void HandleOwnerChange(IChanger changer)
         {
-            // 자연스킵 기능: 적/플레이어 땅 즉시 반대 땅으로 전환
             if (TestManager.OnNaturalSkip)
+                // 자연스킵 기능: 적/플레이어 땅 즉시 반대 땅으로 전환
             {
                 if (_currentOwner == OwnerType.Enemy && changer.OwnerType == OwnerType.Player)
                 {

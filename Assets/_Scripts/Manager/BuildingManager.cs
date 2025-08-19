@@ -180,7 +180,6 @@ public class BuildingManager
         }
 
         _allBuildings.Remove(building);
-        building.RemoveBuilding();
     }
 
     private void RecoverBuildHp()
