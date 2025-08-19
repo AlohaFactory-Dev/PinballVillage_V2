@@ -4,7 +4,7 @@ using UnityEngine;
 public class BuildingHp : MonoBehaviour
 {
     [SerializeField] private BarGauge hpBar;
-
+    private Animator _animator;
     public bool HasBar => hpBar != null;
     private int _defaultMaxHp;
     private int _currentHp;
@@ -15,13 +15,14 @@ public class BuildingHp : MonoBehaviour
         _currentHp = maxHp;
         hpBar.Init(maxHp, null, maxHp);
         hpBar.Off();
+        _animator = GetComponentInChildren<Animator>();
     }
 
 
     public bool TakeDamage(int amount)
     {
         _currentHp -= amount;
-
+        _animator.SetTrigger("Damage");
         hpBar.SetValue(_currentHp);
         if (!hpBar.gameObject.activeSelf)
         {
