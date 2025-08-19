@@ -384,7 +384,21 @@ public class TestManager : MonoBehaviour
                 var cameraController = StageContainer.Get<CameraController>();
                 if (cameraController != null)
                 {
-                    cameraController.MoveToPathPosition(cameraNomalizedPathPositions[i], cameraSpeed, cameraMoveCurve); // AnimationCurve 전달
+                    cameraController.MoveToPathPosition(cameraNomalizedPathPositions[i], cameraSpeed, cameraMoveCurve);
+
+                    // 카메라 이동 액션 기록
+                    if (onRecord)
+                    {
+                        inputEvents.Add(new InputEvent
+                        {
+                            type = InputEventType.CameraMove,
+                            cameraIndex = i,
+                            cameraPathPosition = cameraNomalizedPathPositions[i],
+                            cameraSpeed = cameraSpeed,
+                            time = Time.time - recordStartTime
+                            // AnimationCurve는 직렬화가 제한적이므로 필요시 별도 처리
+                        });
+                    }
                 }
             }
         }
@@ -479,6 +493,15 @@ public class TestManager : MonoBehaviour
                 case InputEventType.KeyUp:
                     OnReplayKeyUp?.Invoke(e.keyCode);
                     Debug.Log($"재생: 키 업 {e.keyCode}");
+                    break;
+                case InputEventType.CameraMove:
+                    var cameraController = StageContainer.Get<CameraController>();
+                    if (cameraController != null)
+                    {
+                        cameraController.MoveToPathPosition(e.cameraPathPosition, e.cameraSpeed, cameraMoveCurve);
+                        Debug.Log($"재생: 카메라 이동 인덱스 {e.cameraIndex}, 위치 {e.cameraPathPosition}, 속도 {e.cameraSpeed}");
+                    }
+
                     break;
             }
 
@@ -656,7 +679,8 @@ public enum InputEventType
     KeyUp,
     MouseDown,
     MouseUp,
-    MouseDrag
+    MouseDrag,
+    CameraMove // 카메라 이동 이벤트 타입 추가
 }
 
 [Serializable]
@@ -669,6 +693,11 @@ public class InputEvent
     public float mouseY;
     public float mouseZ;
     public float time;
+
+    // CameraMove 관련 데이터
+    public int cameraIndex;
+    public float cameraPathPosition;
+    public float cameraSpeed;
 
     [JsonIgnore]
     public Vector3 MousePosition
