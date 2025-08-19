@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Cinemachine;
@@ -22,6 +23,8 @@ public class CameraController : MonoBehaviour
 
     private int _lastScreenWidth;
     private int _lastScreenHeight;
+
+    private Coroutine _moveCoroutine;
 
     private void Start()
     {
@@ -119,6 +122,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera zoomInVirtualCamera;
 
     bool _isZooming = false;
+
     public bool ZoomIn()
     {
         Transform target = StageContainer.Get<VillagerManager>().LordCharacter.transform;
@@ -137,5 +141,43 @@ public class CameraController : MonoBehaviour
 
         return _isZooming;
     }
+
 #endif
+
+    // 외부에서 경로 위치를 직접 지정할 수 있도록 public 메서드 추가
+    public void SetPathPosition(float normalizedPosition)
+    {
+        _currentPathPosition = Mathf.Clamp(normalizedPosition, _minPathPosition, _maxPathPosition);
+    }
+
+
+    // Coroutine을 사용하여 스무스하게 이동 (AnimationCurve 지원)
+    public void MoveToPathPosition(float normalizedPosition, float speed, AnimationCurve curve)
+    {
+        normalizedPosition = Mathf.Clamp(normalizedPosition, _minPathPosition, _maxPathPosition);
+        if (_moveCoroutine != null)
+            StopCoroutine(_moveCoroutine);
+        _moveCoroutine = StartCoroutine(MovePathCoroutine(normalizedPosition, speed, curve));
+    }
+
+    private IEnumerator MovePathCoroutine(float targetPosition, float speed, AnimationCurve curve)
+    {
+        float startPosition = _currentPathPosition;
+        float duration = Mathf.Abs(targetPosition - startPosition) / Mathf.Max(speed, 0.0001f);
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            float curveT = curve != null ? curve.Evaluate(t) : t;
+            _currentPathPosition = Mathf.Lerp(startPosition, targetPosition, curveT);
+            _currentPathPosition = Mathf.Clamp(_currentPathPosition, _minPathPosition, _maxPathPosition);
+            _trackedDolly.m_PathPosition = _currentPathPosition;
+            yield return null;
+        }
+
+        _currentPathPosition = targetPosition;
+        _trackedDolly.m_PathPosition = _currentPathPosition;
+        _moveCoroutine = null;
+    }
 }

@@ -105,6 +105,15 @@ public class TestManager : MonoBehaviour
     private bool onNaturalSkip = false;
 
     [Space]
+    [InfoBox("카메라 컨트롤러")]
+    [SerializeField]
+    float[] cameraNomalizedPathPositions = { 0.5f, 0.75f, 1f };
+
+    [SerializeField] float cameraSpeed = 0.5f;
+
+    [SerializeField] AnimationCurve cameraMoveCurve = AnimationCurve.EaseInOut(0, 0, 1, 1); // 추가
+
+    [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
     private string inputRecordFilePath = "Assets/CPIAction/Aiden";
@@ -366,6 +375,18 @@ public class TestManager : MonoBehaviour
         {
             Time.timeScale = 1f;
             SystemUI.ShowToastMessage($"Time Scale: {Time.timeScale}");
+        }
+
+        for (int i = 0; i < cameraNomalizedPathPositions.Length && i < 9; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Keypad1 + i))
+            {
+                var cameraController = StageContainer.Get<CameraController>();
+                if (cameraController != null)
+                {
+                    cameraController.MoveToPathPosition(cameraNomalizedPathPositions[i], cameraSpeed, cameraMoveCurve); // AnimationCurve 전달
+                }
+            }
         }
     }
 
