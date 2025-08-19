@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 using Stage.Building;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 
 
@@ -35,7 +36,6 @@ public class Spawner : MonoBehaviour
     [Inject] private SpawnerGridManager _spawnerGridManager;
     [Inject] private VillagerManager _villagerManager;
     [SerializeField] private OwnerType defaultOwnerType;
-
     [SerializeField] private SpawnerOwnerChangerController ownerChangerController;
     [SerializeField] private string defaultBuildingId;
     [SerializeField] private GameObject buildAbleHighlight;
@@ -89,6 +89,15 @@ public class Spawner : MonoBehaviour
     public void SetBuilding(Building building)
     {
         _building = building;
+        if (_building.GroupType == BuildingGroupType.Castle)
+        {
+            GetComponent<SortingGroup>().sortingOrder = 1;
+        }
+        else
+        {
+            GetComponent<SortingGroup>().sortingOrder = 0;
+        }
+
         _spawnerPassiveContainer.ActivePassives();
     }
 

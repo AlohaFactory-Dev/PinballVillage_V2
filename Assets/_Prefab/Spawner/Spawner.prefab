@@ -826,6 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4226172620939605389}
   - component: {fileID: 8199236446200734977}
+  - component: {fileID: 9197297627290422885}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -876,6 +877,18 @@ MonoBehaviour:
   spawnPercent: 0
   autoBuildingId: 
   defaultDirection: 0
+--- !u!210 &9197297627290422885
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170232967014341004}
+  m_Enabled: 1
+  m_SortingLayerID: -1653436213
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8897988319710020127
 GameObject:
   m_ObjectHideFlags: 0

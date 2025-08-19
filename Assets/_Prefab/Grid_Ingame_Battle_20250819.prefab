@@ -416,6 +416,26 @@ PrefabInstance:
       propertyPath: defaultBuildingId
       value: EnemyHouse
       objectReference: {fileID: 0}
+    - target: {fileID: 1597846400653234359, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597846400653234359, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597846400653234359, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597846400653234359, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1597846400653234359, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1608164324408443414, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1674,6 +1694,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5984290565423856218, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992474951778888543, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5995011304813264630, guid: 6e0ee1c3869cb994d8e391be8decdcba, type: 3}
