@@ -137,7 +137,6 @@ public class BuildingInfoPopup : UISlice, IDimClosable
 
     private void Init()
     {
-        //Test
         if (_isInitialized) return;
         _isInitialized = true;
         _camera = Camera.main;
