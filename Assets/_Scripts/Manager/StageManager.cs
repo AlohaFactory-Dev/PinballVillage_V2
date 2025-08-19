@@ -22,7 +22,7 @@ public class StageManager : MonoBehaviour
 
     public void StageResult(OwnerType winner)
     {
-        Time.timeScale = 0f; // 게임 일시 정지
+        // Time.timeScale = 0f; // 게임 일시 정지
         StageContainer.Get<StageUI>().OnStageResult(winner);
     }
 }
