@@ -111,6 +111,8 @@ public class TestManager : MonoBehaviour
 
     [SerializeField] float cameraSpeed = 0.5f;
 
+    [SerializeField] AnimationCurve cameraMoveCurve = AnimationCurve.EaseInOut(0, 0, 1, 1); // 추가
+
     [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
@@ -382,7 +384,7 @@ public class TestManager : MonoBehaviour
                 var cameraController = StageContainer.Get<CameraController>();
                 if (cameraController != null)
                 {
-                    cameraController.MoveToPathPosition(cameraNomalizedPathPositions[i], cameraSpeed);
+                    cameraController.MoveToPathPosition(cameraNomalizedPathPositions[i], cameraSpeed, cameraMoveCurve); // AnimationCurve 전달
                 }
             }
         }
