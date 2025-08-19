@@ -81,7 +81,6 @@ GameObject:
   - component: {fileID: 5468650722348573732}
   - component: {fileID: 5572443049511804486}
   - component: {fileID: 9085602673225891463}
-  - component: {fileID: 976068387951774825}
   m_Layer: 5
   m_Name: HP_Gauge
   m_TagString: Untagged
@@ -140,27 +139,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   value: 1
   maxValue: 1
---- !u!95 &976068387951774825
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4863486903833678163}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82be49b81cf701a41bec774c9ce2f961, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5020902784036047629
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4857103513837863771}
   - component: {fileID: 4665311770093390383}
-  - component: {fileID: 4245038131765557997}
   - component: {fileID: 4176810703762586327}
   - component: {fileID: 7094396444765625739}
   m_Layer: 5
@@ -210,29 +187,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5020902784036047629}
   m_CullTransparentMesh: 1
---- !u!114 &4245038131765557997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5020902784036047629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc1a40f0ab97134ea246022cf41546c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillImage: {fileID: 2956449848304568167}
-  fillText: {fileID: 718103648722360265}
-  duration: 0.2
-  curve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  value: 1
-  maxValue: 1
 --- !u!114 &4176810703762586327
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,25 +15,27 @@ public class BuildingHp : MonoBehaviour
         _currentHp = maxHp;
         hpBar.Init(maxHp, null, maxHp);
         hpBar.Off();
-        _animator = GetComponentInChildren<Animator>();
+        _animator = hpBar.GetComponentInChildren<Animator>();
     }
 
 
     public bool TakeDamage(int amount)
     {
         _currentHp -= amount;
-        _animator.SetTrigger("Damage");
         hpBar.SetValue(_currentHp);
         if (!hpBar.gameObject.activeSelf)
         {
             hpBar.On();
         }
 
+
         if (_currentHp <= 0)
         {
             _currentHp = 0;
             hpBar.Off();
         }
+
+        _animator.SetTrigger("Damage");
 
         return _currentHp <= 0;
     }
