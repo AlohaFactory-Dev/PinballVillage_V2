@@ -130,7 +130,7 @@ MonoBehaviour:
   howitzerHeight: 3
   jumpToCastleDuration: 1
   afterJumpDelay: 2
-  randomDirectionRange: 5
+  randomDirectionRange: 15
   bounceBoostSpeed: 20
   bounceBoostDuration: 1
 --- !u!210 &9211765421470398371
