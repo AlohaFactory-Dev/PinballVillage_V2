@@ -131,7 +131,7 @@ public class TestManager : MonoBehaviour
 
     [Inject] private BuildModeManager _buildModeManager; // BuildModeManager 참조 추가
 
-    private void Start()
+    private void Awake()
     {
         InitializeSettings();
         InitializeReplaySystem();
@@ -140,6 +140,7 @@ public class TestManager : MonoBehaviour
 
     private void InitializeSettings()
     {
+        cpiui.Init();
         _onSettingBuildingCardMode = onSettingBuildingCardMode;
         _onEnemyCollsionIgnore = onEnemyCollisionIgnore;
         SettingBuildingCardIds = settingBuildingCardIds;
