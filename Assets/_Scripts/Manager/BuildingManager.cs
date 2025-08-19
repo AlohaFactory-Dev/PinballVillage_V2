@@ -236,9 +236,9 @@ public class BuildingManager
 
     public void SelectedBuildingLevelUp(string id)
     {
-        var building = _playerBuildings.SelectMany(b => b.Value)
-            .FirstOrDefault(b => b.Table.id == id);
-        if (building != null && building.Table.level < building.Table.maxLevel)
+        var buildings = _playerBuildings.SelectMany(b => b.Value)
+            .Where(b => b.Table.id == id && b.Table.level < b.Table.maxLevel);
+        foreach (var building in buildings)
         {
             LevelUpBuilding(building.Spawner);
         }
