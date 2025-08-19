@@ -36,7 +36,7 @@ public class BuildingManager
             _allBuildings.Add(building);
             if (table.group == BuildingGroupType.DirectionSign)
             {
-                (building as DirectionSign)?.Init(table, spawner, (Direction)Random.Range(0, 4), isLevelUp);
+                (building as DirectionSign)?.Init(table, spawner, (Direction)3, isLevelUp);
             }
             else
             {
@@ -237,7 +237,8 @@ public class BuildingManager
     public void SelectedBuildingLevelUp(string id)
     {
         var buildings = _playerBuildings.SelectMany(b => b.Value)
-            .Where(b => b.Table.id == id && b.Table.level < b.Table.maxLevel);
+            .Where(b => b.Table.id == id && b.Table.level < b.Table.maxLevel)
+            .ToList();
         foreach (var building in buildings)
         {
             LevelUpBuilding(building.Spawner);
