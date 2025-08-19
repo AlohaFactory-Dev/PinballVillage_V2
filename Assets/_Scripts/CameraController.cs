@@ -150,23 +150,27 @@ public class CameraController : MonoBehaviour
         _currentPathPosition = Mathf.Clamp(normalizedPosition, _minPathPosition, _maxPathPosition);
     }
 
-    // Coroutine을 사용하여 스무스하게 이동
-    public void MoveToPathPosition(float normalizedPosition, float speed)
+
+    // Coroutine을 사용하여 스무스하게 이동 (AnimationCurve 지원)
+    public void MoveToPathPosition(float normalizedPosition, float speed, AnimationCurve curve)
     {
         normalizedPosition = Mathf.Clamp(normalizedPosition, _minPathPosition, _maxPathPosition);
         if (_moveCoroutine != null)
             StopCoroutine(_moveCoroutine);
-        _moveCoroutine = StartCoroutine(MovePathCoroutine(normalizedPosition, speed));
+        _moveCoroutine = StartCoroutine(MovePathCoroutine(normalizedPosition, speed, curve));
     }
 
-    private IEnumerator MovePathCoroutine(float targetPosition, float speed)
+    private IEnumerator MovePathCoroutine(float targetPosition, float speed, AnimationCurve curve)
     {
         float startPosition = _currentPathPosition;
-        float t = 0f;
-        while (Mathf.Abs(_currentPathPosition - targetPosition) > 0.001f)
+        float duration = Mathf.Abs(targetPosition - startPosition) / Mathf.Max(speed, 0.0001f);
+        float elapsed = 0f;
+        while (elapsed < duration)
         {
-            t += Time.deltaTime * speed;
-            _currentPathPosition = Mathf.Lerp(startPosition, targetPosition, t);
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            float curveT = curve != null ? curve.Evaluate(t) : t;
+            _currentPathPosition = Mathf.Lerp(startPosition, targetPosition, curveT);
             _currentPathPosition = Mathf.Clamp(_currentPathPosition, _minPathPosition, _maxPathPosition);
             _trackedDolly.m_PathPosition = _currentPathPosition;
             yield return null;
