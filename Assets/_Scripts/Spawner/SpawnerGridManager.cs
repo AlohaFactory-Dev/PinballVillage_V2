@@ -320,7 +320,7 @@ namespace Stage.Building
 
         public Spawner GetSpawner(Vector2Int gridPos)
         {
-            return IsValidArrayIndex(gridPos.x, gridPos.y) ? _spawnerGrid[gridPos.x, gridPos.y] : null;
+            return IsValidArrayIndex(gridPos.y, gridPos.x) ? _spawnerGrid[gridPos.y, gridPos.x] : null;
         }
 #endif
     }

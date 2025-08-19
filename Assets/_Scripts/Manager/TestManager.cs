@@ -512,7 +512,10 @@ public class TestManager : MonoBehaviour
                 buildingManager.RemoveBuilding(spawner.Building);
             }
 
-            spawner.ResetOwner(OwnerType.Player);
+            if (spawnBuilding.buildingId.Contains("Enemy"))
+                spawner.ResetOwner(OwnerType.Enemy);
+            else
+                spawner.ResetOwner(OwnerType.Player);
             buildingManager.SpawnBuilding(spawnBuilding.buildingId, spawner);
             yield return new WaitForSeconds(spawnInterval);
         }
