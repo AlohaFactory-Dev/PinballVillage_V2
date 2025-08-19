@@ -21,13 +21,13 @@ public abstract class Villager : MonoBehaviour, IChanger
     public VillagerMoveSystem VillagerMoveSystem => _villagerMoveSystem;
 
 
-    public void Init(Vector2 spawnPoint, VillagerTable table)
+    public void Init(Vector2 spawnPoint, VillagerTable table, float addedMoveSpeed)
     {
         Table = table;
         transform.position = spawnPoint;
         _recycleObject = GetComponent<RecycleObject>();
         _villagerMoveSystem = GetComponentInChildren<VillagerMoveSystem>();
-        _villagerMoveSystem.Init(this, table.moveSpeed);
+        _villagerMoveSystem.Init(this, table.moveSpeed + addedMoveSpeed);
     }
 
     public void Release()

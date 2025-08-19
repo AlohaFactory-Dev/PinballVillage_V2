@@ -25,9 +25,18 @@ public class VillagerManager
     {
         var table = TableListContainer.Get<VillagerTableList>().GetVillagerTable(villagerType, spawner.CurrentOwner);
         var villager = _factoryManager.VillagerFactory.GetVillager(table.id);
+        int addedMoveSpeed = 0;
+        if (spawner.Building.Table.level == 2)
+        {
+            addedMoveSpeed = 5;
+        }
+        else if (spawner.Building.Table.level == 3)
+        {
+            addedMoveSpeed = 10;
+        }
 
         var nearestSpawner = _spawnerGridManager.GetNearestEmptySpawner(spawner, spawner.CurrentOwner);
-        villager.Init(nearestSpawner.transform.position, table);
+        villager.Init(nearestSpawner.transform.position, table, addedMoveSpeed);
         if (spawner.CurrentOwner == OwnerType.Enemy)
         {
             _enemyVillagers.Add(villager);
