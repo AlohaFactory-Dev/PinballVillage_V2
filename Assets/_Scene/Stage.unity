@@ -473,7 +473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.size
-      value: 21
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[0]
@@ -481,23 +481,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[1]
-      value: Market_1
+      value: House_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[2]
-      value: WheatField_1
+      value: House_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[3]
-      value: WheatField_1
+      value: Market_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[4]
-      value: WheatField_1
+      value: Market_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[5]
-      value: Windmill_1
+      value: WheatField_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[6]
@@ -505,15 +505,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[7]
-      value: House_1
+      value: WheatField_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[8]
-      value: ArmsMarket
+      value: WheatField_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[9]
-      value: House_1
+      value: WheatField_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: testActions.Array.data[0].actionType
@@ -525,35 +525,91 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[10]
-      value: House_1
+      value: Windmill_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[11]
-      value: DirectionSign
+      value: WheatField_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[12]
-      value: ArrowTower_1
+      value: House_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[13]
-      value: ArrowTower_1
+      value: ArmsMarket
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[14]
-      value: ArrowTower_1
+      value: House_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[15]
-      value: ArrowTower_1
+      value: House_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[16]
-      value: ArcherTrainingCenter
+      value: Market_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[17]
-      value: 
+      value: DirectionSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[18]
+      value: ArrowTower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[19]
+      value: ArrowTower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[20]
+      value: Castle_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[21]
+      value: House_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[22]
+      value: House_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[23]
+      value: WheatField_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[24]
+      value: WheatField_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[25]
+      value: WheatField_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[26]
+      value: WheatField_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[27]
+      value: Windmill_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[28]
+      value: ArrowTower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[29]
+      value: DirectionSign
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[30]
+      value: ArrowTower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: settingBuildingCardIds.Array.data[31]
+      value: ArcherTrainingCenter
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: testActions.Array.data[0].executeAfterSeconds
