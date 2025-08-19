@@ -41,6 +41,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject buildAbleHighlight;
     [SerializeField] private GameObject buildDisableHighlight;
     [SerializeField] private Animator showRangeHighlight;
+    [SerializeField] private SortingGroup spanwerSortingGroup;
 
     [Header("적 자동 건물 생성 관련")]
     [FormerlySerializedAs("_autoSpawnTime")]
@@ -91,11 +92,11 @@ public class Spawner : MonoBehaviour
         _building = building;
         if (_building.GroupType == BuildingGroupType.Castle)
         {
-            GetComponent<SortingGroup>().sortingOrder = 1;
+            spanwerSortingGroup.sortingOrder = 2;
         }
         else
         {
-            GetComponent<SortingGroup>().sortingOrder = 0;
+            spanwerSortingGroup.sortingOrder = 0;
         }
 
         _spawnerPassiveContainer.ActivePassives();
