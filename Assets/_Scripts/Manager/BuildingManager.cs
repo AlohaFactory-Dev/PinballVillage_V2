@@ -36,7 +36,7 @@ public class BuildingManager
             _allBuildings.Add(building);
             if (table.group == BuildingGroupType.DirectionSign)
             {
-                (building as DirectionSign)?.Init(table, spawner, (Direction)Random.Range(0, 4), isLevelUp);
+                (building as DirectionSign)?.Init(table, spawner, (Direction)3, isLevelUp);
             }
             else
             {
