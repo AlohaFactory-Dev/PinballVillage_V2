@@ -991,6 +991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 3687555255019802542, guid: d344e3e9c6d7b9a4e9af8682595876e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5953532160901941554, guid: d344e3e9c6d7b9a4e9af8682595876e4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1241,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003384969699134778, guid: 70055cf6328cb934ba24af20eeea8572, type: 3}
       propertyPath: m_fontSize
-      value: 28
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6138827754641778113, guid: 70055cf6328cb934ba24af20eeea8572, type: 3}
       propertyPath: m_Pivot.x
@@ -1556,7 +1560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468650722348573732, guid: bb52b2759178af144b87299360e7a4aa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -168.5
+      value: -78
       objectReference: {fileID: 0}
     - target: {fileID: 5468650722348573732, guid: bb52b2759178af144b87299360e7a4aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
