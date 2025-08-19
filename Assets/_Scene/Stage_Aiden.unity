@@ -183,34 +183,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6929765062167540743, guid: 24aa85eb86a658d40943c29b3fd5fa8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -269,6 +241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336686834}
     m_Modifications:
+    - target: {fileID: 1007787377440378351, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
+      propertyPath: defaultBuildingId
+      value: WheatField_1
+      objectReference: {fileID: 0}
     - target: {fileID: 1136119213906966079, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
       propertyPath: m_Name
       value: Grid_Ingame_GoldAndBuild01_20250819
@@ -316,6 +292,22 @@ PrefabInstance:
     - target: {fileID: 2256759134087738851, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665785119883379110, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
+      propertyPath: defaultBuildingId
+      value: WheatField_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346049092276560487, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
+      propertyPath: defaultBuildingId
+      value: House_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028590574128014342, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
+      propertyPath: defaultBuildingId
+      value: WheatField_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880715993666694008, guid: b36bef5fe0bbc8c4e8c1dc990e19324c, type: 3}
+      propertyPath: defaultBuildingId
+      value: House_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -457,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: settingBuildingCardIds.Array.data[0]
