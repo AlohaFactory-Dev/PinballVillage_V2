@@ -35,6 +35,10 @@ public class VillagerManager
         else if (spawner.CurrentOwner == OwnerType.Player)
         {
             _playerVillagers.Add(villager);
+            if (VillagerType.Lord == villagerType)
+            {
+                LordCharacter = villager as LordCharacter;
+            }
         }
 
         return villager;

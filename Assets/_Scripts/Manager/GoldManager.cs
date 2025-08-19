@@ -1,6 +1,4 @@
-using Aloha.Coconut;
 using UniRx;
-using UnityEngine;
 using System.Collections.Generic;
 
 public class GoldManager
@@ -13,13 +11,13 @@ public class GoldManager
 
     // 골드 획득 기록 (tick, amount)
     private readonly Queue<(int tick, int amount)> _goldGainHistory = new();
-    private int _lastTick = 0;
     private int _lastGoldAmount = 0;
 
     private readonly ReactiveProperty<float> _goldPerSecond = new(0f);
     public IReadOnlyReactiveProperty<float> GoldPerSecond => _goldPerSecond;
     private readonly ReactiveProperty<float> _goldPerMinute = new(0f);
     public IReadOnlyReactiveProperty<float> GoldPerMinute => _goldPerMinute;
+    private bool _onSetGoldHistory = false;
 
     public GoldManager(StageGlobalClock stageGlobalClock)
     {
@@ -30,7 +28,6 @@ public class GoldManager
         AddRefreshTicket(initialRefreshTicket);
         stageGlobalClock.RegisterRepeatingTimer("refreshTicket", etcTableList.values[2], () => { AddRefreshTicket((int)etcTableList.values[3]); });
 
-        _lastTick = stageGlobalClock.CurrentTick.Value;
         _lastGoldAmount = _goldAmount.Value;
 
         // 매초 골드 획득량 계산
@@ -41,13 +38,13 @@ public class GoldManager
 
     private void OnTickChanged(int tick)
     {
+        if (_onSetGoldHistory) return;
         int gained = _goldAmount.Value - _lastGoldAmount;
         if (gained > 0)
         {
             _goldGainHistory.Enqueue((tick, gained));
         }
 
-        _lastTick = tick;
         _lastGoldAmount = _goldAmount.Value;
 
         // 60초(틱) 이내 기록만 유지
@@ -97,4 +94,16 @@ public class GoldManager
 
         return enough;
     }
+
+#if UNITY_EDITOR
+
+    public void SetGoldHistory(int goldAmount)
+    {
+        _lastGoldAmount = goldAmount;
+        _goldGainHistory.Clear();
+        _onSetGoldHistory = true;
+        _goldPerSecond.Value = goldAmount;
+        _goldPerMinute.Value = goldAmount;
+    }
+#endif
 }

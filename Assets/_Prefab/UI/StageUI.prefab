@@ -715,6 +715,7 @@ GameObject:
   - component: {fileID: 8025826485617077824}
   - component: {fileID: 1883224953336549272}
   - component: {fileID: 5876411808130206977}
+  - component: {fileID: 651023917494810359}
   m_Layer: 5
   m_Name: StageUI
   m_TagString: Untagged
@@ -825,6 +826,18 @@ MonoBehaviour:
   stagePercentGauge: {fileID: 4609034812374086825}
   conditionRect: {fileID: 177670879243664534}
   timerText: {fileID: 4437758723674633588}
+--- !u!225 &651023917494810359
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575671727436050422}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9166003267844434420
 GameObject:
   m_ObjectHideFlags: 0
