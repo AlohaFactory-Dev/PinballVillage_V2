@@ -100,6 +100,11 @@ public class TestManager : MonoBehaviour
     private int _goldHistoryIndex = 0;
 
     [Space]
+    [InfoBox("중립 스킵 설정")]
+    [SerializeField]
+    private bool onNaturalSkip = false;
+
+    [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
     private string inputRecordFilePath = "Assets/CPIAction/Aiden";
@@ -121,6 +126,7 @@ public class TestManager : MonoBehaviour
     // 정적 프로퍼티
     public static bool OnEnemyCollsionIgnore => _onEnemyCollsionIgnore;
     public static bool OnSettingBuildingCardMode => _onSettingBuildingCardMode;
+    public static bool OnNaturalSkip { get; private set; }
 
     // 재생 이벤트
     private event Action<int, Vector3> OnReplayMouseDown;
@@ -136,6 +142,8 @@ public class TestManager : MonoBehaviour
         InitializeSettings();
         InitializeReplaySystem();
         CPIUIOnOff();
+        // onNaturalSkip 인스펙터 값으로 static 프로퍼티 할당
+        OnNaturalSkip = onNaturalSkip;
     }
 
     private void InitializeSettings()
