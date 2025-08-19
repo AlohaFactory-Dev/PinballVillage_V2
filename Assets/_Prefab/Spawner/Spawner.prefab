@@ -518,9 +518,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4954853783829768448}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -1653436213
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_SortAtRoot: 0
 --- !u!1 &5050271674345253865
 GameObject:
@@ -577,7 +577,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_SortAtRoot: 0
 --- !u!1 &6484614935590301413
 GameObject:
@@ -775,6 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3216583430958883513}
   - component: {fileID: 6231343523236387744}
+  - component: {fileID: 6239799770603110521}
   m_Layer: 10
   m_Name: SpawnerChangerController
   m_TagString: Untagged
@@ -795,9 +796,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8983911296761208286}
   - {fileID: 2950757731272968427}
   - {fileID: 7569376737931001222}
+  - {fileID: 8983911296761208286}
   m_Father: {fileID: 4226172620939605389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6231343523236387744
@@ -816,6 +817,18 @@ MonoBehaviour:
   - {fileID: 1014118828012270536}
   - {fileID: 6506767492464355069}
   - {fileID: 1996299713726223248}
+--- !u!210 &6239799770603110521
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781997486960354297}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_SortAtRoot: 0
 --- !u!1 &8170232967014341004
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +839,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4226172620939605389}
   - component: {fileID: 8199236446200734977}
-  - component: {fileID: 9197297627290422885}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -873,22 +885,11 @@ MonoBehaviour:
   buildAbleHighlight: {fileID: 4954853783829768448}
   buildDisableHighlight: {fileID: 5050271674345253865}
   showRangeHighlight: {fileID: 1991603106522831235}
+  spanwerSortingGroup: {fileID: 6239799770603110521}
   autoSpawnTime: 0
   spawnPercent: 0
   autoBuildingId: 
   defaultDirection: 0
---- !u!210 &9197297627290422885
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8170232967014341004}
-  m_Enabled: 1
-  m_SortingLayerID: -1653436213
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8897988319710020127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1281,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2504604980406447263, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4578773046512538757}
   m_SourcePrefab: {fileID: 100100000, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
 --- !u!95 &1991603106522831235 stripped
 Animator:
@@ -1292,3 +1296,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3695230560737561623, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
   m_PrefabInstance: {fileID: 6411995889109644146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8807308849748500461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2504604980406447263, guid: 67d6a86731e3948479cd11983a073cae, type: 3}
+  m_PrefabInstance: {fileID: 6411995889109644146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &4578773046512538757
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807308849748500461}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_SortAtRoot: 0

@@ -87,9 +87,9 @@ public class GoldText : MonoBehaviour
             {
                 string format = $"F{decimalPlaces}";
                 if (goldTextType == GoldTextType.Minute)
-                    goldPerSecondText.text = $"{x.ToString(format)}/m";
+                    goldPerSecondText.text = $"+{x.ToString(format)}/m";
                 else
-                    goldPerSecondText.text = $"{x.ToString(format)}/s";
+                    goldPerSecondText.text = $"+{x.ToString(format)}/s";
             }, value, goldTextTweenDuration)
             .SetEase(Ease.OutQuad)
             .Play();
