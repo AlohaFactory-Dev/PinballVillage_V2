@@ -284,10 +284,11 @@ public class TestManager : MonoBehaviour
     private void HandleReplayMouseUp(int button, Vector3 position)
     {
         Debug.Log($"재생: 마우스 업 - 버튼: {button}, 위치: {position}");
-        // 마우스 업 시 BuildModeManager의 Update 호출
 #if UNITY_EDITOR
         _buildModeManager?.Update(InputEventType.MouseUp, position);
 #endif
+        // 마우스 업 시 RefreshCards 이벤트 재생
+        // (실제 이벤트 재생은 ReplayInputs에서 처리)
     }
 
     private void HandleReplayMouseDrag(int button, Vector3 position)
@@ -400,6 +401,25 @@ public class TestManager : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _buildModeManager?.Update(InputEventType.MouseUp, Input.mousePosition);
+
+            // 마우스 업 시RefreshCards가 실행됐는지 체크
+            var buildingCardContainer = StageContainer.Get<StageUI>().BuildingCardContainer;
+            if (buildingCardContainer != null && buildingCardContainer.WasLastRefreshByMouseUp())
+            {
+                if (onRecord)
+                {
+                    inputEvents.Add(new InputEvent
+                    {
+                        type = InputEventType.RefreshCards,
+                        time = Time.time - recordStartTime
+                    });
+                }
+            }
+        }
     }
 
     private void RecordInputs()
@@ -500,6 +520,10 @@ public class TestManager : MonoBehaviour
                         Debug.Log($"재생: 카메라 이동 인덱스 {e.cameraIndex}, 위치 {e.cameraPathPosition}, 속도 {e.cameraSpeed}");
                     }
 
+                    break;
+                case InputEventType.RefreshCards:
+                    StageContainer.Get<StageUI>().BuildingCardContainer?.RefreshCards();
+                    Debug.Log("재생: RefreshCards 실행");
                     break;
             }
 
@@ -692,7 +716,8 @@ public enum InputEventType
     MouseDown,
     MouseUp,
     MouseDrag,
-    CameraMove // 카메라 이동 이벤트 타입 추가
+    CameraMove,
+    RefreshCards // RefreshCards 이벤트 타입 추가
 }
 
 [Serializable]

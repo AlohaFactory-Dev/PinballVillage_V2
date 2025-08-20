@@ -31,6 +31,8 @@ public class StageUI : MonoBehaviour
     [SerializeField] private float resultPanelDelay = 1f;
     private BuildingCardContainer _buildingCardContainer;
 
+    public BuildingCardContainer BuildingCardContainer => _buildingCardContainer;
+
     public void Start()
     {
         _buildingCardContainer = GetComponentInChildren<BuildingCardContainer>(true);
