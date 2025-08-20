@@ -598,10 +598,15 @@ public class TestManager : MonoBehaviour
 
     private void LevelUpBuilding()
     {
+        StartCoroutine(LevelUpBuildingCoroutine());
+    }
+
+    private IEnumerator LevelUpBuildingCoroutine()
+    {
         if (_levelUpBuildingIndex >= levelUpBuildingLists.Count)
         {
             Debug.Log("모든 건물 레벨업 완료");
-            return;
+            yield break;
         }
 
         var levelUpList = levelUpBuildingLists[_levelUpBuildingIndex];
@@ -614,6 +619,7 @@ public class TestManager : MonoBehaviour
             foreach (var buildingId in levelUpList.buildingIds)
             {
                 StageContainer.Get<BuildingManager>().SelectedBuildingLevelUp(buildingId);
+                yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
             }
         }
 
