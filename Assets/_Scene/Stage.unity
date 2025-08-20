@@ -257,10 +257,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid_Ingame_Battle_20250819
       objectReference: {fileID: 0}
-    - target: {fileID: 1399058156457209075, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
-      propertyPath: m_ChildCameras.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2256759134087738851, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -581,7 +577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.size
@@ -653,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[1].buildingId
-      value: ArrowTower_1
+      value: ArrowTower_3
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[2].buildingId
@@ -665,11 +661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[4].buildingId
-      value: ArrowTower_1
+      value: ArrowTower_3
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[5].buildingId
-      value: ArrowTower_1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[6].buildingId
@@ -845,15 +841,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[0].gridPosition.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[1].gridPosition.x
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[1].gridPosition.y
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[2].gridPosition.x
@@ -861,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[2].gridPosition.y
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[3].gridPosition.x
@@ -869,23 +865,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[3].gridPosition.y
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[4].gridPosition.x
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[4].gridPosition.y
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[5].gridPosition.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[5].gridPosition.y
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[6].gridPosition.x
