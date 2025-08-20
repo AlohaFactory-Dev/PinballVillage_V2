@@ -65,6 +65,8 @@ public class TestManager : MonoBehaviour
     [SerializeField]
     private List<LevelUpBuildingList> levelUpBuildingLists = new();
 
+    [SerializeField] private float levelUpInterval = 0f;
+
     private int _levelUpBuildingIndex = 0;
 
     [Space]
@@ -734,7 +736,7 @@ public class TestManager : MonoBehaviour
                 foreach (var building in buildings)
                 {
                     StageContainer.Get<BuildingManager>().LevelUpBuilding(building.Spawner);
-                    yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
+                    yield return new WaitForSeconds(levelUpInterval); // 레벨업 간격 조정
                 }
             }
         }
