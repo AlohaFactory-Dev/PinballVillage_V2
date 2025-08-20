@@ -116,9 +116,7 @@ public class TestManager : MonoBehaviour
     [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
-    private string inputRecordFilePath = "Assets/CPIAction/Aiden";
-
-    [SerializeField] private string fileName = "input_record";
+    private string fileName = "input_record";
 
     [SerializeField] private bool onRecord = false;
 
@@ -129,7 +127,7 @@ public class TestManager : MonoBehaviour
     private List<InputEvent> inputEvents = new List<InputEvent>();
     private float recordStartTime;
     private int replayIndex = 0;
-    private string inputRecordPath => Path.Combine(inputRecordFilePath, fileName + ".json");
+    private string inputRecordPath => Path.Combine(Application.persistentDataPath, fileName + ".json");
     private bool isReplaying = false;
 
     // 정적 프로퍼티
@@ -676,6 +674,14 @@ public class TestManager : MonoBehaviour
         OnReplayMouseUp -= HandleReplayMouseUp;
         OnReplayMouseDrag -= HandleReplayMouseDrag;
     }
+
+#if UNITY_EDITOR
+    [Button("입력 기록 파일 열기")]
+    private void OpenInputRecordFile()
+    {
+        EditorUtility.RevealInFinder(Application.persistentDataPath + "/PinballVillage");
+    }
+#endif
 }
 #endif
 
