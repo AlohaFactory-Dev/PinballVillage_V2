@@ -404,8 +404,6 @@ public class TestManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            _buildModeManager?.Update(InputEventType.MouseUp, Input.mousePosition);
-
             // 마우스 업 시RefreshCards가 실행됐는지 체크
             var buildingCardContainer = StageContainer.Get<StageUI>().BuildingCardContainer;
             if (buildingCardContainer != null && buildingCardContainer.WasLastRefreshByMouseUp())
