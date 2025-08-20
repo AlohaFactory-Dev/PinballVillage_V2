@@ -253,9 +253,105 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 336686834}
     m_Modifications:
+    - target: {fileID: 441028427630094372, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 441028427630094372, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 441028427630094372, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 441028427630094372, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 441028427630094372, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 721118242081322578, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 836847759917173318, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 836847759917173318, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 836847759917173318, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 836847759917173318, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 836847759917173318, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1136119213906966079, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
       propertyPath: m_Name
       value: Grid_Ingame_Battle_20250819
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307133593508762118, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307133593508762118, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307133593508762118, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307133593508762118, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307133593508762118, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399058156457209075, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_ChildCameras.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528725238723417477, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975012253665806623, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178479063970654750, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178479063970654750, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178479063970654750, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178479063970654750, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178479063970654750, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2256759134087738851, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -296,6 +392,110 @@ PrefabInstance:
     - target: {fileID: 2256759134087738851, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632008679404940070, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279775846075300158, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669354719797956721, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485236983714065253, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610250193726707447, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151256549425020915, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180898276983283017, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180898276983283017, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180898276983283017, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180898276983283017, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180898276983283017, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360957110732062507, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360957110732062507, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360957110732062507, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360957110732062507, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360957110732062507, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926922071235689745, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926922071235689745, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926922071235689745, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926922071235689745, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926922071235689745, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434575774924980874, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyCastle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112894887101052379, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146060475593084339, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336709406599217465, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389008932454174802, guid: 8b41a69f30be72946b6a339bdad45e79, type: 3}
+      propertyPath: defaultBuildingId
+      value: EnemyHouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -384,344 +584,48 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: fileName
-      value: Test1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: onRecord
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: onReplay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraSpeed
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: recordInput
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: replayInput
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: onNaturalSkip
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnInterval
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: showReplayStatus
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: autoReplayOnStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: inputRecordFilePath
-      value: Assets/CPIAction/Eliot
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: testActions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: onSettingBuildingCardMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingIds.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingGoldHistory.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingGoldHistory.Array.data[0]
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[0]
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[1]
-      value: Market_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[2]
-      value: WheatField_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[3]
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[4]
-      value: ArmsMarket
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[5]
-      value: WheatField_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[6]
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[7]
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[8]
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[9]
-      value: ArmsMarket
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: testActions.Array.data[0].actionType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: testActions.Array.data[1].actionType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[10]
-      value: FarmerHouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[11]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[12]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[13]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[14]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[15]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[16]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: settingBuildingCardIds.Array.data[17]
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[0]
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[1]
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[2]
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[3]
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[5]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: testActions.Array.data[0].executeAfterSeconds
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.size
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.data[0].allBuildingLevelUp
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.size
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[8].direction
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.data[0]
-      value: House_1
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[8].ownerType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.data[1]
-      value: ArrowTower_2
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].direction
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.data[2]
-      value: ArrowTower_2
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].ownerType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.data[3]
-      value: ArrowTower_2
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[8].buildingId
+      value: DirectionSign
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[0].direction
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].direction
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].direction
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[0].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[1].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[2].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[3].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[4].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[5].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[6].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[0].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[1].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[2].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[3].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[4].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[5].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[6].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[7].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[8].buildingId
-      value: House_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[0].buildingId
-      value: EnemyHouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[1].buildingId
-      value: EnemyHouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[2].buildingId
-      value: EnemyHouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[3].buildingId
-      value: EnemyHouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[4].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[5].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[6].buildingId
-      value: ArrowTower_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[7].buildingId
-      value: 
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].buildingId
+      value: DirectionSign
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[0].buildingId
@@ -741,375 +645,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[4].buildingId
-      value: ArcherTrainingCenter
+      value: CavalrymanStatue
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[5].buildingId
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[6].buildingId
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[7].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[8].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[0].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[2].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[4].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[5].buildingId
-      value: DirectionSign
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[6].buildingId
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[7].buildingId
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[8].buildingId
-      value: ArcherTrainingCenter
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[0].gridPosition.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[0].gridPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[1].gridPosition.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[1].gridPosition.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[2].gridPosition.x
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[2].gridPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[3].gridPosition.x
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[3].gridPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[4].gridPosition.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[4].gridPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[5].gridPosition.x
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[5].gridPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[6].gridPosition.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[0].gridPosition.x
-      value: 15
+      value: ArcherStatue
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[0].gridPosition.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[1].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[1].gridPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[2].gridPosition.x
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[2].gridPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[3].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[3].gridPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[4].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[4].gridPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[5].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[5].gridPosition.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[6].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[1].spawnBuildingList.Array.data[6].gridPosition.y
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[0].gridPosition.x
-      value: 7
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[8].gridPosition.x
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[0].gridPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[1].gridPosition.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[1].gridPosition.y
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[8].gridPosition.y
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[2].gridPosition.x
-      value: 8
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].gridPosition.x
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[2].gridPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[3].gridPosition.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[3].gridPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[4].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[4].gridPosition.y
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].gridPosition.y
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[5].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[5].gridPosition.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[6].gridPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[6].gridPosition.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[7].gridPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[7].gridPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[0].gridPosition.x
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[0].gridPosition.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[1].gridPosition.x
-      value: 11
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[1].gridPosition.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[2].gridPosition.x
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[2].gridPosition.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[3].gridPosition.x
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[3].gridPosition.y
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[4].gridPosition.x
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[4].gridPosition.y
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[5].gridPosition.x
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[5].gridPosition.y
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[6].gridPosition.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[6].gridPosition.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[7].gridPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[7].gridPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[8].gridPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[8].gridPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[0].gridPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[0].gridPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].gridPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].gridPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[2].gridPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[2].gridPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].gridPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].gridPosition.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[4].gridPosition.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[4].gridPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[5].gridPosition.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[5].gridPosition.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[6].gridPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[6].gridPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[7].gridPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[7].gridPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[8].gridPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[8].gridPosition.y
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5344063481535179319, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: m_LocalPosition.x

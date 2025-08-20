@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f35465d98752fc46ad55bc5b6a58e8c
+    m_Address: ArrowTower_3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Building
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e2e082111dda6349bf509b4012f17ef
     m_Address: Castle_1
     m_ReadOnly: 0
@@ -85,6 +91,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 571bead32708af6439440e3d5228da05
     m_Address: DirectionSign
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 750d82cd0e2d2564fa5fafb13e11b89e
+    m_Address: ArrowTower_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building

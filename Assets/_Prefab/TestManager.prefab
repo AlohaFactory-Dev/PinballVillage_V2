@@ -44,19 +44,128 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f985d00d0c3e96644aa915fd878d97b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUpBuildingLists: []
+  levelUpBuildingLists:
+  - allBuildingLevelUp: 0
+    buildingIds:
+    - Castle_1
+    - House_1
+    - ArrowTower_1
+  - allBuildingLevelUp: 0
+    buildingIds:
+    - Castle_2
+    - House_2
+    - ArrowTower_2
   onEnemyCollisionIgnore: 0
   spawnBuildingIndex: 0
   spawnList:
   - spawnBuildingList:
-    - buildingId: 
-      gridPosition: {x: 0, y: 0}
-  spawnInterval: 0.1
-  onSettingBuildingCardMode: 0
-  settingBuildingCardIds: []
+    - buildingId: House_1
+      gridPosition: {x: 18, y: 5}
+      direction: 0
+    - buildingId: House_1
+      gridPosition: {x: 18, y: 6}
+      direction: 0
+    - buildingId: House_1
+      gridPosition: {x: 17, y: 1}
+      direction: 0
+    - buildingId: House_1
+      gridPosition: {x: 17, y: 2}
+      direction: 0
+    - buildingId: House_1
+      gridPosition: {x: 18, y: 1}
+      direction: 0
+    - buildingId: House_1
+      gridPosition: {x: 18, y: 2}
+      direction: 0
+  - spawnBuildingList:
+    - buildingId: ArrowTower_1
+      gridPosition: {x: 15, y: 3}
+      direction: 0
+    - buildingId: ArrowTower_1
+      gridPosition: {x: 15, y: 4}
+      direction: 0
+    - buildingId: ArrowTower_1
+      gridPosition: {x: 15, y: 5}
+      direction: 0
+  - spawnBuildingList:
+    - buildingId: EnemyHouse
+      gridPosition: {x: 7, y: 0}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 7, y: 1}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 8, y: 0}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 8, y: 1}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 7, y: 6}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 7, y: 7}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 8, y: 6}
+      direction: 0
+    - buildingId: EnemyHouse
+      gridPosition: {x: 8, y: 7}
+      direction: 0
+  spawnInterval: 0.2
+  onSettingBuildingCardMode: 1
+  settingBuildingCardIds:
+  - House_1
+  - Market_1
+  - WheatField_1
+  - House_1
+  - ArmsMarket
+  - WheatField_1
+  - House_1
+  - DirectionSign
+  - ArrowTower_1
+  - ArmsMarket
+  - FarmerHouse
+  - ArcherTrainingCenter
+  - ArcherTrainingCenter
+  - ArcherTrainingCenter
+  - ArcherTrainingCenter
   cpiuiOnOff: 0
-  settingGoldHistory: 
-  inputRecordFilePath: Assets/CPIAction/Aiden
-  fileName: input_record
-  recordInput: 0
-  autoReplayOnStart: 1
+  settingGoldHistory: f4010000
+  onNaturalSkip: 1
+  cameraNomalizedPathPositions:
+  - 0
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  - 1
+  cameraSpeed: 0.2
+  cameraMoveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fileName: Eliot_Test1
+  onRecord: 1
+  onReplay: 0
+  testActions: []
