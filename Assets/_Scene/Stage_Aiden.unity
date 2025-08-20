@@ -2236,6 +2236,10 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: levelUpInterval
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: showReplayStatus
       value: 0
       objectReference: {fileID: 0}
@@ -2245,11 +2249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: testActions.Array.size
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: onSettingBuildingCardMode
@@ -2286,6 +2290,22 @@ PrefabInstance:
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: testActions.Array.data[5].time
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[6].time
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[7].time
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[8].time
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[9].time
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: levelUpBuildingLists.Array.size
@@ -2333,6 +2353,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: testActions.Array.data[5].actionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[6].actionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[7].actionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[8].actionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: testActions.Array.data[9].actionType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
@@ -2385,11 +2421,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.size
-      value: 32
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.size
-      value: 1
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: levelUpBuildingLists.Array.data[2].allBuildingLevelUp
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.size
@@ -2409,11 +2453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.data[0]
-      value: WheatField_1
+      value: Castle_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: levelUpBuildingLists.Array.data[0].buildingIds.Array.data[1]
-      value: Castle_1
+      value: WheatField_1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: levelUpBuildingLists.Array.data[1].buildingIds.Array.data[0]
@@ -2433,7 +2477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: levelUpBuildingLists.Array.data[3].buildingIds.Array.data[0]
-      value: House_3
+      value: House_2
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[0].buildingId
@@ -2570,6 +2614,94 @@ PrefabInstance:
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].buildingId
       value: Windmill_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[0].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[11].direction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[19].direction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[1].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[2].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[3].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[4].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[5].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[6].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[7].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[8].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[9].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[0].buildingId
+      value: ArmsMarket
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[2].buildingId
+      value: ArmsMarket
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].buildingId
+      value: ArcherStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[4].buildingId
+      value: ArcherStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[5].buildingId
+      value: ArmsMarket
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[6].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[7].buildingId
+      value: ArmsMarket
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[8].buildingId
+      value: Bank_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[9].buildingId
+      value: House_3
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[10].buildingId
@@ -3052,6 +3184,210 @@ PrefabInstance:
       value: WheatField_2
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[32].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[33].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[34].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[35].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[36].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[37].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[38].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[39].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[10].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[11].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[12].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[13].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[14].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[15].buildingId
+      value: FarmerHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[16].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[17].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[18].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[19].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[20].buildingId
+      value: FarmerHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[21].buildingId
+      value: FarmerHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[22].buildingId
+      value: FarmerHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[23].buildingId
+      value: CavalrymanStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[24].buildingId
+      value: CavalrymanStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[25].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[26].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[27].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[28].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[29].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[30].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[31].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[32].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[33].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[34].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[35].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[36].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[37].buildingId
+      value: ArrowTower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[38].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[10].buildingId
+      value: House_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[11].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[12].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[13].buildingId
+      value: WheatField_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[14].buildingId
+      value: Windmill_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[15].buildingId
+      value: Windmill_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[16].buildingId
+      value: Bank_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[17].buildingId
+      value: Market_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[18].buildingId
+      value: Market_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[19].buildingId
+      value: Market_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[20].buildingId
+      value: Market_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[21].buildingId
+      value: Market_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[22].buildingId
+      value: Market_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[23].buildingId
+      value: Bank_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[0].spawnBuildingList.Array.data[0].gridPosition.x
       value: 19
       objectReference: {fileID: 0}
@@ -3285,6 +3621,158 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[9].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[0].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[1].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[1].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[2].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[2].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[3].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[3].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[4].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[4].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[5].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[5].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[6].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[6].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[7].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[7].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[8].gridPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[8].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[9].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[9].gridPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[0].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[1].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[2].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[2].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[3].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[4].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[4].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[5].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[5].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[6].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[6].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[7].gridPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[7].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[8].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[8].gridPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[9].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[9].gridPosition.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
@@ -4241,6 +4729,382 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[31].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[32].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[32].gridPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[33].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[33].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[34].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[34].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[35].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[35].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[36].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[36].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[37].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[37].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[38].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[38].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[39].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[2].spawnBuildingList.Array.data[39].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[10].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[10].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[11].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[11].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[12].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[12].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[13].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[13].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[14].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[14].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[15].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[15].gridPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[16].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[16].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[17].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[17].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[18].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[18].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[19].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[19].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[20].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[20].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[21].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[21].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[22].gridPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[22].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[23].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[23].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[24].gridPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[24].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[25].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[25].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[26].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[26].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[27].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[27].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[28].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[28].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[29].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[29].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[30].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[30].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[31].gridPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[31].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[32].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[33].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[33].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[34].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[34].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[35].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[35].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[36].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[36].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[37].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[37].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[38].gridPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[3].spawnBuildingList.Array.data[38].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[10].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[10].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[11].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[11].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[12].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[12].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[13].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[13].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[14].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[14].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[15].gridPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[15].gridPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[16].gridPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[16].gridPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[17].gridPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[18].gridPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[19].gridPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[20].gridPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[21].gridPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[22].gridPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: spawnList.Array.data[4].spawnBuildingList.Array.data[23].gridPosition.y
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5344063481535179319, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}

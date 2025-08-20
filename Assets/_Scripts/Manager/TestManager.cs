@@ -677,6 +677,10 @@ public class TestManager : MonoBehaviour
                 {
                     spawner.ResetOwner(spawnBuilding.ownerType);
                 }
+                else
+                {
+                    spawner.ResetOwner(OwnerType.Player);
+                }
             }
             else
             {
