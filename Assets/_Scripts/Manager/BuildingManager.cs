@@ -234,15 +234,12 @@ public class BuildingManager
         }
     }
 
-    public void SelectedBuildingLevelUp(string id)
+    public List<Building> GetBuildings(string id)
     {
         var buildings = _playerBuildings.SelectMany(b => b.Value)
             .Where(b => b.Table.id == id && b.Table.level < b.Table.maxLevel)
             .ToList();
-        foreach (var building in buildings)
-        {
-            LevelUpBuilding(building.Spawner);
-        }
+        return buildings;
     }
 #endif
 }
