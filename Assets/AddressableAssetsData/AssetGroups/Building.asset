@@ -41,12 +41,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Building
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 20c75515ea9660a449fe8086bcc72d4f
-    m_Address: ArrowTower_2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Building
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e2e082111dda6349bf509b4012f17ef
     m_Address: Castle_1
     m_ReadOnly: 0
@@ -67,6 +61,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3546b1a68c3aebf4ba49ef37dcb0598c
     m_Address: Windmill_1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37adcc5b728289f4fae2c4f0ea61f7ee
+    m_Address: ArrowTower_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -97,12 +97,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b9de6b1f4b65334aa795b1003624d23
     m_Address: Tree
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Building
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7bbc3481fbece6a4ca0bd304ffaf0ee8
-    m_Address: ArrowTower_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
@@ -139,6 +133,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ae36cde3f30efe143ac1cb67a848b27a
     m_Address: ArcherStatue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Building
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af12dd5a247d69f4fba7f1df5520a487
+    m_Address: ArrowTower_3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Building
