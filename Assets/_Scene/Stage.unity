@@ -541,27 +541,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: cameraNomalizedPathPositions.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: cameraNomalizedPathPositions.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[1]
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[2]
+      propertyPath: cameraNomalizedPathPositions.Array.data[1]
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[3]
+      propertyPath: cameraNomalizedPathPositions.Array.data[2]
       value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
-      propertyPath: cameraNomalizedPathPositions.Array.data[4]
+      propertyPath: cameraNomalizedPathPositions.Array.data[3]
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
+      propertyPath: cameraNomalizedPathPositions.Array.data[4]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325444558940819094, guid: f8a93f00da2ebdc49a38923dca2a2982, type: 3}
       propertyPath: cameraNomalizedPathPositions.Array.data[5]
