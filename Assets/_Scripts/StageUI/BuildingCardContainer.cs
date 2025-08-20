@@ -17,6 +17,7 @@ public class BuildingCardContainer : MonoBehaviour
     private BuildingCard[] _buildingCards;
     private int _requiredGoldToRefresh = 100;
     private int _addedGold = 0;
+    private bool lastRefreshByMouseUp = false; // 추가
 
     public void Init()
     {
@@ -58,8 +59,9 @@ public class BuildingCardContainer : MonoBehaviour
         }
     }
 
-    private void RefreshCards()
+    public void RefreshCards()
     {
+        lastRefreshByMouseUp = Input.GetMouseButtonUp(0); // 마우스 업으로 실행됐는지 기록
         if (_goldManager.HasRefreshTicket)
         {
             foreach (var card in _buildingCards)
@@ -83,5 +85,13 @@ public class BuildingCardContainer : MonoBehaviour
             _requiredGoldToRefresh += _addedGold; // 다음 리프레시 비용 증가
             _goldManager.UseGold(usedGold);
         }
+    }
+
+    // TestManager에서 호출: 최근 RefreshCards가 마우스 업으로 실행됐는지 확인
+    public bool WasLastRefreshByMouseUp()
+    {
+        bool result = lastRefreshByMouseUp;
+        lastRefreshByMouseUp = false; // 한 번 확인 후 초기화
+        return result;
     }
 }
