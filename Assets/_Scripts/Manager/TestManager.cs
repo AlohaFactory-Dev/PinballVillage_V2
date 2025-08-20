@@ -618,8 +618,12 @@ public class TestManager : MonoBehaviour
         {
             foreach (var buildingId in levelUpList.buildingIds)
             {
-                StageContainer.Get<BuildingManager>().SelectedBuildingLevelUp(buildingId);
-                yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
+                var buildings = StageContainer.Get<BuildingManager>().GetBuildings(buildingId);
+                foreach (var building in buildings)
+                {
+                    StageContainer.Get<BuildingManager>().LevelUpBuilding(building.Spawner);
+                    yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
+                }
             }
         }
 
