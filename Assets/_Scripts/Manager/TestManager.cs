@@ -145,6 +145,14 @@ public class TestManager : MonoBehaviour
 
     [Inject] private BuildModeManager _buildModeManager; // BuildModeManager 참조 추가
 
+    [Space]
+    [InfoBox("테스트 액션 시퀀스 (Inspector에서 시간과 행동 지정)")]
+    [SerializeField]
+    private List<TestAction> testActions = new();
+
+    private int testActionIndex = 0;
+    private float testActionStartTime = 0f;
+
     private void Awake()
     {
         InitializeSettings();
@@ -152,6 +160,7 @@ public class TestManager : MonoBehaviour
         CPIUIOnOff();
         // onNaturalSkip 인스펙터 값으로 static 프로퍼티 할당
         OnNaturalSkip = onNaturalSkip;
+        testActionStartTime = Time.time;
     }
 
     private void InitializeSettings()
@@ -312,6 +321,66 @@ public class TestManager : MonoBehaviour
 
         if (!isReplaying)
             HandleRealTimeInput();
+
+        // Inspector에서 세팅한 테스트 액션 실행
+        RunTestActions();
+    }
+
+    private void RunTestActions()
+    {
+        if (testActionIndex >= testActions.Count) return;
+        float elapsed = Time.time - testActionStartTime;
+        while (testActionIndex < testActions.Count && testActions[testActionIndex].time <= elapsed)
+        {
+            var action = testActions[testActionIndex];
+            switch (action.actionType)
+            {
+                case TestActionType.AddGold:
+                    _goldManager.AddGold(10000);
+                    break;
+                case TestActionType.LevelUpBuilding:
+                    LevelUpBuilding();
+                    break;
+                case TestActionType.SpawnBuilding:
+                    StartCoroutine(SpawnBuilding());
+                    break;
+                case TestActionType.CameraMove:
+                    var cameraController = StageContainer.Get<CameraController>();
+                    if (cameraController != null)
+                    {
+                        int idx = action.intParam;
+                        float pos = (idx >= 0 && idx < cameraNomalizedPathPositions.Length) ? cameraNomalizedPathPositions[idx] : action.floatParam;
+                        cameraController.MoveToPathPosition(pos, cameraSpeed, cameraMoveCurve);
+                    }
+
+                    break;
+                case TestActionType.CPIUIOnOff:
+                    cpiuiOnOff = action.intParam != 0;
+                    CPIUIOnOff();
+                    break;
+                case TestActionType.SetGoldHistory:
+                    if (action.intParam >= 0 && action.intParam < settingGoldHistory.Count)
+                        _goldManager.SetGoldHistory(settingGoldHistory[action.intParam]);
+                    break;
+                case TestActionType.TimeScaleUp:
+                    Time.timeScale += 1f;
+                    SystemUI.ShowToastMessage($"Time Scale: {Time.timeScale}");
+                    break;
+                case TestActionType.TimeScaleDown:
+                    Time.timeScale -= 1f;
+                    SystemUI.ShowToastMessage($"Time Scale: {Time.timeScale}");
+                    break;
+                case TestActionType.TimeScaleReset:
+                    Time.timeScale = 1f;
+                    SystemUI.ShowToastMessage($"Time Scale: {Time.timeScale}");
+                    break;
+                case TestActionType.RefreshCards:
+                    StageContainer.Get<StageUI>().BuildingCardContainer?.RefreshCards();
+                    break;
+            }
+
+            testActionIndex++;
+        }
     }
 
     private void HandleRealTimeInput()
@@ -590,7 +659,7 @@ public class TestManager : MonoBehaviour
                 spawner.ResetOwner(OwnerType.Enemy);
             else
                 spawner.ResetOwner(OwnerType.Player);
-            buildingManager.SpawnBuilding(spawnBuilding.buildingId, spawner);
+            buildingManager.SpawnBuilding(spawnBuilding.buildingId, spawner, spawnBuilding.direction);
             yield return new WaitForSeconds(spawnInterval);
         }
 
@@ -746,4 +815,28 @@ public class InputEvent
             mouseZ = value.z;
         }
     }
+}
+
+public enum TestActionType
+{
+    AddGold,
+    LevelUpBuilding,
+    SpawnBuilding,
+    CameraMove,
+    CPIUIOnOff,
+    SetGoldHistory,
+    TimeScaleUp,
+    TimeScaleDown,
+    TimeScaleReset,
+    RefreshCards
+}
+
+[Serializable]
+public struct TestAction
+{
+    public float time;
+    public TestActionType actionType;
+    public int intParam; // 예: 카메라 인덱스, 골드 인덱스 등
+    public float floatParam; // 예: 카메라 위치, 속도 등
+    public string stringParam; // 예: 건물 ID 등
 }
