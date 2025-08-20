@@ -229,9 +229,15 @@ namespace Stage.Building
                 Vector2Int current = queue.Dequeue();
                 Spawner currentSpawner = GetSpawner(current.x, current.y);
 
-                // OwnerType이 일치하고 비어있는 경우만 반환
-                if (currentSpawner && currentSpawner.IsEmpty && currentSpawner.CurrentOwner == ownerType)
-                    return currentSpawner;
+                // OwnerType이 일치하고 비어있는 경우 반환
+                // 또는 Building의 Group이 WheatField인 경우 반환
+                if (currentSpawner && currentSpawner.CurrentOwner == ownerType)
+                {
+                    if (currentSpawner.IsEmpty)
+                        return currentSpawner;
+                    if (currentSpawner.Building.GroupType == BuildingGroupType.WheatField)
+                        return currentSpawner;
+                }
 
                 foreach (Vector2Int dir in _directions)
                 {
