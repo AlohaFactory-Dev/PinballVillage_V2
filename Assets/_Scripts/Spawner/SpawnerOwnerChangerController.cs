@@ -180,6 +180,11 @@ namespace Stage.Building
 #if UNITY_EDITOR
         public void ResetOwner(OwnerType ownerType)
         {
+            if (_currentOwner == ownerType)
+            {
+                return; // 이미 해당 소유자라면 아무 작업도 하지 않음
+            }
+
             foreach (var changer in ownerChangers)
             {
                 if (changer.EnableCheck(ownerType))

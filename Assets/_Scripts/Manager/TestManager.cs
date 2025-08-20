@@ -37,6 +37,9 @@ public class TestManager : MonoBehaviour
         public string buildingId;
         public Vector2Int gridPosition;
         public Direction direction;
+
+        [Header("생성되는 건물의 땅이 적 소유일 경우 해당 소유자 설정")]
+        public OwnerType ownerType;
     }
 
     [Serializable]
@@ -61,6 +64,8 @@ public class TestManager : MonoBehaviour
     [InfoBox("건물 레벨업 설정")]
     [SerializeField]
     private List<LevelUpBuildingList> levelUpBuildingLists = new();
+
+    [SerializeField] private float levelUpInterval = 0f;
 
     private int _levelUpBuildingIndex = 0;
 
@@ -663,9 +668,21 @@ public class TestManager : MonoBehaviour
             }
 
             if (spawnBuilding.buildingId.Contains("Enemy"))
+            {
                 spawner.ResetOwner(OwnerType.Enemy);
+            }
+            else if (spawnBuilding.buildingId == "DirectionSign")
+            {
+                if (spawner.CurrentOwner == OwnerType.Enemy)
+                {
+                    spawner.ResetOwner(spawnBuilding.ownerType);
+                }
+            }
             else
+            {
                 spawner.ResetOwner(OwnerType.Player);
+            }
+
             buildingManager.SpawnBuilding(spawnBuilding.buildingId, spawner, spawnBuilding.direction);
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -719,7 +736,7 @@ public class TestManager : MonoBehaviour
                 foreach (var building in buildings)
                 {
                     StageContainer.Get<BuildingManager>().LevelUpBuilding(building.Spawner);
-                    yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
+                    yield return new WaitForSeconds(levelUpInterval); // 레벨업 간격 조정
                 }
             }
         }

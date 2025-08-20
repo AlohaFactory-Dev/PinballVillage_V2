@@ -105,7 +105,7 @@ public class BuildModeManager : MonoBehaviour
                 _currentPointerSpawner = raySpawner;
 
                 SetShowRangeSpawners(_spawnerGridManager.GetNeighbors(raySpawner, _buildingCard.Table.showRange), true);
-                _currentPointerSpawner.BuildAbleHighlight(_currentPointerSpawner.IsEmpty && _currentPointerSpawner.CurrentOwner == OwnerType.Player);
+                _currentPointerSpawner.BuildAbleHighlight(true);
             }
 
             Vector3 spawnerScreenPosition = GetScreenPosition(_currentPointerSpawner.transform.position);
@@ -133,8 +133,12 @@ public class BuildModeManager : MonoBehaviour
         SetShowRangeSpawners(_showRangeSpawners, false);
         _currentPointerSpawner.AllBuildAbleHighlightOff();
 
-        if (_currentPointerSpawner.IsEmpty && _currentPointerSpawner.CurrentOwner == OwnerType.Player)
+        // 소유권 무시: 빈 땅이면 플레이어 땅으로 변경 후 건물 설치
+        if (_currentPointerSpawner.IsEmpty)
         {
+            // 플레이어 땅으로 변경
+            _currentPointerSpawner.ResetOwner(OwnerType.Player);
+
             if (_goldManager.EnoughGold(_buildingCard.Table.buildCost))
             {
                 _buildingManager.SpawnBuilding(_buildingCard.Table.id, _currentPointerSpawner);
