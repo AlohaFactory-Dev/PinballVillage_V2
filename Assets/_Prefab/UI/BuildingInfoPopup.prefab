@@ -761,7 +761,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_text
-      value: "<size=28>\uBCF5\uAD6C</size>\n<sprite name=Gold>x100"
+      value: '<size=28>Restore</size>
+
+        <sprite name=Gold>x100'
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_fontSize
@@ -1358,11 +1360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5872788210012583403, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -48.485657
+      value: -65.486
       objectReference: {fileID: 0}
     - target: {fileID: 5872788210012583403, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.757172
+      value: 24.257
       objectReference: {fileID: 0}
     - target: {fileID: 5872788210012583403, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1374,11 +1376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_text
-      value: "\uD68C\uC804"
+      value: Rotate
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 27.45
       objectReference: {fileID: 0}
     - target: {fileID: 8150283007356918022, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_Type
@@ -1506,11 +1508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_text
-      value: "\uB808\uBCA8 \uC5C5"
+      value: Level Up
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 32.65
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2277930827587280767, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}

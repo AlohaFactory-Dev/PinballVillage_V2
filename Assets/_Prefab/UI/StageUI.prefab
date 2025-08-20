@@ -566,7 +566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC131\uACF5"
+  m_text: Clear
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
   m_sharedMaterial: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
@@ -915,7 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2E4\uD328"
+  m_text: Fail
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
   m_sharedMaterial: {fileID: -7237721383533162279, guid: 193ad95af16d8db4a97eff9d700a4ad0, type: 2}
@@ -1230,7 +1230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928833694289131585, guid: f45b1d2a50dfc5645bd4b3f1527136b2, type: 3}
       propertyPath: m_text
-      value: "\uB2E4\uC2DC\uD558\uAE30"
+      value: Retry
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

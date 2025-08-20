@@ -100,4 +100,4 @@ FloatingText,VillagerSpawn,<sprite name={[villagerType]}>+{[value]},<sprite name
 FloatingText,EarnGold,<sprite name=Gold>+{[value]},<sprite name=Gold>+{[value]},-99999
 ResultPopup,Clear,Clear,성공,-99999
 ResultPopup,Fail,Fail,실패,-99999
-FloatingText,Damage,{[value]},{[value]},
+FloatingText,Damage,<color=#D65E5E>{[value]}</color>,<color=#D65E5E>{[value]}</color>,

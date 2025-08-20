@@ -130,7 +130,7 @@ public class BuildingInfoPopup : UISlice, IDimClosable
             restoreButton.gameObject.SetActive(false);
         }
 
-        _levelUpCostText.text = $"레벨 업\n" +
+        _levelUpCostText.text = $"Level Up\n" +
             $"<sprite name=Gold>x{_openArgs.Table.levelUpCost}";
     }
 
