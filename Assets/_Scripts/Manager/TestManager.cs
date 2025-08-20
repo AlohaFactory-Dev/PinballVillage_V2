@@ -37,6 +37,9 @@ public class TestManager : MonoBehaviour
         public string buildingId;
         public Vector2Int gridPosition;
         public Direction direction;
+
+        [Header("생성되는 건물의 땅이 적 소유일 경우 해당 소유자 설정")]
+        public OwnerType ownerType;
     }
 
     [Serializable]
@@ -663,9 +666,21 @@ public class TestManager : MonoBehaviour
             }
 
             if (spawnBuilding.buildingId.Contains("Enemy"))
+            {
                 spawner.ResetOwner(OwnerType.Enemy);
+            }
+            else if (spawnBuilding.buildingId == "DirectionSign")
+            {
+                if (spawner.CurrentOwner == OwnerType.Enemy)
+                {
+                    spawner.ResetOwner(spawnBuilding.ownerType);
+                }
+            }
             else
+            {
                 spawner.ResetOwner(OwnerType.Player);
+            }
+
             buildingManager.SpawnBuilding(spawnBuilding.buildingId, spawner, spawnBuilding.direction);
             yield return new WaitForSeconds(spawnInterval);
         }
