@@ -110,6 +110,8 @@ public class TestManager : MonoBehaviour
     [SerializeField]
     float[] cameraNomalizedPathPositions = { 0.5f, 0.75f, 1f };
 
+    int cameraNomalizedPathIndex = 0;
+
     [SerializeField] float cameraSpeed = 0.5f;
 
     [SerializeField] AnimationCurve cameraMoveCurve = AnimationCurve.EaseInOut(0, 0, 1, 1); // 추가
@@ -348,19 +350,24 @@ public class TestManager : MonoBehaviour
                     var cameraController = StageContainer.Get<CameraController>();
                     if (cameraController != null)
                     {
-                        int idx = action.intParam;
-                        float pos = (idx >= 0 && idx < cameraNomalizedPathPositions.Length) ? cameraNomalizedPathPositions[idx] : action.floatParam;
-                        cameraController.MoveToPathPosition(pos, cameraSpeed, cameraMoveCurve);
+                        cameraController.MoveToPathPosition(cameraNomalizedPathPositions[cameraNomalizedPathIndex], cameraSpeed, cameraMoveCurve);
+                        cameraNomalizedPathIndex++;
                     }
 
                     break;
                 case TestActionType.CPIUIOnOff:
-                    cpiuiOnOff = action.intParam != 0;
+                    cpiuiOnOff = !cpiuiOnOff;
                     CPIUIOnOff();
                     break;
                 case TestActionType.SetGoldHistory:
-                    if (action.intParam >= 0 && action.intParam < settingGoldHistory.Count)
-                        _goldManager.SetGoldHistory(settingGoldHistory[action.intParam]);
+                    if (_goldHistoryIndex >= settingGoldHistory.Count)
+                    {
+                        Debug.Log("모든 골드 획득량 설정 완료");
+                        break;
+                    }
+
+                    _goldManager.SetGoldHistory(settingGoldHistory[_goldHistoryIndex]);
+                    _goldHistoryIndex++;
                     break;
                 case TestActionType.TimeScaleUp:
                     Time.timeScale += 1f;
@@ -708,8 +715,12 @@ public class TestManager : MonoBehaviour
         {
             foreach (var buildingId in levelUpList.buildingIds)
             {
-                StageContainer.Get<BuildingManager>().SelectedBuildingLevelUp(buildingId);
-                yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
+                var buildings = StageContainer.Get<BuildingManager>().GetBuildings(buildingId);
+                foreach (var building in buildings)
+                {
+                    StageContainer.Get<BuildingManager>().LevelUpBuilding(building.Spawner);
+                    yield return new WaitForSeconds(spawnInterval); // 레벨업 간격 조정
+                }
             }
         }
 
@@ -836,7 +847,4 @@ public struct TestAction
 {
     public float time;
     public TestActionType actionType;
-    public int intParam; // 예: 카메라 인덱스, 골드 인덱스 등
-    public float floatParam; // 예: 카메라 위치, 속도 등
-    public string stringParam; // 예: 건물 ID 등
 }
