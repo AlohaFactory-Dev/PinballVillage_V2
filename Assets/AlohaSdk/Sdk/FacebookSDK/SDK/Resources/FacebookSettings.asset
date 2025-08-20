@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 3f1fe709fbfc499c36d6a4acdf0c5124
+  - deebef2abd5c60f2a389072145c1c1a1
   appIds:
-  - 1464052477420749
+  - 1974721913292599
   appLabels:
   - Aloha Test App
   cookie: 1

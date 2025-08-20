@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.unity3d.player" xmlns:tools="http://schemas.android.com/tools">
   <application android:name="androidx.multidex.MultiDexApplication">
     <activity android:name="com.unity3d.player.UnityPlayerActivity" android:theme="@style/UnityThemeSelector">
@@ -19,11 +19,11 @@
     <activity android:name="com.facebook.unity.FBUnityAppLinkActivity" android:exported="true" />
     <activity android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true" />
     <activity android:name="com.facebook.unity.FBUnityGameRequestActivity" />
-    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb1464052477420749" />
-    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="3f1fe709fbfc499c36d6a4acdf0c5124" />
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb1974721913292599" />
+    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="deebef2abd5c60f2a389072145c1c1a1" />
     <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled" android:value="true" />
     <meta-data android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled" android:value="true" />
-    <provider android:name="com.facebook.FacebookContentProvider" android:authorities="com.facebook.app.FacebookContentProvider1464052477420749" android:exported="true" />
+    <provider android:name="com.facebook.FacebookContentProvider" android:authorities="com.facebook.app.FacebookContentProvider1974721913292599" android:exported="true" />
   </application>
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
