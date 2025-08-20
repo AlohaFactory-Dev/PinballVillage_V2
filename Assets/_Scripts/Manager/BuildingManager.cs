@@ -27,7 +27,7 @@ public class BuildingManager
         stageGlobalClock.RegisterRepeatingTimer("recoveryHp", etcTable.values[0], RecoverBuildHp);
     }
 
-    public Building SpawnBuilding(string buildingId, Spawner spawner, bool isLevelUp = false)
+    public Building SpawnBuilding(string buildingId, Spawner spawner, Direction direction = Direction.Up, bool isLevelUp = false)
     {
         var table = TableListContainer.Get<BuildingTableList>().GetBuildingTable(buildingId);
         var building = _factoryManager.BuildingFactory.GetBuilding(buildingId);
@@ -36,7 +36,7 @@ public class BuildingManager
             _allBuildings.Add(building);
             if (table.group == BuildingGroupType.DirectionSign)
             {
-                (building as DirectionSign)?.Init(table, spawner, (Direction)3, isLevelUp);
+                (building as DirectionSign)?.Init(table, spawner, direction, isLevelUp);
             }
             else
             {
@@ -214,7 +214,7 @@ public class BuildingManager
         var buildingTable = spawner.Building.Table;
         RemoveBuilding(spawner.Building);
         var nextBuildingTable = TableListContainer.Get<BuildingTableList>().GetBuildingTableByGroup(buildingTable.levelUpTargetGroup, buildingTable.level + 1);
-        return SpawnBuilding(nextBuildingTable.id, spawner, true);
+        return SpawnBuilding(nextBuildingTable.id, spawner, Direction.Up, true);
     }
 
 #if UNITY_EDITOR
