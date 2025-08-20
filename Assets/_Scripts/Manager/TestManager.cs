@@ -36,6 +36,7 @@ public class TestManager : MonoBehaviour
     {
         public string buildingId;
         public Vector2Int gridPosition;
+        public Direction direction;
     }
 
     [Serializable]
