@@ -116,9 +116,7 @@ public class TestManager : MonoBehaviour
     [Space]
     [InfoBox("입력 기록/재생 기능")]
     [SerializeField]
-    private string inputRecordFilePath = "Assets/CPIAction/Aiden";
-
-    [SerializeField] private string fileName = "input_record";
+    private string fileName = "input_record";
 
     [SerializeField] private bool onRecord = false;
 
@@ -129,7 +127,7 @@ public class TestManager : MonoBehaviour
     private List<InputEvent> inputEvents = new List<InputEvent>();
     private float recordStartTime;
     private int replayIndex = 0;
-    private string inputRecordPath => Path.Combine(inputRecordFilePath, fileName + ".json");
+    private string inputRecordPath => Path.Combine(Application.persistentDataPath, fileName + ".json");
     private bool isReplaying = false;
 
     // 정적 프로퍼티
@@ -286,10 +284,11 @@ public class TestManager : MonoBehaviour
     private void HandleReplayMouseUp(int button, Vector3 position)
     {
         Debug.Log($"재생: 마우스 업 - 버튼: {button}, 위치: {position}");
-        // 마우스 업 시 BuildModeManager의 Update 호출
 #if UNITY_EDITOR
         _buildModeManager?.Update(InputEventType.MouseUp, position);
 #endif
+        // 마우스 업 시 RefreshCards 이벤트 재생
+        // (실제 이벤트 재생은 ReplayInputs에서 처리)
     }
 
     private void HandleReplayMouseDrag(int button, Vector3 position)
@@ -402,6 +401,25 @@ public class TestManager : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _buildModeManager?.Update(InputEventType.MouseUp, Input.mousePosition);
+
+            // 마우스 업 시RefreshCards가 실행됐는지 체크
+            var buildingCardContainer = StageContainer.Get<StageUI>().BuildingCardContainer;
+            if (buildingCardContainer != null && buildingCardContainer.WasLastRefreshByMouseUp())
+            {
+                if (onRecord)
+                {
+                    inputEvents.Add(new InputEvent
+                    {
+                        type = InputEventType.RefreshCards,
+                        time = Time.time - recordStartTime
+                    });
+                }
+            }
+        }
     }
 
     private void RecordInputs()
@@ -502,6 +520,10 @@ public class TestManager : MonoBehaviour
                         Debug.Log($"재생: 카메라 이동 인덱스 {e.cameraIndex}, 위치 {e.cameraPathPosition}, 속도 {e.cameraSpeed}");
                     }
 
+                    break;
+                case InputEventType.RefreshCards:
+                    StageContainer.Get<StageUI>().BuildingCardContainer?.RefreshCards();
+                    Debug.Log("재생: RefreshCards 실행");
                     break;
             }
 
@@ -680,6 +702,14 @@ public class TestManager : MonoBehaviour
         OnReplayMouseUp -= HandleReplayMouseUp;
         OnReplayMouseDrag -= HandleReplayMouseDrag;
     }
+
+#if UNITY_EDITOR
+    [Button("입력 기록 파일 열기")]
+    private void OpenInputRecordFile()
+    {
+        EditorUtility.RevealInFinder(Application.persistentDataPath + "/PinballVillage");
+    }
+#endif
 }
 #endif
 
@@ -690,7 +720,8 @@ public enum InputEventType
     MouseDown,
     MouseUp,
     MouseDrag,
-    CameraMove // 카메라 이동 이벤트 타입 추가
+    CameraMove,
+    RefreshCards // RefreshCards 이벤트 타입 추가
 }
 
 [Serializable]
